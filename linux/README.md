@@ -113,3 +113,25 @@ _The last character can be:_
 ![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/linux/images/permission_trailing_dot.png "Permission trailing dot")  
 
 Reference: [what's with that trailing "." for the mode from "ls -l"] (http://lists.fedoraproject.org/pipermail/users/2009-November/092469.html)
+
+## Debugging in Apache configuration
+Recently I faced a problem faced a problem in Fedora 17. [Here] (http://serverfault.com/questions/444629/getting-403-on-apache-with-php-on-fedora-17/446570) is the question that I post to serverfault.com.
+
+If you faced 403 status in your browser, please check the following:
+1. Permission for your `/home/user` and subdirectories to your project if you're using symbolic link
+2. Check your httpd.conf file
+    - `AllowOverride None` change to `AllowOverride All` to enable `.htaccess`
+    - `Options Indexes FollowSymLinks` make sure that `FollowSymLinks` is there if you're using symbolic link
+
+**NOTE:** For the **2**, the configuration is in document root,  
+i.e.
+```conf
+<Directory "/var/www/html">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+</Directory>
+```
+
+Credit: [Kian-Meng, Ang] (https://github.com/kianmeng)
