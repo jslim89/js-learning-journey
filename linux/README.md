@@ -1,6 +1,3 @@
-# Purposes
-I realize that some useful linux command that seldom use, I'll easily forgot. Previously I was write in [Google Plus] (https://plus.google.com/105933285745744838422/posts). After a year, it become hard to trace back what I post. Now I decided to write it on [GitHub] (https://github.com/).
-
 # Lessons
 
 ## Mount from remote windows server (windows share)
@@ -104,3 +101,15 @@ If `CTRL + S` doesn't work, use the command below:
 `$ stty stop ^J`
 
 Reference: [How to forward-search-history with the reverse-i-search command (ctrl+r)?] (http://askubuntu.com/questions/60071/how-to-forward-search-history-with-the-reverse-i-search-command-ctrlr#answers)
+
+## Remove the trailing dot behind the permission drwxrwxrwx
+`$ find /path/to/dir -print0 | xargs -0 -n 1 sudo setfattr -h -x security.selinux`
+
+_The last character can be:_
+` ` **(Blank)** - no SELinux coverage
+`.` **(dot)** - ordinary SELinux context only
+`+` **(plus)** - SELinux ACLs or other things beyond ordinary context
+
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/linux/images/permission_trailing_dot.png "Permission trailing dot")  
+
+Reference: [what's with that trailing "." for the mode from "ls -l"] (http://lists.fedoraproject.org/pipermail/users/2009-November/092469.html)
