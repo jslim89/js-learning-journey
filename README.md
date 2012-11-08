@@ -10,3 +10,6 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 
 ## Vim
 * [Vim] (https://github.com/jslim89/js-learning-journey/tree/master/vim)
+
+## Version Control System
+* [Git] (https://github.com/jslim89/js-learning-journey/tree/master/vcs/git)
