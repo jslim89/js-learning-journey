@@ -1,5 +1,5 @@
 # About
-To keep all the technical knowledge that I've been learn.
+I realize that some technical stuff that seldom use, I'll easily forgot. Previously I was wrote in [Google Plus] (https://plus.google.com/105933285745744838422/posts). After a year, it become hard to trace back what I post. Now I decided to write it on [GitHub] (https://github.com/).
 
 ## Programming Language
 * [Python] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python)
