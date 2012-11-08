@@ -118,6 +118,7 @@ Reference: [what's with that trailing "." for the mode from "ls -l"] (http://lis
 Recently I faced a problem faced a problem in Fedora 17. [Here] (http://serverfault.com/questions/444629/getting-403-on-apache-with-php-on-fedora-17/446570) is the question that I post to serverfault.com.
 
 If you faced 403 status in your browser, please check the following:
+
 1. Permission for your `/home/user` and subdirectories to your project if you're using symbolic link
 2. Check your httpd.conf file
     - `AllowOverride None` change to `AllowOverride All` to enable `.htaccess`
