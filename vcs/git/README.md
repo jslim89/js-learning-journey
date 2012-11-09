@@ -6,10 +6,17 @@
 Reference: [How to tell which local branch is tracking which remote branch in Git?] (http://serverfault.com/questions/175052/how-to-tell-which-local-branch-is-tracking-which-remote-branch-in-git#answers)
 
 ## Change origin
-`$ git remote rm origin`  
-`$ git remote add origin https://github.com/jslim89/dotfiles`
+```sh
+$ git remote rm origin
+$ git remote add origin https://github.com/jslim89/dotfiles
+```
+another way is
+```sh
+$ git remote set-url origin git@github.com:jslim89/dotfiles.git
+```
 
 Reference: [Change “origin” of your GIT repository] (http://blog.aplikacja.info/2010/08/switch-origin-of-your-git-repository/)
+Reference: [Install Jekyll-Bootstrap] (http://jekyllbootstrap.com/#2__install_jekyllbootstrap)
 
 ## Merge with other's github repo
 ### Setup
