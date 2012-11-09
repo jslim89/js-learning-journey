@@ -15,8 +15,10 @@ another way is
 $ git remote set-url origin git@github.com:jslim89/dotfiles.git
 ```
 
-Reference: [Change “origin” of your GIT repository] (http://blog.aplikacja.info/2010/08/switch-origin-of-your-git-repository/)
-Reference: [Install Jekyll-Bootstrap] (http://jekyllbootstrap.com/#2__install_jekyllbootstrap)
+Reference:
+
+1. [Change “origin” of your GIT repository] (http://blog.aplikacja.info/2010/08/switch-origin-of-your-git-repository/)
+2. [Install Jekyll-Bootstrap] (http://jekyllbootstrap.com/#2__install_jekyllbootstrap)
 
 ## Merge with other's github repo
 ### Setup
