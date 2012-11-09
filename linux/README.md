@@ -2,12 +2,18 @@
 
 ## Mount from remote windows server (windows share)
 
-1. Login as root  
-`$ su -`
-2. Create a mount point  
-`# mkdir -p /mnt/ntserver`
-3. Mount the server  
-`# mount -t cifs //192.168.1.100/folder_to_be_mount -o username=jslim89,password=passwd /mnt/ntserver`
+1. Login as root
+```sh
+$ su -
+```
+2. Create a mount point
+```sh
+# mkdir -p /mnt/ntserver
+```
+3. Mount the server
+```sh
+# mount -t cifs //192.168.1.100/folder_to_be_mount -o username=jslim89,password=passwd /mnt/ntserver
+```
 
 **NOTE**
 * `-t cifs` - File system type to be mount
@@ -16,7 +22,9 @@
 Reference: [How to mount remote windows partition (windows share) under Linux] (http://www.cyberciti.biz/tips/how-to-mount-remote-windows-partition-windows-share-under-linux.html)
 
 ## GREP exclude certain keyword
-`$ grep "*wanted*" -v "*dontWant*" *`  
+```sh
+$ grep "*wanted*" -v "*dontWant*" *
+```
 In this case it will match the keyword **wanted** but exclude all the word with **dontWant**  
 
 `-v` option is for excluding what you don't want
@@ -24,13 +32,17 @@ In this case it will match the keyword **wanted** but exclude all the word with 
 Reference: [Using grep to Exclude Lines Containing Certain Characters/Text] (http://droptips.com/using-grep-to-exclude-lines-containing-certain-characterstext)
 
 ## find exclude certain filename
-`$ find . -not -iname "*dontWant*" -iname "*wanted*"`  
+```sh
+$ find . -not -iname "*dontWant*" -iname "*wanted*"
+```
 In this case it will match the filename with the word **wanted** but exclude those with the word **dontWant**  
 
 Reference: [How do you exclude files in the find command] (http://www.linuxforums.org/forum/programming-scripting/66523-how-do-you-exclude-files-find-command.html#post354455)
 
 ## svn commit excluding those files you haven't done
-`$ svn st | grep -v Foo | cut -c9- | xargs svn commit`  
+```sh
+$ svn st | grep -v Foo | cut -c9- | xargs svn commit
+```
 `svn st` - show the files that have been modified  
 `grep -v Foo` - exclude those file path with the word **Foo**  
 `cut -c9-` - to remove the extra character in front. i.e.  
@@ -41,13 +53,17 @@ after `cut` become **./path/to/Foo/bar.php**
 Reference: [how to loop files in linux from svn status] (http://stackoverflow.com/questions/289626/how-to-loop-files-in-linux-from-svn-status#answers)
 
 ## Change "localhost" to other name
-`$ vi /etc/sysconfig/network`  
+```sh
+$ vi /etc/sysconfig/network
+```
 Just change from here
 
 ## echo with new line character
-`$ echo -e [ui]\nusername = Your Name <your@email.com>`  
-which will produce:  
+```sh
+$ echo -e [ui]\nusername = Your Name <your@email.com>
 ```
+which will produce:  
+```conf
 [ui]
 username = Your Name <your@email.com>
 ```
@@ -56,38 +72,52 @@ username = Your Name <your@email.com>
 Reference: [new line in echo] (http://www.unix.com/shell-programming-scripting/56666-new-line-echo.html#post302271720)
 
 ## Change password for other users
-`$ sudo passwd userfoo`
+```sh
+$ sudo passwd userfoo
+```
 
 Reference: [PostgreSQL default password] (http://mohsinpage.wordpress.com/2011/01/20/postgresql-default-password/)
 
 ## Display size of directory
-`$ du -ch /path/to/dir | grep total`
+```sh
+$ du -ch /path/to/dir | grep total
+```
 
 Reference: (http://www.codecoffee.com/tipsforlinux/articles/22.html)
 
 ## Start SSH server on bootup
-`$ su -c 'chkconfig sshd on'`
+```sh
+$ su -c 'chkconfig sshd on'
+```
 
 ## yum install without gpg-key
-`# yum install --nogpgcheck package-name`
+```sh
+# yum install --nogpgcheck package-name
+```
 
 ## replace pattern with sed
 Example: replace `window.location.reload('#page1#&#page2#')` to `window.location.href='#page1#&#page2#';`  
-`$ sed -i "s/reload('#\(\w\+\)#&#\(\w\+\)#')/href='#\1#\&#\2#';/" /path/to/file`
+```sh
+$ sed -i "s/reload('#\(\w\+\)#&#\(\w\+\)#')/href='#\1#\&#\2#';/" /path/to/file
+```
 
 **NOTE:** the `&` in the _destination_ must use `\` to escape, otherwise it will refer to the _source_  
 i.e. `$ sed -i "s/reload('#\(\w\+\)#&#\(\w\+\)#')/href='#\1#&#\2#';/" /path/to/file`  
 will be come `window.location.href='#choosepage#reload('#choosepage#&#queryString#')#queryString#';`
 
 Replace all occurance in a directory  
-`$ grep "reload" -Rl * | xargs sed -i "s/reload('#\(\w\+\)#&#\(\w\+\)#')/href='#\1#\&#\2#';/"`
+```sh
+$ grep "reload" -Rl * | xargs sed -i "s/reload('#\(\w\+\)#&#\(\w\+\)#')/href='#\1#\&#\2#';/"
+```
 
 **Assumption:** `reload` keyword only occur in this situation.  
 `-R` - recursively looking for all files in sub-directories
 `-l` - show only the filename
 
 ## Sync 2 directories using rsync
-`$ rsync -vr /path/to/source/ /path/to/destination/`
+```sh
+$ rsync -vr /path/to/source/ /path/to/destination/
+```
 * `-v` - verbose
 * `-r` - recursive
 
@@ -98,12 +128,16 @@ Reference: [How to Backup Linux? 15 rsync Command Examples] (http://www.thegeeks
 `CTRL + S` - forward search **(Use after typing _CTRL + R_)**  
 If `CTRL + S` doesn't work, use the command below:
 
-`$ stty stop ^J`
+```sh
+$ stty stop ^J
+```
 
 Reference: [How to forward-search-history with the reverse-i-search command (ctrl+r)?] (http://askubuntu.com/questions/60071/how-to-forward-search-history-with-the-reverse-i-search-command-ctrlr#answers)
 
 ## Remove the trailing dot behind the permission drwxrwxrwx
-`$ find /path/to/dir -print0 | xargs -0 -n 1 sudo setfattr -h -x security.selinux`
+```sh
+$ find /path/to/dir -print0 | xargs -0 -n 1 sudo setfattr -h -x security.selinux
+```
 
 _The last character can be:_
 ` ` **(Blank)** - no SELinux coverage
