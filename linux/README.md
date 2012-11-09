@@ -136,3 +136,17 @@ i.e.
 ```
 
 Credit: [Kian-Meng, Ang] (https://github.com/kianmeng)
+
+## awk usage
+Extract out certain portion of input by a separator
+```sh
+$ echo "hello to awk" | awk '{print $3}'
+```
+The output will be `awk`.  
+**By default it will separated by a _<space>_ character**
+```sh
+$ echo "hello_to_awk" | awk -F _ '{print $3}'
+```
+`-F` - specify **separator** instead of using **<space>** by default
+
+Reference: [simple awk tutorial] (http://www.hcs.harvard.edu/~dholland/computers/awk.html)
