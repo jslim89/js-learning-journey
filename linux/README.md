@@ -91,9 +91,7 @@ $ su -c 'chkconfig sshd on'
 ```
 
 ## yum install without gpg-key
-```sh
-\# yum install --nogpgcheck package-name
-```
+`# yum install --nogpgcheck package-name`
 
 ## replace pattern with sed
 Example: replace `window.location.reload('#page1#&#page2#')` to `window.location.href='#page1#&#page2#';`  
