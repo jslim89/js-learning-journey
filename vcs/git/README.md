@@ -23,3 +23,15 @@ Reference: [Change “origin” of your GIT repository] (http://blog.aplikacja.i
 `$ git merge upstream/master`
 
 Reference: [Syncing a fork] (https://help.github.com/articles/syncing-a-fork)
+
+## Add / Update / Delete submodule
+```sh
+$ git submodule add git@github.com:user/repo.git /path/to/repo # adding a submodule
+
+$ git submodule init
+$ git submodule update # update submodule
+
+$ git rm --cached /path/to/repo # remove submodule
+```
+
+Reference: [Git Submodules: Adding, Using, Removing, Updating] (http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/)
