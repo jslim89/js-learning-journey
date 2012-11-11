@@ -182,3 +182,8 @@ $ echo "hello_to_awk" | awk -F _ '{print $3}'
 `-F` - specify **separator** instead of using **\<space\>** by default
 
 Reference: [simple awk tutorial] (http://www.hcs.harvard.edu/~dholland/computers/awk.html)
+
+## Rename a file to md5 hash
+```sh
+$ md5sum ori_filename | awk '{print $1}' | xargs mv ori_filename
+```
