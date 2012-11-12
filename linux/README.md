@@ -187,3 +187,11 @@ Reference: [simple awk tutorial] (http://www.hcs.harvard.edu/~dholland/computers
 ```sh
 $ md5sum ori_filename | awk '{print $1}' | xargs mv ori_filename
 ```
+
+## Xmodmap key mapping (fix for NEC Versa E6300)
+I had faced a problem when I want to use `|` _(Pipe)_ it always give me `>` character, here is a fix.
+```sh
+$ echo "keycode 94 = backslash bar" > ~/.Xmodmap
+```
+`94` is the key for backslash  
+`backslash bar` is refer to 2 character, 1 is `\` another 1 is `|`
