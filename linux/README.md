@@ -195,3 +195,10 @@ $ echo "keycode 94 = backslash bar" > ~/.Xmodmap
 ```
 `94` is the key for backslash  
 `backslash bar` is refer to 2 character, 1 is `\` another 1 is `|`
+
+## Run a programming without providing ABSOLUTE PATH
+```sh
+$ `which javac` HelloWorld.java
+```
+This example is to show that compile a java file without providing absolute path for `javac` _(i.e. /opt/jdk/bin/javac)_.  
+Here using `which` to get the absolute path of `javac` then use the output as the command.
