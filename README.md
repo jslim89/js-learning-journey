@@ -5,6 +5,9 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 * [Python] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python)
     - [Fabric] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python/fabric)
 
+## Database
+* [MySQL] (https://github.com/jslim89/js-learning-journey/tree/master/database/mysql)
+
 ## Linux Stuff
 * [Linux] (https://github.com/jslim89/js-learning-journey/tree/master/linux)
 
