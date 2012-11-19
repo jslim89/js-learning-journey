@@ -4,6 +4,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 ## Programming Language
 * [Python] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python)
     - [Fabric] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python/fabric)
+* [CSS] (https://github.com/jslim89/js-learning-journey/tree/master/programming/css)
 
 ## Database
 * [MySQL] (https://github.com/jslim89/js-learning-journey/tree/master/database/mysql)
