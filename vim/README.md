@@ -63,3 +63,13 @@ Reference: [Vim Regex Replace] (http://stackoverflow.com/questions/11850033/vim-
 `g~` - toggle between lower & UPPER case
 
 Reference: [Switching case of characters] (http://vim.wikia.com/wiki/Switching_case_of_characters)
+
+## Change case by regex
+Change FooBar to fOObAR
+```viml
+:%s/\(\w\)\(\w\{2\}\)\(\w\)\(\w\{2\}\)/\L\1\U\2\L\3\U\4/g
+```
+`\L` is change to lower-case **(apply to all text after `L`)**  
+`\U` is change to upper-case **(apply to all text after `U`)**
+
+Reference: [Changing case with regular expressions] (http://vim.wikia.com/wiki/Changing_case_with_regular_expressions)
