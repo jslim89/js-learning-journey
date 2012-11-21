@@ -23,4 +23,4 @@ if(myRegex.test(year)) {
 `\d` refer to integer  
 `{4}` exactly 4 occurance must matched
 
-Reference: [Check if a Javascript Function Exists or Is Defined] (http://www.idealog.us/2007/02/check_if_a_java.html)
+Reference: [JavaScript - Test for an integer] (http://stackoverflow.com/questions/1019515/javascript-test-for-an-integer#answers)
