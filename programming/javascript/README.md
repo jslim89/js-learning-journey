@@ -15,7 +15,7 @@ Example, to validate a **Year**:
 var year = 2012;
 var myRegex = /^\d{4}$/;
 if(myRegex.test(year)) {
-    alert('Is a valid year);
+    alert('Is a valid year');
 }
 ```
 `/^` indicate a beginning of the pattern  
