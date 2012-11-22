@@ -24,3 +24,10 @@ if(myRegex.test(year)) {
 `{4}` exactly 4 occurance must matched
 
 Reference: [JavaScript - Test for an integer] (http://stackoverflow.com/questions/1019515/javascript-test-for-an-integer#answers)
+
+## Check whether a function exists
+```js
+var totalRows = document.getElementById('tableId').getElementsByTagName('tr').length;
+```
+
+Reference: [Obtain the number of rows in a table] (http://www.delphifaq.com/faq/f771.shtml)
