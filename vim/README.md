@@ -78,3 +78,14 @@ Reference: [Changing case with regular expressions] (http://vim.wikia.com/wiki/C
 Press **/** and then **CTRL + f**  
 ![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/vim/images/search-history-tracing.png "Search history")  
 Then can select the previous command by typing **Enter** key
+
+## Count the number of occurance (pattern or word)
+```viml
+" Count the number of occurance of exactly 9-digit integer
+:%s/\d\{9\}//gn
+
+" Count the number of `foo`
+:%s/foo//gn
+```
+
+Reference: [Counting occurrences of a pattern] (http://vim.wikia.com/wiki/Word_count#Counting_occurrences_of_a_pattern)
