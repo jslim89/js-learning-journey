@@ -73,3 +73,8 @@ Change FooBar to fOObAR
 `\U` is change to upper-case **(apply to all text after `U`)**
 
 Reference: [Changing case with regular expressions] (http://vim.wikia.com/wiki/Changing_case_with_regular_expressions)
+
+## Trace back search history
+Press **/** and then **CTRL + f**  
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/vim/images/search-history-tracing.png "Search history")  
+Then can select the previous command by typing **Enter** key
