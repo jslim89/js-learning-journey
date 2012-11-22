@@ -45,3 +45,27 @@ document.write(new_str); // abc_321
 * `+` - one or more occurance
 
 Reference: [Using Parenthesized Substring Matches] (http://www.websina.com/bugzero/kb/regexp.html#1008659)
+
+## Change element's ID
+```js
+document.getElementById('originalId').id = "newId";
+```
+
+Reference: [How do I change the ID of a HTML element with JavaScript?] (http://stackoverflow.com/questions/1650299/how-do-i-change-the-id-of-a-html-element-with-javascript)
+
+## For each row in table
+```js
+var rows = document.getElementById('tableName').rows;
+for(rowIndex in rows) {
+    if(/^\d+$/.test(rowIndex)) {
+        /*
+        Your code here, accessed by rows[rowIndex]
+        i.e. rows[rowIndex].id = "resetNewId";
+        */
+    }
+}
+```
+**NOTE**  
+`if(/^\d+$/.test(rowIndex))` is to get only the integer index, because in `document.getElementById('tableName').rows` there are extra 3 attributes: `length`, `item` and `namedItem`. I just want to ignore this 3 attributes. Since the indexes are all integer, so I use regular expression to filter it.
+
+Reference: [How do I iterate through table rows and cells in javascript?] (http://stackoverflow.com/questions/3065342/how-do-i-iterate-through-table-rows-and-cells-in-javascript#answers)
