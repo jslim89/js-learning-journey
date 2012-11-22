@@ -31,3 +31,17 @@ var totalRows = document.getElementById('tableId').getElementsByTagName('tr').le
 ```
 
 Reference: [Obtain the number of rows in a table] (http://www.delphifaq.com/faq/f771.shtml)
+
+## Replace text with submatch (parenthesis)
+Change a text **abc_123** to **abc_321**
+```js
+var str = "abc_123";
+var new_str = str.replace(/([A-Za-z]+)_\d+/, "$1_321");
+document.write(new_str); // abc_321
+```
+* `[A-Za-z]` - only match alphabet excluding underscore **(_)**
+* `(.....)` - keep the text inside the parenthesis into a variable _(`$1` in this case as it is the first parenthesis, if second then use `$2`)_
+* `\d` - match only integer
+* `+` - one or more occurance
+
+Reference: [Using Parenthesized Substring Matches] (http://www.websina.com/bugzero/kb/regexp.html#1008659)
