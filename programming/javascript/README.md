@@ -69,3 +69,10 @@ for(rowIndex in rows) {
 `if(/^\d+$/.test(rowIndex))` is to get only the integer index, because in `document.getElementById('tableName').rows` there are extra 3 attributes: `length`, `item` and `namedItem`. I just want to ignore this 3 attributes. Since the indexes are all integer, so I use regular expression to filter it.
 
 Reference: [How do I iterate through table rows and cells in javascript?] (http://stackoverflow.com/questions/3065342/how-do-i-iterate-through-table-rows-and-cells-in-javascript#answers)
+
+## Remove DOM element attribute
+```js
+document.getElementById('elementId').removeAttribute('class');
+```
+
+Reference: [DOM Element removeAttribute() Method](http://www.w3schools.com/jsref/met_element_removeattribute.asp)
