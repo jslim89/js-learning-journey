@@ -202,3 +202,10 @@ $ `which javac` HelloWorld.java
 ```
 This example is to show that compile a java file without providing absolute path for `javac` _(i.e. /opt/jdk/bin/javac)_.  
 Here using `which` to get the absolute path of `javac` then use the output as the command.
+
+## tree show only the first level
+By default it will shows all files, but I definitely cannot have a clear image on that. The command below shows only the first level
+```sh
+$ tree /path -L 1
+```
+`-L` - refer to the level you want
