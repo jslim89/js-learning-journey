@@ -63,3 +63,25 @@ $ cd ..
 Actually during the octopress setup, they push the source to another branch rather than master.
 
 Reference: [Octopress: Setting up a Blog and Contributing to an Existing One] (http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one)
+
+## un-add a file before commit
+```sh
+$ git reset
+```
+
+Reference: [Undo git add before commit] (http://stackoverflow.com/questions/348170/undo-git-add-before-commit#answers)
+
+## un-delete before commit
+```sh
+$ git checkout <filename>
+```
+
+Reference: [git un-remove before commit?] (http://stackoverflow.com/questions/5587183/git-un-remove-before-commit#answers)
+
+## Accidentally pushing sensitive date to octopress blog on github repo
+```sh
+$ git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch filepath/filename' --prune-empty --tag-name-filter cat -- --all
+$ git push origin master --force
+```
+
+Reference: [Remove sensitive data] (https://help.github.com/articles/remove-sensitive-data)
