@@ -89,3 +89,12 @@ Then can select the previous command by typing **Enter** key
 ```
 
 Reference: [Counting occurrences of a pattern] (http://vim.wikia.com/wiki/Word_count#Counting_occurrences_of_a_pattern)
+
+## Remove the trailing space for each line
+```viml
+:%s/\(^ $\)\@!\&\s\+$//g
+" Or
+:%s/\(\S\zs\s\+$\)\|\(^\s\{2,}$\)//g
+```
+
+Reference: [Vim: Match spaces at end of line but not lines consisting of a single space](http://stackoverflow.com/questions/7946057/vim-match-spaces-at-end-of-line-but-not-lines-consisting-of-a-single-space#answers)
