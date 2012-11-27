@@ -3,15 +3,15 @@
 ## Mount from remote windows server (windows share)
 
 1. Login as root
-```sh
+```
 $ su -
 ```
 2. Create a mount point
-```sh
+```
 # mkdir -p /mnt/ntserver
 ```
 3. Mount the server
-```sh
+```
 # mount -t cifs //192.168.1.100/folder_to_be_mount -o username=jslim89,password=passwd /mnt/ntserver
 ```
 
@@ -209,3 +209,10 @@ By default it will shows all files, but I definitely cannot have a clear image o
 $ tree /path -L 1
 ```
 `-L` - refer to the level you want
+
+## Remove trailing space for each line using sed
+```sh
+$ sed -i 's/[[:space:]]*$//' filename
+```
+
+Reference: [sed + removes all leading and trailing whitespace from each line on solaris system](http://stackoverflow.com/questions/10621828/sed-removes-all-leading-and-trailing-whitespace-from-each-line-on-solaris-syst#answers)
