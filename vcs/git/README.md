@@ -85,3 +85,10 @@ $ git push origin master --force
 ```
 
 Reference: [Remove sensitive data] (https://help.github.com/articles/remove-sensitive-data)
+
+## Un-modify a file before commit
+```sh
+$ git checkout -- filename
+```
+
+Reference: [Unmodifying a Modified File] (http://git-scm.com/book/en/Git-Basics-Undoing-Things#Unmodifying-a-Modified-File)
