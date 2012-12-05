@@ -76,3 +76,25 @@ document.getElementById('elementId').removeAttribute('class');
 ```
 
 Reference: [DOM Element removeAttribute() Method](http://www.w3schools.com/jsref/met_element_removeattribute.asp)
+
+## Binding event on future (i.e. add row) using jQuery
+If you have an **Add Row** function, the normal binding doesn't affected. i.e.
+```js
+$(function() {
+    $('.row-div').click(function() {
+        // This doesn't work
+        alert('added a new row');
+    });
+});
+```
+The example above doesn't work because it already binded when the page loaded, thus the elements after added doesn't bind. In order for this to work, use `delegate`
+```js
+$(function() {
+    $('.parent-element').delegate('.row-div', 'click', function() {
+        // This work
+        alert('added a new row');
+    });
+});
+```
+
+Reference: [jQuery - .delegate()](http://api.jquery.com/delegate/)
