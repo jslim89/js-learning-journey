@@ -20,6 +20,7 @@ Array
 [2] => 3
 [3] => 4
 [4] => 5
+)
 ```
 
 Reference: [PHP range() Function](http://www.w3schools.com/php/func_array_range.asp)
