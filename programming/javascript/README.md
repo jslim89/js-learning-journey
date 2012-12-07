@@ -98,3 +98,26 @@ $(function() {
 ```
 
 Reference: [jQuery - .delegate()](http://api.jquery.com/delegate/)
+
+## Disable a hyperlink and resume it back when is needed using jQuery
+**Disable:** This cannot be done by `disabled` attribute
+```js
+$(function() {
+    $('a#hyperlink').click(function (e) {
+        // To avoid its default behavior
+        e.preventDefault();
+    });
+});
+```
+**Resume:** There is no way to resume this, but you can _hack_ on it.
+```js
+$(function() {
+    $('a#hyperlink').click(function() {
+        window.location.href = $(this).attr('href');
+    });
+});
+```
+
+References:  
+* [jQuery disable a link](http://stackoverflow.com/questions/970388/jquery-disable-a-link#answers)
+* [When the user clicks an element: Prevent default action, present menu(s), then resume default action when menu is clicked](http://stackoverflow.com/questions/3964548/when-the-user-clicks-an-element-prevent-default-action-present-menus-then-r#answers)
