@@ -141,3 +141,27 @@ Some <em>description</em> here
 **Note:** `eq(1)` the digit inside the `eq` is refer to index which is start with **0**
 
 Reference: [jQuery, get second child](http://stackoverflow.com/questions/4727263/jquery-get-second-child#answers)
+
+## Remove all inside a DOM element using jQuery
+```js
+// Easiest way
+$('#foo').html('');
+
+// Other way
+$('#foo').empty();
+```
+
+References:  
+* [What is the fastest way to remove child elements from the DOM in IE?](http://stackoverflow.com/questions/2298927/what-is-the-fastest-way-to-remove-child-elements-from-the-dom-in-ie#answers)
+* [jQuery - .empty()](http://api.jquery.com/empty/)
+
+## Access the content of style using jQuery
+```js
+// Set the height value to 100px
+$('#foo').css('height', '100px');
+
+// Get the height value
+var height = $('#foo').css('height');
+```
+
+Reference: [jQuery - .css()](http://api.jquery.com/css/)
