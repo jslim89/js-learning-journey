@@ -18,3 +18,11 @@ GRANT ALL PRIVILEGES ON db_foo.* TO 'foo'@'%' WITH GRANT OPTION;
 ```
 
 Reference: [MySQL: 6.3.2. Adding User Accounts] (http://dev.mysql.com/doc/refman/5.5/en//adding-users.html)
+
+## Dump database to sql file
+```sh
+$ mysqldump -u root -p database_name > filename.sql
+# enter password
+```
+`-u` - refer to user (normally use root)  
+`-p` - will prompt you password
