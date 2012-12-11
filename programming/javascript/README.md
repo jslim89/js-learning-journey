@@ -121,3 +121,23 @@ $(function() {
 References:  
 * [jQuery disable a link](http://stackoverflow.com/questions/970388/jquery-disable-a-link#answers)
 * [When the user clicks an element: Prevent default action, present menu(s), then resume default action when menu is clicked](http://stackoverflow.com/questions/3964548/when-the-user-clicks-an-element-prevent-default-action-present-menus-then-r#answers)
+
+## Select second child element using jQuery
+```html
+<div id="main-div">
+    <div>Some text here</div>
+    <div>Some <em>description</em> here</div>
+</div>
+```
+Let say you want to access the second `div`
+```js
+var contentHtml = $('div#main-div').children().eq(1).html();
+alert(contentHtml);
+```
+Output will be:
+```
+Some <em>description</em> here
+```
+**Note:** `eq(1)` the digit inside the `eq` is refer to index which is start with **0**
+
+Reference: [jQuery, get second child](http://stackoverflow.com/questions/4727263/jquery-get-second-child#answers)
