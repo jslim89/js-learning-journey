@@ -26,3 +26,19 @@ $ mysqldump -u root -p database_name > filename.sql
 ```
 `-u` - refer to user (normally use root)  
 `-p` - will prompt you password
+
+## Select current DateTime
+```sql
+mysql > SELECT NOW();
+```
+Output:
+```
++---------------------+
+| NOW()               |
++---------------------+
+| 2012-12-11 17:28:30 |
++---------------------+
+1 row in set (0.00 sec)
+```
+
+Reference: [Mysql/Php - Current date and time](http://stackoverflow.com/questions/3618401/mysql-php-current-date-and-time#answers)
