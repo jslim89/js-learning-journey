@@ -59,7 +59,7 @@ Reference: [How to manage sessions with AFNetworking?](http://stackoverflow.com/
 
 ## Clear all NSUserDefaults
 ```obj-c
-UserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 NSDictionary *dict = [defaults dictionaryRepresentation];
 for (id key in dict) {
     [defaults removeObjectForKey:key];
