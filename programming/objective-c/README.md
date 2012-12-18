@@ -68,3 +68,30 @@ for (id key in dict) {
 ```
 
 Reference: [Delete all keys from a NSUserDefaults dictionary iPhone](http://stackoverflow.com/questions/6797096/delete-all-keys-from-a-nsuserdefaults-dictionary-iphone#answers)
+
+## Define global constant
+Create 2 files:
+```sh
+$ touch Constants.h
+$ touch Constants.m
+```
+Add the 2 files to project, **right-click** the project -> **Add Files to "project"...**  
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/add-files-to-project.png "Add Files to \"project\"...")  
+
+Edit the files
+* Constants.h
+```obj-c
+FOUNDATION_EXPORT NSString *const FOO;
+FOUNDATION_EXPORT NSString *const BAR;
+```
+* Constants.m
+```obj-c
+NSString *const FOO = @"I'm Foo";
+NSString *const BAR = @"I'm Bar";
+```
+Then import to those files that you want to use these constants
+```obj-c
+import "Constants.h"
+```
+
+Reference: [Constants in Objective C](http://stackoverflow.com/questions/538996/constants-in-objective-c#answers)
