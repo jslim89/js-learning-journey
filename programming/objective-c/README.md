@@ -26,3 +26,45 @@ NSWhatEver *foo = (NSWhatEver *)bar;
 ```
 
 Reference: [Casting Objects in Cocoa touch](http://stackoverflow.com/questions/960513/casting-objects-in-cocoa-touch#answers)
+
+## Accessing a `deep` element in JSON
+```obj-c
+/*
+{
+    lvl_1_0 =     {
+        lvl_2_0 =         {
+            lvl_3_0 = "I'm Foo";
+            lvl_3_1 = "I'm Bar";
+        };
+        lvl_2_1 = 123;
+    };
+    lvl_1_1 =     (
+    );
+}
+*/
+
+NSString *foo = [[[json valueForKey:@"lvl_1_0"] valueForKey:@"lvl_2_0" ] valueForKey:@"lvl_3_0"];
+```
+
+## Clear all cookies
+```obj-c
+NSString baseUrlString = @"http://yourdomain.com/";
+NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL: [NSURL URLWithString:baseUrlString]];
+for (NSHTTPCookie *cookie in cookies) {
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
+}
+```
+
+Reference: [How to manage sessions with AFNetworking?](http://stackoverflow.com/questions/10984374/how-to-manage-sessions-with-afnetworking#answers)
+
+## Clear all NSUserDefaults
+```obj-c
+UserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+NSDictionary *dict = [defaults dictionaryRepresentation];
+for (id key in dict) {
+    [defaults removeObjectForKey:key];
+}
+[defaults synchronize];
+```
+
+Reference: [Delete all keys from a NSUserDefaults dictionary iPhone](http://stackoverflow.com/questions/6797096/delete-all-keys-from-a-nsuserdefaults-dictionary-iphone#answers)
