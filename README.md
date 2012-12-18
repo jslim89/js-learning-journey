@@ -7,6 +7,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 * [PHP] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php)
 * [CSS] (https://github.com/jslim89/js-learning-journey/tree/master/programming/css)
 * [JavaScript] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript)
+* [Objective-C] (https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c)
 
 ## Database
 * [MySQL] (https://github.com/jslim89/js-learning-journey/tree/master/database/mysql)
