@@ -97,3 +97,13 @@ import "Constants.h"
 ```
 
 Reference: [Constants in Objective C](http://stackoverflow.com/questions/538996/constants-in-objective-c#answers)
+
+## Add objects into NSMutableArray
+```obj-c
+NSMutableArray *arrayObj = [[NSMutableArray alloc] init];
+for (int i = 0; i < 10; i++) {
+    [arrayObj addObject:[NSString stringWithFormat:@"Row %d", i]];
+}
+```
+
+Reference: [NSArray adding elements](http://stackoverflow.com/questions/778465/nsarray-adding-elements#answers)
