@@ -103,3 +103,13 @@ output:
 **NOTE:** must indicate `u` in front of the string
 
 Reference: [Python: any way to perform this “hybrid” split() on multi-lingual (e.g. Chinese & English) strings?](http://stackoverflow.com/questions/3801431/python-any-way-to-perform-this-hybrid-split-on-multi-lingual-e-g-chinese#answers)
+
+## read content from web
+```python
+import urllib
+
+url = 'http://yoururl.com/'
+content = urllib.urlopen(url).read()
+```
+
+Reference: [How to get an HTML file using Python?](http://stackoverflow.com/questions/4489550/how-to-get-an-html-file-using-python)
