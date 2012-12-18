@@ -76,15 +76,17 @@ $ touch Constants.h
 $ touch Constants.m
 ```
 Add the 2 files to project, **right-click** the project -> **Add Files to "project"...**  
-![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/add-files-to-project.png "Add Files to \"project\"...")  
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/add-files-to-project.png "Add Files to 'project'...")  
 
-Edit the files
-* Constants.h
+Edit the files:
+
+**Constants.h**
 ```obj-c
 FOUNDATION_EXPORT NSString *const FOO;
 FOUNDATION_EXPORT NSString *const BAR;
 ```
-* Constants.m
+
+**Constants.m**
 ```obj-c
 NSString *const FOO = @"I'm Foo";
 NSString *const BAR = @"I'm Bar";
