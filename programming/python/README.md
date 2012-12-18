@@ -85,3 +85,21 @@ Fortunately, I found a solution
 Just have to add this line to the top of `filename.py`
 
 Reference: [SyntaxError: Non-ASCII character '\xa3' in file when function returns '£'](http://stackoverflow.com/questions/10589620/syntaxerror-non-ascii-character-xa3-in-file-when-function-returns#answer-10589674)
+
+## match all chinese character
+```python
+import re
+
+regex = re.compile(ur'([\u4e00-\ufaff]+)', re.UNICODE)
+text = u'this is 中文 char'
+matches = regex.findall(text)
+
+print(matches[0])
+```
+output:
+```
+中文
+```
+**NOTE:** must indicate `u` in front of the string
+
+Reference: [Python: any way to perform this “hybrid” split() on multi-lingual (e.g. Chinese & English) strings?](http://stackoverflow.com/questions/3801431/python-any-way-to-perform-this-hybrid-split-on-multi-lingual-e-g-chinese#answers)
