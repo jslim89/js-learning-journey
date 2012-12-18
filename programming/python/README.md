@@ -52,3 +52,36 @@ Hey, I'm Bar
 ```
 
 Reference: [Making your own Modules](http://www.ibiblio.org/g2swap/byteofpython/read/making-modules.html)
+
+## dump object
+```python
+import pprint
+
+pprint.pprint(obj);
+```
+
+Reference: [What is a python equivalent of PHP's var_dump()](http://stackoverflow.com/questions/383944/what-is-a-python-equivalent-of-phps-var-dump#answers)
+
+## Parsing text with regex
+This is equivalent to [PHP: preg_match_all](http://php.net/manual/en/function.preg-match-all.php)
+```python
+import re
+
+pattern = '(https?://\S+)'
+urls = re.findall(pattern, text)
+```
+
+Reference: [Translating PHP’s preg_match_all to Python](http://stackoverflow.com/questions/3865896/translating-phps-preg-match-all-to-python#answers)
+
+## Store chinese character in string
+I had getting such an error:  
+```
+SyntaxError: Non-ASCII character '\xe5' in file filename.py on line 13, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+```
+Fortunately, I found a solution
+```python
+# -*- coding: utf-8 -*-
+```
+Just have to add this line to the top of `filename.py`
+
+Reference: [SyntaxError: Non-ASCII character '\xa3' in file when function returns '£'](http://stackoverflow.com/questions/10589620/syntaxerror-non-ascii-character-xa3-in-file-when-function-returns#answer-10589674)
