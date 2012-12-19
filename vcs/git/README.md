@@ -92,3 +92,50 @@ $ git checkout -- filename
 ```
 
 Reference: [Unmodifying a Modified File] (http://git-scm.com/book/en/Git-Basics-Undoing-Things#Unmodifying-a-Modified-File)
+
+## Problem with no HEAD branch
+```sh
+$ git remote show origin
+Identity added: /Users/jslim/.ssh/id_rsa (/Users/jslim/.ssh/id_rsa)
+* remote origin
+  Fetch URL: git@yourdomain.com:/yourporject.git
+  Push  URL: git@yourdomain.com:/yourporject.git
+  HEAD branch: (unknown)
+```
+When I type the same command to my learning journey, it has **HEAD** branch
+```sh
+$ git remote show origin
+* remote origin
+  Fetch URL: git@github.com:jslim89/js-learning-journey.git
+  Push  URL: git@github.com:jslim89/js-learning-journey.git
+  HEAD branch: master
+  Remote branch:
+    master tracked
+  Local branch configured for 'git pull':
+    master merges with remote master
+  Local ref configured for 'git push':
+    master pushes to master (up to date)
+```
+When first I see this, I was thinking about how to add **master** to the HEAD. In fact, it is not necessary
+```sh
+$ git push origin master
+Counting objects: 18, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (18/18), 13.30 KiB, done.
+Total 18 (delta 1), reused 0 (delta 0)
+To git@yourdomain.com:/yourporject.git
+ * [new branch]      master -> master
+```
+Show origin again
+```sh
+$ git remote show origin
+* remote origin
+  Fetch URL: git@yourdomain.com:/yourporject.git
+  Push  URL: git@yourdomain.com:/yourporject.git
+  HEAD branch: master
+  Remote branch:
+    master tracked
+  Local ref configured for 'git push':
+    master pushes to master (up to date)
+```
