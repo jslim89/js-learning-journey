@@ -107,3 +107,14 @@ for (int i = 0; i < 10; i++) {
 ```
 
 Reference: [NSArray adding elements](http://stackoverflow.com/questions/778465/nsarray-adding-elements#answers)
+
+## set border to image
+```obj-c
+#import <QuartzCore/QuartzCore.h>
+
+UIImageView *imageView = [[UIImageView alloc] init];
+[imageView.layer setBorderColor:[[UIColor blackColor] CGColor]];
+[imageView.layer setBorderWidth:2.0];
+```
+
+Reference: [How can i take an UIImage and give it a black border?](http://stackoverflow.com/questions/1354811/how-can-i-take-an-uiimage-and-give-it-a-black-border#answer-3018485)
