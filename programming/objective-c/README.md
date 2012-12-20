@@ -118,3 +118,10 @@ UIImageView *imageView = [[UIImageView alloc] init];
 ```
 
 Reference: [How can i take an UIImage and give it a black border?](http://stackoverflow.com/questions/1354811/how-can-i-take-an-uiimage-and-give-it-a-black-border#answer-3018485)
+
+## Generate Unix timestamp
+```obj-c
+int timestamp = [[NSDate date] timeIntervalSince1970];
+```
+
+Reference: [UnixTimestamps always off in ios](http://stackoverflow.com/questions/8639048/unixtimestamps-always-off-in-ios#answers)
