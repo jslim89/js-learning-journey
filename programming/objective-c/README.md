@@ -125,3 +125,25 @@ int timestamp = [[NSDate date] timeIntervalSince1970];
 ```
 
 Reference: [UnixTimestamps always off in ios](http://stackoverflow.com/questions/8639048/unixtimestamps-always-off-in-ios#answers)
+
+## Hide the navigation bar
+Consider a situation here, a 2nd layer view is pushed on top of the root view, where root view need a navigation bar and the view just pushed no need.
+
+In root navigation viewController.m
+```obj-c
+- (void)viewWillAppear:(BOOL)animated
+{
+    # show navigation bar when the root view is shown
+    [self.navigationController setNavigationBarHidden:NO];
+}
+- (IBAction)toNextView:(id)sender
+{
+    # push a new view in
+    YourViewController *controller = [[YourViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+    # hide the navigation bar
+    [self.navigationController setNavigationBarHidden:YES];
+}
+```
+
+Reference: [Hide navigation bar in UINavigationViewController's root view, but show it in others](http://stackoverflow.com/questions/8620491/hide-navigation-bar-in-uinavigationviewcontrollers-root-view-but-show-it-in-ot#answers)
