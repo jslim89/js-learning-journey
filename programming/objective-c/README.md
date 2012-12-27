@@ -108,6 +108,16 @@ for (int i = 0; i < 10; i++) {
 
 Reference: [NSArray adding elements](http://stackoverflow.com/questions/778465/nsarray-adding-elements#answers)
 
+## Add objects into NSMutableDictionary
+```obj-c
+NSMutableDictionary *arrayObj = [[NSMutableDictionary alloc] init];
+for (int i = 0; i < 10; i++) {
+    [arrayObj setObject:[NSString stringWithFormat:@"Row %d", i] forKey:[NSString stringWithFormat:@"key_%d", i]];
+}
+```
+
+Reference: [How to addObject of NSMutableDictionary to NSMutableArray in a loop](http://stackoverflow.com/questions/1957883/how-to-addobject-of-nsmutabledictionary-to-nsmutablearray-in-a-loop#answer-7432535)
+
 ## set border to image
 ```obj-c
 #import <QuartzCore/QuartzCore.h>
