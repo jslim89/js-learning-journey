@@ -147,3 +147,27 @@ In root navigation viewController.m
 ```
 
 Reference: [Hide navigation bar in UINavigationViewController's root view, but show it in others](http://stackoverflow.com/questions/8620491/hide-navigation-bar-in-uinavigationviewcontrollers-root-view-but-show-it-in-ot#answers)
+
+## Property creation
+**FooViewController.h**
+```obj-c
+@interface FooViewController : UIViewController
+
+@property (strong, nonatomic) NSString *fooStr;
+# primitive type no need to specify strong or weak
+@property (nonatomic) int fooInt;
+
+@end
+```
+
+**FooViewController.m**
+```obj-c
+@implementation FooViewController { }
+
+@synthesize fooStr;
+@synthesize fooInt;
+
+...
+@end
+```
+This can be apply in such a situation where you want to let the next view to access your property
