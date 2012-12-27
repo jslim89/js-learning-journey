@@ -168,6 +168,13 @@ Reference: [Hide navigation bar in UINavigationViewController's root view, but s
 @synthesize fooInt;
 
 ...
+- (void)viewDidUnload
+{
+    // Deallocate object reference type
+    [self setFooStr:nil];
+    [super viewDidUnload];
+}
 @end
+...
 ```
 This can be apply in such a situation where you want to let the next view to access your property
