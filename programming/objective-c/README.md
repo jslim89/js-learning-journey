@@ -210,3 +210,16 @@ fooLabel.textAlignment = UITextAlignmentCenter;
 ```
 
 Reference: [UILabel Align Text to center](http://stackoverflow.com/questions/5722730/uilabel-align-text-to-center#answers)
+
+## Get device model
+```obj-c
+- (NSString *)model
+{
+    struct utsname systemInfo;
+    uname(&systemInfo);
+
+    return [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+}
+```
+
+Reference: [ios iphone get device model and make?](http://stackoverflow.com/questions/11197509/ios-iphone-get-device-model-and-make#answers)
