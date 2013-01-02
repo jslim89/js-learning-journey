@@ -279,4 +279,32 @@ Reference: [How can I get current location from user in iOS](http://stackoverflo
 ...
 ```
 
- Reference: [has Iphone built in beep sound efect](http://stackoverflow.com/questions/5867058/has-iphone-built-in-beep-sound-efect#answers)
+Reference: [has Iphone built in beep sound efect](http://stackoverflow.com/questions/5867058/has-iphone-built-in-beep-sound-efect#answers)
+
+## Bind `Return` button to UITextField
+In **FooViewController.h**
+```obj-c
+@interface FooViewController : UIViewController <UITextFieldDelegate>
+```
+
+In **FooViewController.m**
+```obj-c
+- (void)viewDidLoad
+{
+    ...
+    UITextField *textField = [[UITextField alloc] initWithFrame:...];
+    ...
+    textField.delegate = self;
+    ...
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // Un-focus the text field
+    [textField resignFirstResponder];
+    return YES;
+}
+```
+
+Reference: [How to make return key on iphone make keyboard disappear?](http://stackoverflow.com/questions/6190276/how-to-make-return-key-on-iphone-make-keyboard-disappear#answers)
