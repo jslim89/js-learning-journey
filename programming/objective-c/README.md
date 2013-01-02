@@ -223,3 +223,45 @@ Reference: [UILabel Align Text to center](http://stackoverflow.com/questions/572
 ```
 
 Reference: [ios iphone get device model and make?](http://stackoverflow.com/questions/11197509/ios-iphone-get-device-model-and-make#answers)
+
+## Get user location
+First, add a framework named **CoreLocation.framework**
+
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/add-core-location-framework-to-project.png "Add CoreLocation.framework")  
+
+In **FooViewController.h**
+```obj-c
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+@interface FooViewController : UIViewController <CLLocationManagerDelegate> {
+    CLLocationManager *locationManager;
+}
+
+@end
+```
+
+In **FooViewController.m**
+```obj-c
+...
+- (void)viewDidLoad
+{
+    ...
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+    ...
+}
+
+...
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"Old location: %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
+    NSLog(@"New location: %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+}
+...
+```
+
+Reference: [How can I get current location from user in iOS](http://stackoverflow.com/questions/4152003/how-can-i-get-current-location-from-user-in-ios#answer-11334031)
