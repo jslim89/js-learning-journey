@@ -203,3 +203,10 @@ Reference: [present and dismiss modal view controller](http://stackoverflow.com/
 ```
 
 Reference: [I want to make UILabel's text bold](http://stackoverflow.com/questions/4602586/i-want-to-make-uilabels-text-bold#answers)
+
+## UILabel center text alignment
+```obj-c
+fooLabel.textAlignment = UITextAlignmentCenter;
+```
+
+Reference: [UILabel Align Text to center](http://stackoverflow.com/questions/5722730/uilabel-align-text-to-center#answers)
