@@ -265,3 +265,18 @@ In **FooViewController.m**
 ```
 
 Reference: [How can I get current location from user in iOS](http://stackoverflow.com/questions/4152003/how-can-i-get-current-location-from-user-in-ios#answer-11334031)
+
+## Add beep sound
+```obj-c
+#import <AudioToolBox/AudioToolBox.h>
+
+...
+- (void)viewDidLoad
+{
+    # more sound refer to http://iphonedevwiki.net/index.php/AudioServices
+    AudioServicePlaySystemSound(1000);
+}
+...
+```
+
+ Reference: [has Iphone built in beep sound efect](http://stackoverflow.com/questions/5867058/has-iphone-built-in-beep-sound-efect#answers)
