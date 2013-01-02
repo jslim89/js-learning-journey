@@ -188,3 +188,11 @@ Reference: [Hide navigation bar in UINavigationViewController's root view, but s
 ...
 ```
 This can be apply in such a situation where you want to let the next view to access your property
+
+## Dismiss `presentModalViewController`
+i.e. **Cancel** button is clicked, want to dismiss itself
+```obj-c
+[self dismissModalViewControllerAnimated:YES];
+```
+
+Reference: [present and dismiss modal view controller](http://stackoverflow.com/questions/1529632/present-and-dismiss-modal-view-controller#answers)
