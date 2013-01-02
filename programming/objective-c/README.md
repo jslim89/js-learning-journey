@@ -308,3 +308,10 @@ In **FooViewController.m**
 ```
 
 Reference: [How to make return key on iphone make keyboard disappear?](http://stackoverflow.com/questions/6190276/how-to-make-return-key-on-iphone-make-keyboard-disappear#answers)
+
+## Change keyboard `Return` key to `Go`
+```obj-c
+[textField setReturnKeyType:UIReturnKeyGo];
+```
+
+Reference: [iOS keyboard with “Go” button instead of return](http://stackoverflow.com/questions/4489879/ios-keyboard-with-go-button-instead-of-return#answers)
