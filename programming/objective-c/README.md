@@ -196,3 +196,10 @@ i.e. **Cancel** button is clicked, want to dismiss itself
 ```
 
 Reference: [present and dismiss modal view controller](http://stackoverflow.com/questions/1529632/present-and-dismiss-modal-view-controller#answers)
+
+## UILabel setFont
+```obj-c
+[fooLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:16]];
+```
+
+Reference: [I want to make UILabel's text bold](http://stackoverflow.com/questions/4602586/i-want-to-make-uilabels-text-bold#answers)
