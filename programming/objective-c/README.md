@@ -315,3 +315,46 @@ Reference: [How to make return key on iphone make keyboard disappear?](http://st
 ```
 
 Reference: [iOS keyboard with “Go” button instead of return](http://stackoverflow.com/questions/4489879/ios-keyboard-with-go-button-instead-of-return#answers)
+
+## Delegate multiple UITextField
+In **FooViewController.m**
+```obj-c
+#import "FooViewController.h"
+
+#define TEXTFIELD_FOO 1
+#define TEXTFIELD_BAR 2
+
+@interface FooViewController()
+
+@end
+
+@implementation FooViewController
+...
+- (void)viewDidLoad
+{
+    ...
+    UITextField *fooTextField = [[UITextField alloc] initWithFrame:...];
+    ...
+    fooTextField.tag = TEXTFIELD_FOO;
+    fooTextField.delegate = self;
+    ...
+    UITextField *barTextField = [[UITextField alloc] initWithFrame:...];
+    ...
+    barTextField.tag = TEXTFIELD_BAR;
+    barTextField.delegate = self;
+    ...
+}
+...
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField.tag == TEXTFIELD_FOO) {
+        // do something with Foo
+    } else if (textField.tag == TEXTFIELD_BAR) {
+        // do something with Bar
+    }
+    return YES;
+}
+```
+
+Reference: [iphone: uitextfield, multiple textfields with the same delegate?](http://stackoverflow.com/questions/3747315/iphone-uitextfield-multiple-textfields-with-the-same-delegate#answers)
