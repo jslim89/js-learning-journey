@@ -358,3 +358,9 @@ In **FooViewController.m**
 ```
 
 Reference: [iphone: uitextfield, multiple textfields with the same delegate?](http://stackoverflow.com/questions/3747315/iphone-uitextfield-multiple-textfields-with-the-same-delegate#answers)
+
+## UIScrollView scroll as page
+The statement below will enable the paging like what you see in iPhone menu (cannot scroll half page)
+```obj-c
+scrollView.pagingEnabled = YES;
+```
