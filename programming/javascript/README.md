@@ -165,3 +165,26 @@ var height = $('#foo').css('height');
 ```
 
 Reference: [jQuery - .css()](http://api.jquery.com/css/)
+
+## Select elements with `:not` operator using jQuery
+Let say we have an html
+```html
+<ul>
+    <li class="foo">I don't want this</li>
+    <li class="bar">I don't want this as well</li>
+    <li>I just want this</li>
+    <li>this</li>
+    <li>and this</li>
+</ul>
+```
+
+In jQuery
+```js
+$(function() {
+    $('ul li:not([class=foo]):not([class=bar])').each(function(index) {
+        // do something here
+    });
+});
+```
+
+Reference: [jQuery get all divs which do not have class attribute](http://stackoverflow.com/questions/1962247/jquery-get-all-divs-which-do-not-have-class-attribute#answer-1962250)
