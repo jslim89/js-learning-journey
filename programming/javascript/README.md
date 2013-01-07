@@ -39,12 +39,25 @@ var str = "abc_123";
 var new_str = str.replace(/([A-Za-z]+)_\d+/, "$1_321");
 document.write(new_str); // abc_321
 ```
+**OR** using callback function
+```js
+var str = "abc_efg";
+var new_str = str.replace(/([A-Za-z]+)_([A-Za-z]+)/, function(s, p1, p2) {
+    // p1 refer to first submatch (i.e. abc), p2 refer to second submatch (i.e. efg)
+    return [p1, p2].join('-');
+});
+document.write(new_str); // abc-efg
+```
+
 * `[A-Za-z]` - only match alphabet excluding underscore **(_)**
 * `(.....)` - keep the text inside the parenthesis into a variable _(`$1` in this case as it is the first parenthesis, if second then use `$2`)_
 * `\d` - match only integer
 * `+` - one or more occurance
 
-Reference: [Using Parenthesized Substring Matches] (http://www.websina.com/bugzero/kb/regexp.html#1008659)
+References:
+
+- [Using Parenthesized Substring Matches](http://www.websina.com/bugzero/kb/regexp.html#1008659)
+- [replace](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_function_as_a_parameter)
 
 ## Change element's ID
 ```js
