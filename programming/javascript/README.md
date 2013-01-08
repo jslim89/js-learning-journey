@@ -201,3 +201,34 @@ $(function() {
 ```
 
 Reference: [jQuery get all divs which do not have class attribute](http://stackoverflow.com/questions/1962247/jquery-get-all-divs-which-do-not-have-class-attribute#answer-1962250)
+
+## Store $.ajax result to global variable
+```js
+function foo(arg1, arg2) {
+    var bar;
+
+    $.ajax({
+        type: 'POST',
+        url: '/path/to/action.php',
+        data: {
+            param1: arg1,
+            param2: arg2
+        },
+        success: function(data) {
+            bar = data.bar;
+        },
+        complete: function(jqXHR, textStatus) {
+            alert(textStatus);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            alert(errorThrown);
+        },
+        async: false // force the client to wait
+    });
+
+    return bar;
+}
+```
+By setting `async` to `false`, so it won't continue to run until the request is completed.
+
+Reference: [JavaScript: Global variables after Ajax requests](http://stackoverflow.com/questions/3222347/javascript-global-variables-after-ajax-requests#answers)
