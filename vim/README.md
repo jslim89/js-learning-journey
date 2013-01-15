@@ -98,3 +98,16 @@ Reference: [Counting occurrences of a pattern] (http://vim.wikia.com/wiki/Word_c
 ```
 
 Reference: [Vim: Match spaces at end of line but not lines consisting of a single space](http://stackoverflow.com/questions/7946057/vim-match-spaces-at-end-of-line-but-not-lines-consisting-of-a-single-space#answers)
+
+## Getting `E576` error
+```sh
+$ vim foo.php
+E576: viminfo: Missing '>' in line: on/foo.php^I368^I16
+Press ENTER or type command to continue
+```
+When the error above occurred, just remove the `~/.viminfo` will do
+```sh
+$ rm ~/.viminfo
+```
+
+Reference: [E576: viminfo: Missing '>' in line:](http://www.linuxquestions.org/questions/linux-newbie-8/e576-viminfo-missing-in-line-691158/#post3378332)
