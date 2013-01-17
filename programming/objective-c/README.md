@@ -364,3 +364,32 @@ The statement below will enable the paging like what you see in iPhone menu (can
 ```obj-c
 scrollView.pagingEnabled = YES;
 ```
+
+## Change the height of UITableViewCell
+```obj-c
+- (CGFloat)tableView:(UITableView *)theTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100.00;
+}
+```
+
+Reference: [How can I programmatically increase the height of the cells in my UITableView?](http://stackoverflow.com/questions/3644366/how-can-i-programmatically-increase-the-height-of-the-cells-in-my-uitableview#answers)
+
+## Set UITableViewCell background image 
+```obj-c
+- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    }
+
+    cell.backgroundView = [[UIView alloc] init];
+    cell.contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"imgName"]];
+    
+    return cell;
+}
+```
