@@ -42,3 +42,18 @@ Output:
 ```
 
 Reference: [Mysql/Php - Current date and time](http://stackoverflow.com/questions/3618401/mysql-php-current-date-and-time#answers)
+
+## String concatenation with IF condition
+This is to avoid the **extra comma** appear if some of the component doesn't exist.
+```sql
+SELECT CONCAT(
+    address
+    , IF(address2 IS NULL OR address2 = '', '', CONCAT(', ', address2))
+    , IF(address3 IS NULL OR address3 = '', '', CONCAT(', ', address3))
+    , IF(postcode IS NULL OR postcode = '', '', CONCAT(', ', postcode))
+    , IF(state IS NULL OR state = '', '', CONCAT(', ', state))
+) AS full_address
+FROM what_ever;
+```
+
+Reference: [MySQL Forums :: Views :: IF and CONCAT](http://forums.mysql.com/read.php?100,94227,94227)
