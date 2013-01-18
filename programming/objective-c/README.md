@@ -412,3 +412,9 @@ tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 ```
 
 Reference: [How do I remove the borders of a UITableView?](http://stackoverflow.com/questions/286332/how-do-i-remove-the-borders-of-a-uitableview#answer-456945)
+
+## Reset UIBarButtonItem background to default
+**AppDelegate.m**
+```obj-c
+[[UIBarButtonItem appearance] setBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+```
