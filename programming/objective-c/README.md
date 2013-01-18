@@ -405,3 +405,10 @@ UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom]; // use custom i
 [button setFrame:CGRectMake(position_x, position_y, width, height)];
 [button setBackgroundImage:[UIImage imageNamed:@"SignInRegisterButton"] forState:UIControlStateNormal];
 ```
+
+## Remove UITableView cell separator
+```obj-c
+tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+```
+
+Reference: [How do I remove the borders of a UITableView?](http://stackoverflow.com/questions/286332/how-do-i-remove-the-borders-of-a-uitableview#answer-456945)
