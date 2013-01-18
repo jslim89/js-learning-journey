@@ -393,3 +393,15 @@ Reference: [How can I programmatically increase the height of the cells in my UI
     return cell;
 }
 ```
+
+## Set background on UIButton
+I was curious that why the background is always there
+
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/buttonWithUnclearedBackground.png "Ugly background")  
+
+Finally I found the problem, is the `Type`, to create a button with background programmatically
+```obj-c
+UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom]; // use custom instead of RoundedRect
+[button setFrame:CGRectMake(position_x, position_y, width, height)];
+[button setBackgroundImage:[UIImage imageNamed:@"SignInRegisterButton"] forState:UIControlStateNormal];
+```
