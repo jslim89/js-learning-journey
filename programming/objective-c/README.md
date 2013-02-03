@@ -418,3 +418,13 @@ Reference: [How do I remove the borders of a UITableView?](http://stackoverflow.
 ```obj-c
 [[UIBarButtonItem appearance] setBackgroundImage:nil forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 ```
+
+## Get `Day`, `Month`, `Year` from NSDate
+```
+NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:[NSDate date]];
+NSNumber *day = [NSNumber numberWithInt:[dateComponents day]];
+NSNumber *month = [NSNumber numberWithInt:[dateComponents month]];
+NSNumber *year = [NSNumber numberWithInt:[dateComponents year]];
+```
+
+Reference: [How to parse and extract Year, Month, Day etc from time interval on iphone IOS](http://stackoverflow.com/questions/8121147/how-to-parse-and-extract-year-month-day-etc-from-time-interval-on-iphone-ios#answers)
