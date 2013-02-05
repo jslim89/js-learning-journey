@@ -43,3 +43,20 @@ mkdir($path, 0777, true);
 The **3rd** argument is allowed to create intermediate directory.
 
 Reference: [PHP - mkdir](http://php.net/manual/en/function.mkdir.php)
+
+## Get client located country info
+We make use of [hostip.info](http://www.hostip.info/) api to get the location details.
+
+```php
+$url = 'http://api.hostip.info/get_json.php?ip=' . $_SERVER['REMOTE_ADDR'];
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+ob_start();
+curl_exec($ch);
+$content = ob_get_contents();
+ob_end_clean();
+curl_close($ch);
+
+$result = json_decode($content);
+```

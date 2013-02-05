@@ -232,3 +232,10 @@ function foo(arg1, arg2) {
 By setting `async` to `false`, so it won't continue to run until the request is completed.
 
 Reference: [JavaScript: Global variables after Ajax requests](http://stackoverflow.com/questions/3222347/javascript-global-variables-after-ajax-requests#answers)
+
+## Get selected text from dropdown list
+```js
+$('#dropdown :selected').text();
+```
+
+Reference: [jquery get label value from dropdown](http://stackoverflow.com/questions/3838965/jquery-get-label-value-from-dropdown#answer-3838982)
