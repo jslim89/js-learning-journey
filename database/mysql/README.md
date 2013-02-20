@@ -57,3 +57,10 @@ FROM what_ever;
 ```
 
 Reference: [MySQL Forums :: Views :: IF and CONCAT](http://forums.mysql.com/read.php?100,94227,94227)
+
+## Dump a specific table
+```sh
+$ mysqldump -u user -p db_name table_name1 table_name2 > file.sql
+```
+
+Reference: [How do you mysqldump specific table(s)?](http://dba.stackexchange.com/questions/9306/how-do-you-mysqldump-specific-tables#answer-9309)
