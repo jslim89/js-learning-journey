@@ -63,7 +63,9 @@ $result = json_decode($content);
 
 ## Get the date 7 days before
 ```php
-/* The format is 'Y-m-d' (i.e. 2013-02-26)
+/*
+ * The format is 'Y-m-d' (i.e. 2013-02-26)
+ */
 function getPreviousDateFromDate($date, $days_ago) {
     return date('Y-m-d', strtotime($date . ' -' . $days_ago . ' days'));
 }
