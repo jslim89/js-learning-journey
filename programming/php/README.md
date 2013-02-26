@@ -61,7 +61,7 @@ curl_close($ch);
 $result = json_decode($content);
 ```
 
-## Get the date 7 days before
+## Get the date `x` days before
 ```php
 /*
  * The format is 'Y-m-d' (i.e. 2013-02-26)
