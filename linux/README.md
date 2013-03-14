@@ -216,3 +216,12 @@ $ sed -i 's/[[:space:]]*$//' filename
 ```
 
 Reference: [sed + removes all leading and trailing whitespace from each line on solaris system](http://stackoverflow.com/questions/10621828/sed-removes-all-leading-and-trailing-whitespace-from-each-line-on-solaris-syst#answers)
+
+## Continuously watch a file
+This is to monitor a file in few seconds interval
+```sh
+$ watch -n 3 -d tail file_to_watch.txt
+```
+In this case I monitor the file **file_to_watch.txt** for every **3** second
+
+Reference: [Shell command to monitor changes in a file - What's it called again?](http://serverfault.com/questions/1669/shell-command-to-monitor-changes-in-a-file-whats-it-called-again#answer-1682)
