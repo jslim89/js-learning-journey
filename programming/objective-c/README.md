@@ -428,3 +428,74 @@ NSNumber *year = [NSNumber numberWithInt:[dateComponents year]];
 ```
 
 Reference: [How to parse and extract Year, Month, Day etc from time interval on iphone IOS](http://stackoverflow.com/questions/8121147/how-to-parse-and-extract-year-month-day-etc-from-time-interval-on-iphone-ios#answers)
+
+## Create UITableView programmatically
+In **YourViewController.h**
+```obj-c
+#import <UIKit/UIKit.h>
+
+@interface YourViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@end
+```
+
+Tell the compiler to conform to `UITableViewDelegate` & `UITableViewDataSource` these 2 protocols
+
+In **YourViewController.m**
+```obj-c
+#import "CKShowRewardViewController.h"
+#import "CKHistoryCell.h"
+
+@interface CKShowRewardViewController ()
+
+@end
+
+@implementation CKShowRewardViewController {
+        UITableView *tableView;
+}
+...
+
+- (void)viewDidLoad
+{
+    tableView = [[UITableView alloc] initWithFrame:CGRectMake(self.view.frame.size.width * 0.55f, self.view.frame.size.height * 0.2f, self.view.frame.size.width * 0.4f, self.view.frame.size.height * 0.7f) style:UITableViewStylePlain];
+
+    // set the delegate & dataSource to self, means have to implement in YourViewController
+    tableView.delegate = self;
+    tableView.dataSource = self;
+
+    [self.view addSubview:tableView];
+}
+
+...
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)theTableView
+{
+    // the number of section(s) in the table
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)theTableView numberOfRowsInSection:(NSInteger)section
+{
+    // the number of row(s) in the table
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)theTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [theTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    // do some configuration like populate data to cell
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Action that you want to perform when clicked on table cell
+}
+```
