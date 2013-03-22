@@ -443,14 +443,13 @@ Tell the compiler to conform to `UITableViewDelegate` & `UITableViewDataSource` 
 
 In **YourViewController.m**
 ```obj-c
-#import "CKShowRewardViewController.h"
-#import "CKHistoryCell.h"
+#import "YourViewController.h"
 
-@interface CKShowRewardViewController ()
+@interface YourViewController ()
 
 @end
 
-@implementation CKShowRewardViewController {
+@implementation YourViewController {
         UITableView *tableView;
 }
 ...
