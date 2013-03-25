@@ -498,3 +498,24 @@ In **YourViewController.m**
     // Action that you want to perform when clicked on table cell
 }
 ```
+
+## Validate phone number via Regex
+```obj-c
+    NSString *phoneNo = @"+6012-3456789";
+    NSString *regex = @"^(\\+)?\\d+(-)?\\d+";
+    NSPredicate *stringTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    BOOL isValid = [stringTest evaluateWithObject:phoneNo];
+```
+
+* `^` Indicate beginning of the text
+* `(\\+)?` Is an **optional** `+` character at the beginning of the text
+* `\\d+` Indicate one or more integer
+* `(-)?` An **optional** character
+
+This will matches:
+
+* +6012-3456789
+* 012-3456789
+* +60123456789
+* 6012-3456789
+* 60123456789
