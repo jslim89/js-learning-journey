@@ -213,6 +213,8 @@ Reference: [UILabel Align Text to center](http://stackoverflow.com/questions/572
 
 ## Get device model
 ```obj-c
+#import <sys/utsname.h>
+...
 - (NSString *)model
 {
     struct utsname systemInfo;
