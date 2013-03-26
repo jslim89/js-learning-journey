@@ -519,3 +519,28 @@ This will matches:
 * +60123456789
 * 6012-3456789
 * 60123456789
+
+## Validate required text field
+Should use
+```obj-c
+if (textField.text.length == 0) {
+    // handle error
+}
+```
+rather than
+```obj-c
+if ([textField.text isEqualToString:@""]) {
+    // handle error
+}
+```
+The second 1 won't work as it's default value is not an empty string, unless that you set
+```obj-c
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    textField.text = @"";
+}
+```
+it's initial value.
+
+Reference: [UITextField Initial Value](http://iphonedevsdk.com/forum/iphone-sdk-development/98995-uitextfield-initial-value.html#Comment_410476)
