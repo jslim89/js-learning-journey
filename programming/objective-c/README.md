@@ -546,3 +546,16 @@ The second 1 won't work as it's default value is not an empty string, unless tha
 it's initial value.
 
 Reference: [UITextField Initial Value](http://iphonedevsdk.com/forum/iphone-sdk-development/98995-uitextfield-initial-value.html#Comment_410476)
+
+## Disable sleep
+In your **AppDelegate.m**
+```obj-c
+...
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
+}
+...
+```
+
+Reference: [How to Disable Sleep, but Enable Screen Dimming](http://iphonedevsdk.com/forum/iphone-sdk-development/34269-how-to-disable-sleep-but-enable-screen-dimming.html)
