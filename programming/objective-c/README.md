@@ -561,7 +561,7 @@ In your **AppDelegate.m**
 Reference: [How to Disable Sleep, but Enable Screen Dimming](http://iphonedevsdk.com/forum/iphone-sdk-development/34269-how-to-disable-sleep-but-enable-screen-dimming.html)
 
 ## Adding criteria to CoreData
-```sh
+```obj-c
 NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     
 NSEntityDescription *entity = [NSEntityDescription entityForName:@"TableName" inManagedObjectContext:self.managedObjectContext];
