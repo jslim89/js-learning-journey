@@ -559,3 +559,30 @@ In your **AppDelegate.m**
 ```
 
 Reference: [How to Disable Sleep, but Enable Screen Dimming](http://iphonedevsdk.com/forum/iphone-sdk-development/34269-how-to-disable-sleep-but-enable-screen-dimming.html)
+
+## Adding criteria to CoreData
+```sh
+NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+NSEntityDescription *entity = [NSEntityDescription entityForName:@"TableName" inManagedObjectContext:self.managedObjectContext];
+[fetchRequest setEntity:entity];
+
+NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:YES];
+[fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+
+/* Add criteria here */
+// for integer
+[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"theId == %d", 123]];
+// for string
+[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"columnName CONTAINS[cd] %@", @"foo"]];
+
+NSError *error;
+NSArray *resultSet = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+if (resultSet == nil) {
+    FATAL_CORE_DATA_ERROR(error);
+}
+
+NSLog(@"Result: %@", resultSet);
+```
+
+Reference: [NSPredicate compare with Integer](http://stackoverflow.com/questions/7540329/nspredicate-compare-with-integer/7540395#answers)
