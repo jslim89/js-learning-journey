@@ -225,3 +225,16 @@ $ watch -n 3 -d tail file_to_watch.txt
 In this case I monitor the file **file_to_watch.txt** for every **3** second
 
 Reference: [Shell command to monitor changes in a file - What's it called again?](http://serverfault.com/questions/1669/shell-command-to-monitor-changes-in-a-file-whats-it-called-again#answer-1682)
+
+## Kill all process from grep
+Let say now want to kill all **fcgi** processes
+```sh
+$ ps aux | grep fcgi | awk '{print $2}' | xargs kill -9
+```
+
+If you want to kill other process, just replace the **fcgi** in the second portion with the process that you wanted to kill.
+
+i.e.
+```sh
+$ ps aux | grep <process_name> | awk '{print $2}' | xargs kill -9
+```
