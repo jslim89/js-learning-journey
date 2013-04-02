@@ -25,3 +25,10 @@ urlpatterns = patterns('',
 ```
 
 Reference: [URL dispatcher](https://docs.djangoproject.com/en/dev/topics/http/urls/)
+
+## Get COOKIE
+```py
+request.COOKIES.get('key', 'default')
+```
+
+Reference: [Testing for cookie existence in Django](http://stackoverflow.com/questions/1466732/testing-for-cookie-existence-in-django#answers)
