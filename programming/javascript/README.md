@@ -239,3 +239,22 @@ $('#dropdown :selected').text();
 ```
 
 Reference: [jquery get label value from dropdown](http://stackoverflow.com/questions/3838965/jquery-get-label-value-from-dropdown#answer-3838982)
+
+## jQuery - add a wrapper to element
+Initial
+```html
+<div class="inner">Some content</div>
+```
+Add a wrapper via jQuery
+```js
+$('.inner').wrapAll($('<div></div>').addClass('outer'));
+```
+
+Page rendered
+```html
+<div class="outer">
+    <div class="inner">Some content</div>
+</div>
+```
+
+Reference: [jquery add wrapper divs around 2 divs where content can be varient length](http://stackoverflow.com/questions/12343960/jquery-add-wrapper-divs-around-2-divs-where-content-can-be-varient-length#answers)
