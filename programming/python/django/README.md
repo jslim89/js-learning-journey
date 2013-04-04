@@ -32,3 +32,14 @@ request.COOKIES.get('key', 'default')
 ```
 
 Reference: [Testing for cookie existence in Django](http://stackoverflow.com/questions/1466732/testing-for-cookie-existence-in-django#answers)
+
+## Model date comparison
+```py
+from datetime import date
+
+user = User.objects.get(id=1)
+if user.accessed_date == date.today():
+    // do something
+else:
+    // do other thing
+```
