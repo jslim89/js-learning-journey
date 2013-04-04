@@ -39,7 +39,7 @@ from datetime import date
 
 user = User.objects.get(id=1)
 if user.accessed_date == date.today():
-    // do something
+    # do something
 else:
-    // do other thing
+    # do other thing
 ```
