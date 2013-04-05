@@ -238,3 +238,11 @@ i.e.
 ```sh
 $ ps aux | grep <process_name> | awk '{print $2}' | xargs kill -9
 ```
+
+## Change time zone in Ubuntu Server
+```sh
+$ sudo dpkg-reconfigure tzdata
+```
+Then choose your Time Zone now.
+
+Reference: [How to set the timezone on Ubuntu Server](http://www.christopherirish.com/2012/03/21/how-to-set-the-timezone-on-ubuntu-server/)
