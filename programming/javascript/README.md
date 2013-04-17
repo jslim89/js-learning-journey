@@ -258,3 +258,33 @@ Page rendered
 ```
 
 Reference: [jquery add wrapper divs around 2 divs where content can be varient length](http://stackoverflow.com/questions/12343960/jquery-add-wrapper-divs-around-2-divs-where-content-can-be-varient-length#answers)
+
+## Match certain text via RegEx
+Example to retrive the element name from HTML text.
+```js
+var str = '<input class="required" type="text" value="" required="required" placeholder="First Name" name="first_name">'; 
+var result = str.match(/name="(\w+)"/);
+/*
+ *  result[0] => 'name: "first_name"'
+ *  result[1] => 'first_name'
+ */
+```
+
+Reference: [JavaScript match() Method](http://www.w3schools.com/jsref/jsref_match.asp)
+
+## Remove next element
+In jQuery
+```js
+$('#foo').next().remove();
+```
+In pure JavaScript
+```js
+// store the DOM object into a variable
+var fooObject = document.getElementById('foo');
+// store the next object into a variable
+var nextElement = fooObject.nextSibling;
+// access the parent element and remove the next element by removeChild method
+fooObject.parentNode.removeChild(nextElement);
+```
+
+Reference: [JavaScript: remove element by id](http://stackoverflow.com/questions/3387427/javascript-remove-element-by-id)
