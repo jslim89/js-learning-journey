@@ -6,6 +6,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [Fabric] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python/fabric)
     - [Django] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python/django)
 * [PHP] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php)
+    - [Zend Framework 2] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/zend)
 * [CSS] (https://github.com/jslim89/js-learning-journey/tree/master/programming/css)
 * [JavaScript] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript)
 * [Objective-C] (https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c)
