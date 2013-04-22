@@ -70,3 +70,18 @@ function getPreviousDateFromDate($date, $days_ago) {
     return date('Y-m-d', strtotime($date . ' -' . $days_ago . ' days'));
 }
 ```
+
+## Inner function to access outer function's variable
+```php
+function outer($foo) {
+    // now the inner want to use the variable 'foo'
+    $inner = function() use ($foo) {
+        echo $foo;
+    }
+
+    $inner();
+}
+```
+the **`use`** keyword is to let the inner function to access the outer function's variable
+
+Reference: [How to access variable from scope of parent function?](http://stackoverflow.com/questions/8393121/how-to-access-variable-from-scope-of-parent-function#answer-8393242)
