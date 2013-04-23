@@ -85,3 +85,16 @@ function outer($foo) {
 the **`use`** keyword is to let the inner function to access the outer function's variable
 
 Reference: [How to access variable from scope of parent function?](http://stackoverflow.com/questions/8393121/how-to-access-variable-from-scope-of-parent-function#answer-8393242)
+
+## Convert array to query string
+```php
+$params = array(
+    'p1' => 'value1',
+    'p2' => 'value2',
+);
+$query_string = http_build_query($params);
+
+echo $query_string; // p1=value1&p2=value2
+```
+
+Reference: [PHP function to build query string from array](http://stackoverflow.com/questions/400805/php-function-to-build-query-string-from-array#answers)
