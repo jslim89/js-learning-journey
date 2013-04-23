@@ -4,6 +4,7 @@
 The password requirement normally must contain at least ONE digit, ONE uppercase, ONE lowercase and at least few characters long.
 
 ```php
+<?php
 $pattern = '/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])[0-9A-Za-z!@#$%]{6,}$/';
 
 $input_filter->add($factory->createInput(array(
@@ -49,7 +50,18 @@ Reference: [Create preg_match for password validation allowing (!@#$%)](http://s
 ## Get query string from URL
 In your controller
 ```php
+<?php
 $keyword = $this->getRequest()->getQuery('keyword');
 ```
 
 Reference: [Github: zf2 / library / Zend / Http / Request.php](https://github.com/zendframework/zf2/blob/master/library/Zend/Http/Request.php#L232-L243)
+
+## Get query string in view
+```php
+<?php
+$children = $this->viewModel()->getCurrent()->getChildren();
+$variables = $children[0]->getVariables();
+
+echo $variables['param1'];
+echo $variables['param2'];
+```
