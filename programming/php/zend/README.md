@@ -45,3 +45,11 @@ $input_filter->add($factory->createInput(array(
 * `$/` - end of string
 
 Reference: [Create preg_match for password validation allowing (!@#$%)](http://stackoverflow.com/questions/11873990/create-preg-match-for-password-validation-allowing#answers)
+
+## Get query string from URL
+In your controller
+```php
+$keyword = $this->getRequest()->getQuery('keyword');
+```
+
+Reference: [Github: zf2 / library / Zend / Http / Request.php](https://github.com/zendframework/zf2/blob/master/library/Zend/Http/Request.php#L232-L243)
