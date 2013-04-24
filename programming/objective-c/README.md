@@ -586,3 +586,13 @@ NSLog(@"Result: %@", resultSet);
 ```
 
 Reference: [NSPredicate compare with Integer](http://stackoverflow.com/questions/7540329/nspredicate-compare-with-integer/7540395#answers)
+
+## Sentence to CamelCase
+```obj-c
+- (NSString *)camelCaseFromString:(NSString *)str
+{
+    return [[str capitalizedString] stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+```
+
+Reference: [How to convert text to camel case in Objective-C?](http://stackoverflow.com/questions/6863096/how-to-convert-text-to-camel-case-in-objective-c/6863154#6863154)
