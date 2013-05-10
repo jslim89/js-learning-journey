@@ -596,3 +596,22 @@ Reference: [NSPredicate compare with Integer](http://stackoverflow.com/questions
 ```
 
 Reference: [How to convert text to camel case in Objective-C?](http://stackoverflow.com/questions/6863096/how-to-convert-text-to-camel-case-in-objective-c/6863154#6863154)
+
+## Add touch event to UIImageView
+```obj-c
+UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTouched:)];
+
+UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+[imageView addGestureRecognizer:tap];
+imageView.userInteractionEnabled = YES;
+[self.view addSubview:imageView];
+
+...
+
+- (void)imageTouched:(UITapGestureRecognizer *)sender
+{
+    NSLog(@"Image tapped");
+}
+```
+
+**NOTE: `imageView.userInteractionEnabled = YES` must be set, otherwise it won't work**
