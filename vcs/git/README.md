@@ -139,3 +139,25 @@ $ git remote show origin
   Local ref configured for 'git push':
     master pushes to master (up to date)
 ```
+
+## Checkout specific revision
+```sh
+# Just to play safe, clone to a new folder
+$ git clone git@yourdomain.com:/yourporject.git
+$ git checkout <SHA1>
+Checking out files: 100% (6466/6466), done.
+Note: checking out '49869aec20e12345c40cbabcde0f5e8e959d5aa'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at 49869ae... Your commit message here
+```
+
+Reference: [How to clone git repository with specific revision/changeset?](http://stackoverflow.com/questions/3489173/how-to-clone-git-repository-with-specific-revision-changeset)
