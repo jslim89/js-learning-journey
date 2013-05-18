@@ -288,3 +288,49 @@ fooObject.parentNode.removeChild(nextElement);
 ```
 
 Reference: [JavaScript: remove element by id](http://stackoverflow.com/questions/3387427/javascript-remove-element-by-id)
+
+## Access class variable inside callback function
+Example here:
+```js
+function Foo() {
+    this.username = 'mr foo';
+
+    this.loadSomeDataFromServer = function(url) {
+        $.ajax({
+            url: url,
+            success: function(data) {
+                // LOOK AT HERE
+                var text = 'Dear ' + this.username + '\n';
+                text += data;
+
+                alert(text);
+            }
+        });
+    }
+}
+```
+You're not able to get the actual value from `this.username`, as the word `this` is refer to the **success function**, in order to use the variable, create a **`that`** variable
+
+```js
+function Foo() {
+    // LOOK AT HERE
+    var that = this;
+
+    this.username = 'mr foo';
+
+    this.loadSomeDataFromServer = function(url) {
+        $.ajax({
+            url: url,
+            success: function(data) {
+                // NOW YOU SHOULD BE ABLE TO GET THE RIGHT username
+                var text = 'Dear ' + that.username + '\n';
+                text += data;
+
+                alert(text);
+            }
+        });
+    }
+}
+```
+
+Reference: [javascript class variable scope in callback function](http://stackoverflow.com/questions/8317724/javascript-class-variable-scope-in-callback-function#answers)
