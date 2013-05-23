@@ -615,3 +615,11 @@ imageView.userInteractionEnabled = YES;
 ```
 
 **NOTE: `imageView.userInteractionEnabled = YES` must be set, otherwise it won't work**
+
+## NSArray check is object in array
+```obj-c
+NSArray *foo = [NSArray arrayWithObjects:obj1, obj2, obj3, nil];
+BOOL isObj1InArray = [foo containsObject:obj1];
+```
+
+Reference: [in_array() for objective-c](http://iphonedevsdk.com/forum/iphone-sdk-development/29765-in_array-for-objective-c.html#Comment_128847)
