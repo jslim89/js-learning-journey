@@ -633,3 +633,12 @@ NSMutableURLRequest *request = [client requestWithMethod:@"GET" path:@"/foo" par
 ```
 
 Reference: [How to set a timeout with AFNetworking](http://stackoverflow.com/questions/8304560/how-to-set-a-timeout-with-afnetworking#answers)
+
+## Compare CGRect
+```obj-c
+if (CGRectEqualToRect(someView.frame, anotherView.frame)) {
+    NSLog(@"They are equal");
+}
+```
+
+Reference: [Comparing two CGRects](http://stackoverflow.com/questions/12877496/comparing-two-cgrects#answers)
