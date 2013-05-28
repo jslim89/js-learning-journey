@@ -623,3 +623,13 @@ BOOL isObj1InArray = [foo containsObject:obj1];
 ```
 
 Reference: [in_array() for objective-c](http://iphonedevsdk.com/forum/iphone-sdk-development/29765-in_array-for-objective-c.html#Comment_128847)
+
+## Set timeout interval
+Set the interval to 60 seconds.
+```obj-c
+// must be NSMutableURLRequest, NSURLRequest doesn't has setTimeoutInterval this method
+NSMutableURLRequest *request = [client requestWithMethod:@"GET" path:@"/foo" parameters:nil];
+[request setTimeoutInterval:60];
+```
+
+Reference: [How to set a timeout with AFNetworking](http://stackoverflow.com/questions/8304560/how-to-set-a-timeout-with-afnetworking#answers)
