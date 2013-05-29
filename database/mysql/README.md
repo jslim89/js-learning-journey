@@ -64,3 +64,16 @@ $ mysqldump -u user -p db_name table_name1 table_name2 > file.sql
 ```
 
 Reference: [How do you mysqldump specific table(s)?](http://dba.stackexchange.com/questions/9306/how-do-you-mysqldump-specific-tables#answer-9309)
+
+## Get a specific opponent from explode equivalent string
+```sql
+SELECT SUBSTRING_INDEX(
+    SUBSTRING_INDEX('123-456-789-abc-this_is_what_we_want-xyz', '-',5)
+    , '-', -1
+);
+```
+
+Look at the inner `SUBSTRING_INDEX`, we explode by **-** _(dash)_, so the **5** is to take from the **1st** to **5th** opponent.  
+So we get **123-456-789-abc-this_is_what_we_want**.
+
+Now the outer `SUBSTRING_INDEX` is to get **1** opponent start from the left, which is the **last** opponent, is what we want **this_is_what_we_want**.
