@@ -65,3 +65,19 @@ $variables = $children[0]->getVariables();
 echo $variables['param1'];
 echo $variables['param2'];
 ```
+
+## Add custom error message
+```php
+<?php
+$form->get('element')->setMessages(array(
+    'foo has this error',
+    'bar has another error',
+    ...
+));
+
+if ($form->isValid() && !$form->get('element')->getMessages()) {
+    // no more error
+}
+```
+
+Reference: [Set Zend\Form Error Messages from Controller](http://stackoverflow.com/questions/12896624/set-zend-form-error-messages-from-controller#answer-12912336)
