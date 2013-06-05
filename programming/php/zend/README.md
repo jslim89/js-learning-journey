@@ -57,10 +57,20 @@ $keyword = $this->getRequest()->getQuery('keyword');
 Reference: [Github: zf2 / library / Zend / Http / Request.php](https://github.com/zendframework/zf2/blob/master/library/Zend/Http/Request.php#L232-L243)
 
 ## Get query string in view
+In layout
 ```php
 <?php
 $children = $this->viewModel()->getCurrent()->getChildren();
 $variables = $children[0]->getVariables();
+
+echo $variables['param1'];
+echo $variables['param2'];
+```
+
+In view
+```php
+<?php
+$variables = $this->viewModel()->getCurrent()->getVariables();
 
 echo $variables['param1'];
 echo $variables['param2'];
