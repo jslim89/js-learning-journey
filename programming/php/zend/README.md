@@ -91,3 +91,54 @@ if ($form->isValid() && !$form->get('element')->getMessages()) {
 ```
 
 Reference: [Set Zend\Form Error Messages from Controller](http://stackoverflow.com/questions/12896624/set-zend-form-error-messages-from-controller#answer-12912336)
+
+## Get config in view
+First create a view helper (Refer to [here](http://jslim.net/blog/2013/04/19/zendframework-2-create-a-custom-view-helper/))
+
+**./module/Application/src/Application/View/Helper/Config.php**
+```php
+<?php
+namespace Application\View\Helper;
+
+use Zend\View\Helper\AbstractHelper;
+
+class Config extends AbstractHelper
+{
+    private $_sm;
+
+    public function __construct($sm)
+    {
+        $this->_sm = $sm;
+    }
+
+    public function __invoke()
+    {
+        return $this->_sm->getServiceLocator()->get('Config');
+    }
+}
+```
+
+In **./module/Application/Module.php**
+```php
+<?php
+...
+public function getViewHelperConfig()
+{
+    return array(
+        'factories' => array(
+            'getConfig' => function($sm) {
+                $helper = new \Application\View\Helper\Config($sm);
+                return $helper;
+            },
+        ),
+    );
+}
+...
+```
+
+Now you can use it in your view
+```php
+<div id="foo">
+    <pre><?php print_r($this->getConfig()); ?></pre>
+</div>
+```
