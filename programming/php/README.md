@@ -98,3 +98,21 @@ echo $query_string; // p1=value1&p2=value2
 ```
 
 Reference: [PHP function to build query string from array](http://stackoverflow.com/questions/400805/php-function-to-build-query-string-from-array#answers)
+
+## Removed **<a>** attributes accept **href**
+```php
+<?php
+$html = 'This is a <a id="lnk" href="http://www.google.com" id="lnk">Google link</a> for you.'
+. ' This is another <a id="lnk" href="http://www.facebook.com">Facebook link</a> for you';
+
+$new_content = preg_replace('/<a\s[^>]*href=\"([^\"]*)\"[^>]*>(.*)<\/a>/siU', '<a href="$1">$2</a>', $html);
+
+echo $new_content;
+```
+
+The result will be
+```
+This is a <a href="http://www.google.com">Google link</a> for you. This is another <a href="http://www.facebook.com">Facebook link</a> for you
+```
+
+Reference: [PHP: Parsing HTML to find Links](http://www.the-art-of-web.com/php/parse-links/#.Ub7Yrvb89Yg)
