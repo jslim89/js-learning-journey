@@ -142,3 +142,11 @@ Now you can use it in your view
     <pre><?php print_r($this->getConfig()); ?></pre>
 </div>
 ```
+
+## Construct URL in controller
+```php
+<?php
+public function indexAction() {
+    $route = $this->url()->fromRoute('product', array('action' => 'edit'));
+}
+```
