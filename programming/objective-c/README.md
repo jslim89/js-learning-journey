@@ -642,3 +642,29 @@ if (CGRectEqualToRect(someView.frame, anotherView.frame)) {
 ```
 
 Reference: [Comparing two CGRects](http://stackoverflow.com/questions/12877496/comparing-two-cgrects#answers)
+
+## Open browser when click on hyperlink in UIWebView
+In your **FooViewController.h**, make sure it conform to WebView's protocol
+```obj-c
+#import <UIKit/UIKit.h>
+
+@interface FooViewController : UIViewController <UIWebViewDelegate>
+
+@end
+```
+
+In **FooViewController.m**, implement the delegate method
+```obj-c
+#pragma mark - UIWebViewDelegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    // if a hyperlink is onclick, open browser
+    if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+        [[UIApplication sharedApplication] openURL:request.URL];
+        return NO;
+    }
+    return YES;
+}
+```
+
+Reference: [Launch Safari from UIWebview](http://iphonedevsdk.com/forum/iphone-sdk-development/17251-launch-safari-from-uiwebview.html#Comment_181401)
