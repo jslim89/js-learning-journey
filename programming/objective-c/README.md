@@ -668,3 +668,25 @@ In **FooViewController.m**, implement the delegate method
 ```
 
 Reference: [Launch Safari from UIWebview](http://iphonedevsdk.com/forum/iphone-sdk-development/17251-launch-safari-from-uiwebview.html#Comment_181401)
+
+## Access property variable in closure
+When you see a warning **Capturing 'self' strongly in this block is likely to lead to a retain cycle**, you can't access via **self** inside the block.
+```obj-c
+[self.coverImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[json valueForKeyPath:@"response.cover"]]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            
+    self.coverImageView.image = image; // warning will be appeared here
+} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+}];
+```
+
+The solution is
+```obj-c
+__weak typeof(self) weakSelf = self;
+[self.coverImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[json valueForKeyPath:@"response.cover"]]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            
+    weakSelf.coverImageView.image = image;
+} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+}];
+```
+
+Reference: [capturing self strongly in this block is likely to lead to a retain cycle](http://stackoverflow.com/questions/14556605/capturing-self-strongly-in-this-block-is-likely-to-lead-to-a-retain-cycle#answer-14556706)
