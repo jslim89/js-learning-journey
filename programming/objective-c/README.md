@@ -690,3 +690,33 @@ __weak typeof(self) weakSelf = self;
 ```
 
 Reference: [capturing self strongly in this block is likely to lead to a retain cycle](http://stackoverflow.com/questions/14556605/capturing-self-strongly-in-this-block-is-likely-to-lead-to-a-retain-cycle#answer-14556706)
+
+## Add a **Done** button to UISearchBar
+```obj-c
+// add Done button to keyboard
+// dummy bar button just to make the Done button to right-hand-side
+UIBarButtonItem *dummyBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(hideKeyboard:)];
+[doneBarButton setStyle:UIBarButtonItemStyleDone];
+UIToolbar *keyboardToolbar = [[UIToolbar alloc] init];
+[keyboardToolbar setBarStyle:UIBarStyleBlackTranslucent];
+[keyboardToolbar sizeToFit];
+[keyboardToolbar setItems:[NSArray arrayWithObjects:dummyBarButton, doneBarButton, nil]];
+
+self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+self.searchBar.delegate = self;
+self.searchBar.placeholder = @"Search...";
+self.searchBar.backgroundImage = [UIImage imageNamed:@"NavigationBarBackground"];
+// Access it subview (UITextField) and set the toolbar to it
+// Since self.searchBar.inputAccessoryView = keyboardToolbar; will thrown error
+for (UIView *subView in self.searchBar.subviews) {
+    if ([subView conformsToProtocol:@protocol(UITextInputTraits)]) {
+        UITextField *searchBarField = (UITextField *)subView;
+        searchBarField.inputAccessoryView = keyboardToolbar;
+        break;
+    }
+}
+[self.view addSubview:self.searchBar];
+```
+
+Reference: [Issue with UISearchBar inputAccessoryView](http://stackoverflow.com/questions/12180457/issue-with-uisearchbar-inputaccessoryview#answer-12180620)
