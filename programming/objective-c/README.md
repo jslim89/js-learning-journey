@@ -706,7 +706,6 @@ UIToolbar *keyboardToolbar = [[UIToolbar alloc] init];
 self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
 self.searchBar.delegate = self;
 self.searchBar.placeholder = @"Search...";
-self.searchBar.backgroundImage = [UIImage imageNamed:@"NavigationBarBackground"];
 // Access it subview (UITextField) and set the toolbar to it
 // Since self.searchBar.inputAccessoryView = keyboardToolbar; will thrown error
 for (UIView *subView in self.searchBar.subviews) {
@@ -720,3 +719,31 @@ for (UIView *subView in self.searchBar.subviews) {
 ```
 
 Reference: [Issue with UISearchBar inputAccessoryView](http://stackoverflow.com/questions/12180457/issue-with-uisearchbar-inputaccessoryview#answer-12180620)
+
+## Change UISearchBar **Search** button to **Done**
+```obj-c
+
+self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+self.searchBar.delegate = self;
+self.searchBar.placeholder = @"Search...";
+// Loop through all subviews in UISearchBar
+for (UIView *searchBarSubview in [self.searchBar subviews]) {
+    // Check if it is UITextField
+    if ([searchBarSubview conformsToProtocol:@protocol(UITextInputTraits)]) {
+        @try {
+            // Change the title "Search" to "Done"
+            [(UITextField *)searchBarSubview setReturnKeyType:UIReturnKeyDone];
+            // set the style of keyboard
+            [(UITextField *)searchBarSubview setKeyboardAppearance:UIKeyboardAppearanceAlert];
+            // Enable the "Done" button eventhough no text in search bar
+            [(UITextField *)searchBarSubview setEnablesReturnKeyAutomatically:NO];
+        }
+        @catch (NSException * e) {
+            // ignore exception
+        }
+    }
+}
+[self.view addSubview:self.searchBar];
+```
+
+Reference: [iphone UISearchBar Done button always enabled](http://stackoverflow.com/questions/4728338/iphone-uisearchbar-done-button-always-enabled#answer-5552906)
