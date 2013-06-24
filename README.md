@@ -17,6 +17,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 
 ## Linux Stuff
 * [Linux] (https://github.com/jslim89/js-learning-journey/tree/master/linux)
+    - [OpenSSL] (https://github.com/jslim89/js-learning-journey/tree/master/linux/openssl)
 
 ## Vim
 * [Vim] (https://github.com/jslim89/js-learning-journey/tree/master/vim)
