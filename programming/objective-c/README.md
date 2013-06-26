@@ -747,3 +747,10 @@ for (UIView *searchBarSubview in [self.searchBar subviews]) {
 ```
 
 Reference: [iphone UISearchBar Done button always enabled](http://stackoverflow.com/questions/4728338/iphone-uisearchbar-done-button-always-enabled#answer-5552906)
+
+## Remove all subviews from UIScrollView
+```obj-c
+[self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+```
+
+Reference: [Remove all the subviews from a UIScrollView?](http://stackoverflow.com/questions/4102362/remove-all-the-subviews-from-a-uiscrollview#answer-4102431)
