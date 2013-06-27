@@ -754,3 +754,22 @@ Reference: [iphone UISearchBar Done button always enabled](http://stackoverflow.
 ```
 
 Reference: [Remove all the subviews from a UIScrollView?](http://stackoverflow.com/questions/4102362/remove-all-the-subviews-from-a-uiscrollview#answer-4102431)
+
+## Calculate visible "radius" from MKMapView
+```obj-c
+// get the center coordinate
+CLLocationCoordinate2D centerCoor = [self.mapView centerCoordinate];
+// get top left coordinate
+CLLocationCoordinate2D topLeftCoor = [self.mapView convertPoint:CGPointMake(0, 0) toCoordinateFromView:self.mapView];
+
+// init locations based on coordinates
+CLLocation *centerLocation = [[CLLocation alloc] initWithLatitude:centerCoor.latitude longitude:centerCoor.longitude];
+CLLocation *topLeftLocation = [[CLLocation alloc] initWithLatitude:topLeftCoor.latitude longitude:topLeftCoor.longitude];
+
+// get the distance between 2 locations
+CLLocationDistance radius = [centerLocation distanceFromLocation:topLeftLocation];
+
+NSLog(@"Distance %.9f meters", radius);
+```
+
+Reference: [How to get left-top and right-buttom latitude and longitude of map in MapKit](http://stackoverflow.com/questions/1831634/how-to-get-left-top-and-right-buttom-latitude-and-longitude-of-map-in-mapkit#answer-1831660)
