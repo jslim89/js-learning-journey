@@ -773,3 +773,32 @@ NSLog(@"Distance %.9f meters", radius);
 ```
 
 Reference: [How to get left-top and right-buttom latitude and longitude of map in MapKit](http://stackoverflow.com/questions/1831634/how-to-get-left-top-and-right-buttom-latitude-and-longitude-of-map-in-mapkit#answer-1831660)
+
+## Draw a circle image
+This is basically just to draw a UIImage (circle) from code.
+```obj-c
+- (UIImage *)drawCircleWithColor:(UIColor *)color andSize:(CGSize)size
+{
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetLineWidth(context, 4.0);
+    CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    
+    CGContextBeginPath(context);
+    CGContextAddEllipseInRect(context, rect);
+    CGContextDrawPath(context, kCGPathFillStroke); // Or kCGPathFill
+
+    UIImage *circle = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return circle;
+}
+```
+
+References:
+
+* [drawing two circles using Quartz CGContextFillEllipseInRect](http://stackoverflow.com/questions/9684006/drawing-two-circles-using-quartz-cgcontextfillellipseinrect#answer-9684158)
+* [iOS, Generated images, and masking](http://stackoverflow.com/questions/7141978/ios-generated-images-and-masking)
