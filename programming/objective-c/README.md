@@ -812,3 +812,26 @@ cell.textLabel.text = @"the updated text";
 ```
 
 Reference: [UITableViewCell: How do I update textLabel.text at fifth row?](http://stackoverflow.com/questions/8227742/uitableviewcell-how-do-i-update-textlabel-text-at-fifth-row#answer-8227807)
+
+## Remove last 2 character in NSMutableString
+```obj-c
+NSMutableString *str = [NSMutableString stringWithString:@"Item 1, Item 2, "];
+[str deleteCharactersInRange:NSMakeRange([str length] - 2, 2)];
+```
+
+Result will be `Item 1, Item 2`
+
+Reference: [Removing the last character from an NSMutableString](http://stackoverflow.com/questions/4675609/removing-the-last-character-from-an-nsmutablestring#answer-4675657)
+
+## Get all checked UITableViewCell
+```obj-c
+// options is the dataSource for the tableView
+for (int i = 0; i < [options count]; i++) {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        // perform action here
+    }
+}
+```
+
+Reference: [Selecting multiple rows of a UITableView](http://stackoverflow.com/questions/4430570/selecting-multiple-rows-of-a-uitableview)
