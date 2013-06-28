@@ -802,3 +802,13 @@ References:
 
 * [drawing two circles using Quartz CGContextFillEllipseInRect](http://stackoverflow.com/questions/9684006/drawing-two-circles-using-quartz-cgcontextfillellipseinrect#answer-9684158)
 * [iOS, Generated images, and masking](http://stackoverflow.com/questions/7141978/ios-generated-images-and-masking)
+
+## Update text on a specific UITableViewCell
+For example update, the fifth row in section 0
+```obj-c
+NSIndexPath *fifthRow = [NSIndexPath indexPathForRow:4 inSection:0];
+UITableViewCell *cell = [tableView cellForRowAtIndexPath:fifthRow];
+cell.textLabel.text = @"the updated text";
+```
+
+Reference: [UITableViewCell: How do I update textLabel.text at fifth row?](http://stackoverflow.com/questions/8227742/uitableviewcell-how-do-i-update-textlabel-text-at-fifth-row#answer-8227807)
