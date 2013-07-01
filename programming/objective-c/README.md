@@ -835,3 +835,22 @@ for (int i = 0; i < [options count]; i++) {
 ```
 
 Reference: [Selecting multiple rows of a UITableView](http://stackoverflow.com/questions/4430570/selecting-multiple-rows-of-a-uitableview)
+
+## UIView get index of subview
+Some time you might have some views is overlapping, when tapping a button, the 2 views will interchange, so you need to get the view's index to do comparison.
+```obj-c
+UIView *superView = [[UIView alloc] init];
+
+UITableView *listView = [[UITableView alloc] initWithFrame:superView.bounds];
+[superView addSubview:listView];
+
+UITableView *gridView = [[UITableView alloc] initWithFrame:superView.bounds];
+[superView addSubview:gridView];
+
+int listViewIndex = [superView.subviews indexOfObject:listView];
+int gridViewIndex = [superView.subviews indexOfObject:gridView];
+
+// action here
+```
+
+Reference: [How to get UIView hierarchy index ??? (i.e. the depth in between the other subviews)](http://stackoverflow.com/questions/2343432/how-to-get-uiview-hierarchy-index-i-e-the-depth-in-between-the-other-subvi#answer-2343472)
