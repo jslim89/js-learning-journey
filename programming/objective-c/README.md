@@ -854,3 +854,29 @@ int gridViewIndex = [superView.subviews indexOfObject:gridView];
 ```
 
 Reference: [How to get UIView hierarchy index ??? (i.e. the depth in between the other subviews)](http://stackoverflow.com/questions/2343432/how-to-get-uiview-hierarchy-index-i-e-the-depth-in-between-the-other-subvi#answer-2343472)
+
+## UINavigationBar change back bar button text
+Let say there are 2 viewControllers, **FirstViewController** and **SecondViewController**
+
+In **FirstViewController.m**
+```obj-c
+...
+- (void)viewDidLoad
+{
+    // This must be put in FirstViewController rather than SecondViewController
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Your title"
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:nil
+                                                                            action:nil];
+}
+- (void)navigateToSecondView
+{
+    SecondViewController *controller = [[SecondViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+...
+```
+
+When you navigate to **SecondViewController**, you will see `Your title` text appear in back button.
+
+Reference: [UINavigationController “back button” custom text?](http://stackoverflow.com/questions/1441699/uinavigationcontroller-back-button-custom-text#answer-1441718)
