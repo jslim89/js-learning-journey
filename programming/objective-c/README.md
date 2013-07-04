@@ -880,3 +880,28 @@ In **FirstViewController.m**
 When you navigate to **SecondViewController**, you will see `Your title` text appear in back button.
 
 Reference: [UINavigationController “back button” custom text?](http://stackoverflow.com/questions/1441699/uinavigationcontroller-back-button-custom-text#answer-1441718)
+
+## tableView:viewForFooterInSection VS tableView.tableFooterView
+If you want the footer to keep at the end of table view (it will scroll together with table cell), then use `tableView.tableFooterView`
+
+```obj-c
+UIView *footerView = [[UIView alloc] initWithFrame:...];
+[footerView addSubview:someView];
+
+tableView.tableFooterView = footerView;
+```
+
+If you're using `tableView:viewForFooterInSection`, then the view will stay at bottom of your visible screen for that particular section.
+```obj-c
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *footerView = [[UIView alloc] initWithFrame:...];
+    ...
+    [footerView addSubview:someView];
+
+    return footerView;
+}
+```
+
+Reference: [UITableView Footer, Stop from floating over content](http://stackoverflow.com/questions/5740518/uitableview-footer-stop-from-floating-over-content#answer-5751142)
