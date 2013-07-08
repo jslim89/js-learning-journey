@@ -991,3 +991,38 @@ NSArray *arr = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 ```
 
 Reference: [Why NSUserDefaults failed to save NSMutableDictionary in iPhone SDK?](http://stackoverflow.com/questions/471830/why-nsuserdefaults-failed-to-save-nsmutabledictionary-in-iphone-sdk/471920#471920)
+
+## Compare NSObject
+Override the `hash` & `isEqual` methods
+
+```obj-c
+- (NSUInteger)hash
+{
+    NSUInteger prime = 31;
+    NSUInteger result = 1;
+    
+    // for object
+    result = prime * result + [self.name hash];
+
+    // for primitive type
+    result = prime * result + self.amount;
+
+    // for 64bit
+    result = prime * result + (int) (self.data64bit ^ (self.data64bit >>> 32));
+
+    // for boolean
+    result = prime * result + (self.isCorrect) ? 1231 : 1237;
+
+    return result;
+}
+
+- (BOOL)isEqual:(id)object
+{
+    if (![object isKindOfClass:[self class]]) {
+        return NO;
+    }
+    return [self hash] == [object hash];
+}
+```
+
+Reference: [Best practices for overriding isEqual: and hash](http://stackoverflow.com/questions/254281/best-practices-for-overriding-isequal-and-hash)
