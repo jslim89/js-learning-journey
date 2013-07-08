@@ -905,3 +905,31 @@ If you're using `tableView:viewForFooterInSection`, then the view will stay at b
 ```
 
 Reference: [UITableView Footer, Stop from floating over content](http://stackoverflow.com/questions/5740518/uitableview-footer-stop-from-floating-over-content#answer-5751142)
+
+## RSA - Convert `.pem` to `.der` format
+```obj-c
+NSString *startPublicKey = @"-----BEGIN PUBLIC KEY-----";
+NSString *endPublicKey = @"-----END PUBLIC KEY-----";
+
+// read .pem from file
+NSString* path = [[NSBundle mainBundle] pathForResource:@"public_key"
+                                                     ofType:@"pem"];
+// get the content
+NSString* content = [NSString stringWithContentsOfFile:path
+                                                  encoding:NSUTF8StringEncoding
+                                                     error:NULL];
+// remove the first line & end line
+NSString *publicKey;
+NSScanner *scanner = [NSScanner scannerWithString:content];
+[scanner scanUpToString:startPublicKey intoString:nil];
+[scanner scanString:startPublicKey intoString:nil];
+[scanner scanUpToString:endPublicKey intoString:&publicKey];
+
+// now this is in .der format
+NSData *data = [NSData base64DataFromString:publicKey];
+```
+
+References:
+
+* [Load public key from PEM file into NSData](http://stackoverflow.com/questions/16865466/load-public-key-from-pem-file-into-nsdata#answer-16868667)
+* [ASN.1 key structures in DER and PEM](https://polarssl.org/kb/cryptography/asn1-key-structures-in-der-and-pem)
