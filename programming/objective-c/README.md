@@ -933,3 +933,61 @@ References:
 
 * [Load public key from PEM file into NSData](http://stackoverflow.com/questions/16865466/load-public-key-from-pem-file-into-nsdata#answer-16868667)
 * [ASN.1 key structures in DER and PEM](https://polarssl.org/kb/cryptography/asn1-key-structures-in-der-and-pem)
+
+## Storing Custom object to NSUserDefaults
+Let say you have an object **Foo**
+
+**Foo.h**
+```obj-c
+#import <Foundation/Foundation.h>
+
+// conform to NSCoding
+@interface Foo : NSObject <NSCoding>
+
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *desc;
+
+@end
+```
+
+**Foo.m**
+```obj-c
+#import "Foo.h"
+
+@implementation Foo
+
+@synthesize name = _name;
+@synthesize desc = _desc;
+
+// implement this 2 methods
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.name forKey:@"Name"];
+    [aCoder encodeObject:self.desc forKey:@"Desc"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self.name = [aDecoder decodeObjectForKey:@"Name"];
+    self.desc = [aDecoder decodeObjectForKey:@"Desc"];
+    
+    return self;
+}
+```
+
+Now you can **save** your objects to NSUserDefaults
+```obj-c
+NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+NSMutableArray *arr = ... ; // set value
+NSData *data = [NSKeyedArchiver archivedDataWithRootObject:arr];
+[defaults setObject:data forKey:@"theKeyInUserDefaults"];
+```
+
+and **load** it from NSUserDefaults
+```obj-c
+NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+NSData *data = [defaults objectForKey:@"theKeyInUserDefaults"];
+NSArray *arr = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+```
+
+Reference: [Why NSUserDefaults failed to save NSMutableDictionary in iPhone SDK?](http://stackoverflow.com/questions/471830/why-nsuserdefaults-failed-to-save-nsmutabledictionary-in-iphone-sdk/471920#471920)
