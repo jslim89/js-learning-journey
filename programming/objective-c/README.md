@@ -803,6 +803,24 @@ References:
 * [drawing two circles using Quartz CGContextFillEllipseInRect](http://stackoverflow.com/questions/9684006/drawing-two-circles-using-quartz-cgcontextfillellipseinrect#answer-9684158)
 * [iOS, Generated images, and masking](http://stackoverflow.com/questions/7141978/ios-generated-images-and-masking)
 
+## Create rectangle UIImage programmatically
+```obj-c
+- (UIImage *)imageWithColor:(UIColor *)color inSize:(CGSize)size
+{
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return img;
+}
+```
+
+Reference: [Creating a UIImage from a UIColor to use as a background image for UIButton](http://stackoverflow.com/questions/6496441/creating-a-uiimage-from-a-uicolor-to-use-as-a-background-image-for-uibutton)
+
 ## Update text on a specific UITableViewCell
 For example update, the fifth row in section 0
 ```obj-c
