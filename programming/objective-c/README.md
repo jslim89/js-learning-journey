@@ -1051,3 +1051,12 @@ cell.textLabel.highlightedTextColor = [UIColor whiteColor];
 ```
 
 Reference: [iPhone: How to change font color in UITableViewCell when selected?](http://stackoverflow.com/questions/6736618/iphone-how-to-change-font-color-in-uitableviewcell-when-selected/6736711#6736711)
+
+## Rate Us: Open in AppStore
+```obj-c
+NSURL *rateUrl = [NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software", @"YOUR_APP_ID_HERE"]];
+
+[[UIApplication sharedApplication] openURL:rateUrl];
+```
+
+Reference: [App store link for “rate/review this app”](http://stackoverflow.com/questions/3124080/app-store-link-for-rate-review-this-app/3167015#3167015)
