@@ -1044,3 +1044,10 @@ Override the `hash` & `isEqual` methods
 ```
 
 Reference: [Best practices for overriding isEqual: and hash](http://stackoverflow.com/questions/254281/best-practices-for-overriding-isequal-and-hash)
+
+## Change textLabel color of UITableViewCell in `selected` state
+```obj-c
+cell.textLabel.highlightedTextColor = [UIColor whiteColor];
+```
+
+Reference: [iPhone: How to change font color in UITableViewCell when selected?](http://stackoverflow.com/questions/6736618/iphone-how-to-change-font-color-in-uitableviewcell-when-selected/6736711#6736711)
