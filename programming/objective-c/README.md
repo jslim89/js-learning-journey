@@ -1076,3 +1076,12 @@ self.navigationController.navigationBar.layer.shadowPath = [UIBezierPath bezierP
 ```
 
 Reference: [Shadow in UIView without gradient ?](http://stackoverflow.com/questions/17539323/shadow-in-uiview-without-gradient/17539564#17539564)
+
+## Resign any first responder
+Some time we just want to hide the keyboard when clicked on a button, but we might not know which textField is currently showing keyboard. The line below will just resign any responder.
+
+```obj-c
+[self.view endEditing:YES];
+```
+
+Reference: [Get the current first responder without using a private API](http://stackoverflow.com/questions/1823317/get-the-current-first-responder-without-using-a-private-api/2887690#2887690)
