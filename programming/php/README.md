@@ -116,3 +116,13 @@ This is a <a href="http://www.google.com">Google link</a> for you. This is anoth
 ```
 
 Reference: [PHP: Parsing HTML to find Links](http://www.the-art-of-web.com/php/parse-links/#.Ub7Yrvb89Yg)
+
+## Check whether is POST request
+```php
+<?php
+function is_post() {
+    return $_SERVER['REQUEST_METHOD'] === 'POST';
+}
+```
+
+Reference: [Check whether a request is GET or POST [duplicate]](http://stackoverflow.com/questions/1372147/check-whether-a-request-is-get-or-post/1372163#1372163)
