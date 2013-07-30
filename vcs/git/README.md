@@ -161,3 +161,10 @@ HEAD is now at 49869ae... Your commit message here
 ```
 
 Reference: [How to clone git repository with specific revision/changeset?](http://stackoverflow.com/questions/3489173/how-to-clone-git-repository-with-specific-revision-changeset)
+
+## Change last commit message
+```sh
+$ git commit --amend -m "New commit message"
+```
+
+Reference: [How do I edit an incorrect commit message in Git?](http://stackoverflow.com/questions/179123/how-do-i-edit-an-incorrect-commit-message-in-git/179147#179147)
