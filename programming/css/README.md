@@ -43,3 +43,16 @@ li:not(:last-child):after {
 ```
 
 Reference: [CSS :not(:last-child):after selector](http://stackoverflow.com/questions/5449872/css-notlast-childafter-selector)
+
+## CSS3 odd & even
+Take a table rows as example
+```css
+table tr:nth-child(even) {
+    background-color: #dfdfdf;
+}
+table tr:nth-child(odd) {
+    background-color: #b38a2f;
+}
+```
+
+Reference: [EVEN AND ODD RULES](http://www.w3.org/Style/Examples/007/evenodd.en.html)
