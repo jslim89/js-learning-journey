@@ -1085,3 +1085,14 @@ Some time we just want to hide the keyboard when clicked on a button, but we mig
 ```
 
 Reference: [Get the current first responder without using a private API](http://stackoverflow.com/questions/1823317/get-the-current-first-responder-without-using-a-private-api/2887690#2887690)
+
+## Loop through NSDictionary
+```obj-c
+NSDictionary *dict = ...;
+for (NSString *key in dict) {
+    id value = [dict objectForKey:key];
+    // do stuff
+}
+```
+
+Reference: [for each loop in objective c for accessing NSMutable dictionary](http://stackoverflow.com/questions/2143372/for-each-loop-in-objective-c-for-accessing-nsmutable-dictionary/2143389#2143389)
