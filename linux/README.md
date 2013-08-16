@@ -246,3 +246,10 @@ $ sudo dpkg-reconfigure tzdata
 Then choose your Time Zone now.
 
 Reference: [How to set the timezone on Ubuntu Server](http://www.christopherirish.com/2012/03/21/how-to-set-the-timezone-on-ubuntu-server/)
+
+## Zip files with password protection
+```sh
+$ zip -e zipname.zip file1.txt folder1/*
+```
+
+Reference: [How do I create a password protected ZIP archive?](http://forums.macrumors.com/showthread.php?t=653030#post7125763)
