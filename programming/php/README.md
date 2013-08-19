@@ -126,3 +126,26 @@ function is_post() {
 ```
 
 Reference: [Check whether a request is GET or POST [duplicate]](http://stackoverflow.com/questions/1372147/check-whether-a-request-is-get-or-post/1372163#1372163)
+
+## URL from text (href)
+```php
+<?php
+function url_from_text($text) {
+    // The Regular Expression filter
+    $reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
+
+    // The Text you want to filter for urls
+    $text = "The text you want to filter goes here. http://google.com";
+
+    // Check if there is a url in the text
+    if(preg_match($reg_exUrl, $text, $url)) {
+        // make the urls hyper links
+        return preg_replace($reg_exUrl, "<a href="{$url[0]}">{$url[0]}</a> ", $text);
+    } else {
+        // if no urls in the text just return the text
+        return $text;
+    }
+}
+```
+
+Reference: [Find URLs in Text, Make Links](http://css-tricks.com/snippets/php/find-urls-in-text-make-links/)
