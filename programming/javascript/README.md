@@ -334,3 +334,29 @@ function Foo() {
 ```
 
 Reference: [javascript class variable scope in callback function](http://stackoverflow.com/questions/8317724/javascript-class-variable-scope-in-callback-function#answers)
+
+## jQuery ajax request from other domain
+There are no error, textStatus is `0`, finally I solved it using `jsonp`
+
+```js
+$.ajax({
+    url: 'http://otherdomain.com/api.php',
+    type: 'GET',
+    dataType: 'jsonp',  // <----- IMPORTANT
+    data: {
+        param1: 'foo',
+        param2: 'bar'
+    },
+    success: function(data) {
+        console.log(data);
+    },
+    complete: function(jqXHR, textStatus) {
+        alert(textStatus);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        alert(errorThrown);
+    }
+});
+```
+
+Reference: [JQuery ajax cross domain](http://stackoverflow.com/questions/3506208/jquery-ajax-cross-domain/3506306#3506306)
