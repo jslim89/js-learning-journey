@@ -77,3 +77,13 @@ Look at the inner `SUBSTRING_INDEX`, we explode by **-** _(dash)_, so the **5** 
 So we get **123-456-789-abc-this_is_what_we_want**.
 
 Now the outer `SUBSTRING_INDEX` is to get **1** opponent start from the left, which is the **last** opponent, is what we want **this_is_what_we_want**.
+
+## Migrate data form table A to table B
+```sql
+INSERT INTO table_b (col_1, col_2, col_3)
+(SELECT col_1, col_2, col_3
+FROM table_a
+WHERE col_1 = 'foo');
+```
+
+Reference: [MySQL : perform a big data migration between tables](http://dba.stackexchange.com/questions/24116/mysql-perform-a-big-data-migration-between-tables)
