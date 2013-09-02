@@ -152,8 +152,8 @@ Reference: [Find URLs in Text, Make Links](http://css-tricks.com/snippets/php/fi
 
 ## Get last month date range
 ```php
-$first_day_prev_month = date("Y-m-t", strtotime("first day of previous month"));
-$last_day_prev_month = date("Y-m-1", strtotime("first day of previous month"));
+$first_day_prev_month = date('Y-m-1', strtotime('first day of previous month'));
+$last_day_prev_month = date('Y-m-t', strtotime('first day of previous month'));
 ```
 
 Reference: [Getting last month's date in php](http://stackoverflow.com/questions/1889758/getting-last-months-date-in-php/5180731#5180731)
