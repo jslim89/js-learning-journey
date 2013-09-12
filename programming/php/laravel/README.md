@@ -36,3 +36,32 @@ if (!function_exists('my_debug')) {
 ```
 
 Reference: [What are the best practices and best places for laravel 4 helpers or basic functions?](http://stackoverflow.com/questions/17088917/what-are-the-best-practices-and-best-places-for-laravel-4-helpers-or-basic-funct/17091089#17091089)
+
+## Add custom config file
+Some time we have use a lot of third party API which need to keep the API key. So we can create a custom config file to store that.
+
+```sh
+$ touch /path/to/laravel/app/config/custom.php
+```
+
+Put content to the file. i.e.
+```php
+<?php
+return array(
+    'api' => array(
+        'google_map' => array(
+            'key' => '98fgy8sy3SDF8f37*#7f',
+            'other_param' => 'foobar',
+        ),
+    ),
+);
+```
+
+Can retrieve it by
+```php
+$google_config = \Config::get('custom.api.google_map');
+echo 'KEY: ' . $google_config['key'];
+echo 'Other: ' . $google_config['other_param'];
+```
+
+Reference: [Configuration](http://codehappy.daylerees.com/configuration)
