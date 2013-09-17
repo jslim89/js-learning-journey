@@ -157,3 +157,22 @@ $last_day_prev_month = date('Y-m-t', strtotime('first day of previous month'));
 ```
 
 Reference: [Getting last month's date in php](http://stackoverflow.com/questions/1889758/getting-last-months-date-in-php/5180731#5180731)
+
+## `fgetcsv` read all as ONE line
+This is due to End-of-Line (EOL) problem in different environment (Windows is different from UNIX)
+
+The **EOL** in Windows is `^M`, you can see this if you try to open via VIM.
+
+```php
+while (($data = fgetcsv($handle, 10000)) !== FALSE) {
+    print_r($data);
+}
+```
+If you read the file which contains of `^M` character, then everything will be in a single line.
+
+In order to solve this, add this before the `while` statement
+```php
+ini_set('auto_detect_line_endings', true);
+```
+
+Reference: [php fgetcsv returning all lines](http://stackoverflow.com/questions/5539053/php-fgetcsv-returning-all-lines/5541319#5541319)
