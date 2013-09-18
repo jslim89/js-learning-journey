@@ -168,3 +168,12 @@ $ git commit --amend -m "New commit message"
 ```
 
 Reference: [How do I edit an incorrect commit message in Git?](http://stackoverflow.com/questions/179123/how-do-i-edit-an-incorrect-commit-message-in-git/179147#179147)
+
+## Show commited files on a specific revision
+```sh
+$ git diff-tree --no-commit-id --name-only -r 16fafae4328371850e21ad34e6f4b083bc9e566c
+controller/Index.php
+model/UserModel.php
+```
+
+Reference: [List all the files for a commit in Git](http://stackoverflow.com/questions/424071/list-all-the-files-for-a-commit-in-git/424142#424142)
