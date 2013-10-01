@@ -1099,7 +1099,7 @@ Reference: [for each loop in objective c for accessing NSMutable dictionary](htt
 
 ## UINavigationBar in iOS7 overlap the main content view issue
 
-![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/ios-7-navigationbar.png "NavigationBar overlapping")
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/ios-7-navigationbar.png "NavigationBar overlapping") 
 ![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/ios-7-navigationbar-fixed.png "NavigationBar fixed")
 
 In order to fix this, just add the line below
