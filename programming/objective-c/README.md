@@ -1096,3 +1096,16 @@ for (NSString *key in dict) {
 ```
 
 Reference: [for each loop in objective c for accessing NSMutable dictionary](http://stackoverflow.com/questions/2143372/for-each-loop-in-objective-c-for-accessing-nsmutable-dictionary/2143389#2143389)
+
+## UINavigationBar in iOS7 overlap the main content view issue
+
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/ios-7-navigationbar.png "NavigationBar overlapping")
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/ios-7-navigationbar-fixed.png "NavigationBar fixed")
+
+In order to fix this, just add the line below
+
+```obj-c
+navigationController.navigationBar.translucent = NO;
+```
+
+Reference: [Status bar and navigation bar appear over my view's bounds in iOS 7](http://stackoverflow.com/questions/17074365/status-bar-and-navigation-bar-appear-over-my-views-bounds-in-ios-7)
