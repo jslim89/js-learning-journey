@@ -1109,3 +1109,39 @@ navigationController.navigationBar.translucent = NO;
 ```
 
 Reference: [Status bar and navigation bar appear over my view's bounds in iOS 7](http://stackoverflow.com/questions/17074365/status-bar-and-navigation-bar-appear-over-my-views-bounds-in-ios-7)
+
+## Draw UIImage from text
+```obj-c
+- (UIImage *)imageFromText:(NSString *)text
+{
+    // set the font type and size
+    UIFont *font = [UIFont fontWithName:@"Helvetica" size:12];
+    CGSize size  = [text sizeWithFont:font];
+    
+    // check if UIGraphicsBeginImageContextWithOptions is available (iOS is 4.0+)
+    if (UIGraphicsBeginImageContextWithOptions != NULL)
+        UIGraphicsBeginImageContextWithOptions(size,NO,0.0);
+    else
+        // iOS is < 4.0
+        UIGraphicsBeginImageContext(size);
+    
+    // optional: add a shadow, to avoid clipping the shadow you should make the context size bigger
+    //
+    // CGContextRef ctx = UIGraphicsGetCurrentContext();
+    // CGContextSetShadowWithColor(ctx, CGSizeMake(1.0, 1.0), 5.0, [[UIColor grayColor] CGColor]);
+    
+    // set text color
+    [[UIColor colorWithWhite:1 alpha:0.55] set];
+    
+    // draw in context, you can use also drawInRect:withFont:
+    [text drawAtPoint:CGPointMake(0.0, 0.0) withFont:font];
+    
+    // transfer image
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+```
+
+Reference: [How do I use the NSString draw functionality to create a UIImage from text](http://stackoverflow.com/questions/2765537/how-do-i-use-the-nsstring-draw-functionality-to-create-a-uiimage-from-text/2768081#2768081)
