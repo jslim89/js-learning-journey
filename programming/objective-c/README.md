@@ -1156,9 +1156,11 @@ In AppDelegate.m
 
     // change the font & text color
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                          [UIFont fontWithName:@"CustomFont-Bold" size:18], UITextAttributeFont,
-                                                                                                                        [UIColor whiteColor], UITextAttributeTextColor,
-                                                          nil]];
+                      [UIFont fontWithName:@"CustomFont-Bold" size:18], UITextAttributeFont,
+                      [UIColor whiteColor], UITextAttributeTextColor,
+                      // make the text FLAT
+                      [UIColor clearColor], UITextAttributeTextShadowColor,
+                      nil]];
     ...
 }
 ```
