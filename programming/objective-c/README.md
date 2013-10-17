@@ -1145,3 +1145,24 @@ Reference: [Status bar and navigation bar appear over my view's bounds in iOS 7]
 ```
 
 Reference: [How do I use the NSString draw functionality to create a UIImage from text](http://stackoverflow.com/questions/2765537/how-do-i-use-the-nsstring-draw-functionality-to-create-a-uiimage-from-text/2768081#2768081)
+
+## Change UINavigationBar style
+
+In AppDelegate.m
+```obj-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    ...
+
+    // change the font & text color
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIFont fontWithName:@"CustomFont-Bold" size:18], UITextAttributeFont,
+                                                                                                                        [UIColor whiteColor], UITextAttributeTextColor,
+                                                          nil]];
+    ...
+}
+```
+
+This is same to `UIBarButtonItem`
+
+Reference: [Change UINavigationBar font properties?](http://stackoverflow.com/questions/8774531/change-uinavigationbar-font-properties/12364740#12364740)
