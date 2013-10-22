@@ -1168,3 +1168,12 @@ In AppDelegate.m
 This is same to `UIBarButtonItem`
 
 Reference: [Change UINavigationBar font properties?](http://stackoverflow.com/questions/8774531/change-uinavigationbar-font-properties/12364740#12364740)
+
+## UINavigationBar bar button image color for iOS7
+In iOS7, even you set an image which is white color, it will automatic become blue color. This can change it by `tintColor`.
+
+```obj-c
+if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+}
+```
