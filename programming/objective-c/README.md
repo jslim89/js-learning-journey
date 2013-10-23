@@ -1178,7 +1178,7 @@ if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
 }
 ```
 
-## Change status bar text color
+## Change status bar text color for iOS7
 
 **On ViewController**
 1. Set the `UIViewControllerBasedStatusBarAppearance` to `YES` in the plist.
