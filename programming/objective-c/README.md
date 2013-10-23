@@ -1177,3 +1177,25 @@ if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 ```
+
+## Change status bar text color
+
+1. Set the `UIViewControllerBasedStatusBarAppearance` to `YES` in the plist.
+2. Edit `ViewController.m`
+
+```obj-c
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    // ADD THIS LINE
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+// ADD THIS METHOD
+- (UIStatusBarStyle)preferredStatusBarStyle { 
+    return UIStatusBarStyleLightContent; 
+}
+```
+
+Reference: [How to change Status Bar text color in iOS 7](http://stackoverflow.com/questions/17678881/how-to-change-status-bar-text-color-in-ios-7/17768797#17768797)
