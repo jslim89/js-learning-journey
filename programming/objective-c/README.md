@@ -1180,6 +1180,7 @@ if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
 
 ## Change status bar text color
 
+**On ViewController**
 1. Set the `UIViewControllerBasedStatusBarAppearance` to `YES` in the plist.
 2. Edit `ViewController.m`
 
@@ -1198,4 +1199,19 @@ if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
 }
 ```
 
-Reference: [How to change Status Bar text color in iOS 7](http://stackoverflow.com/questions/17678881/how-to-change-status-bar-text-color-in-ios-7/17768797#17768797)
+**On splash screen**
+
+Edit `Info.plist`
+```xml
+<dict>
+    ...
+    <key>UIStatusBarStyle</key>
+    <string>UIStatusBarStyleLightContent</string>
+    ...
+</dict>
+```
+
+References:
+
+- [How to change Status Bar text color in iOS 7](http://stackoverflow.com/questions/17678881/how-to-change-status-bar-text-color-in-ios-7/17768797#17768797)
+- [How to change status bar style during launch on iOS 7](http://stackoverflow.com/questions/18924345/how-to-change-status-bar-style-during-launch-on-ios-7/18924428#18924428)
