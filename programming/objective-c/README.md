@@ -1228,3 +1228,13 @@ view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizi
 ```
 
 Reference: [UIView autoresizingMask problem](http://stackoverflow.com/questions/3069388/uiview-autoresizingmask-problem/3069427#3069427)
+
+## Check location service enabled for this app
+
+```obj-c
+if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+    // location service is not allowed for this app
+}
+```
+
+Reference: [How to check if location services are enabled for a particular app prior to iOS 4.2?](http://stackoverflow.com/questions/4700987/how-to-check-if-location-services-are-enabled-for-a-particular-app-prior-to-ios#comment-21140860)
