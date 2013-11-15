@@ -1215,3 +1215,16 @@ References:
 
 - [How to change Status Bar text color in iOS 7](http://stackoverflow.com/questions/17678881/how-to-change-status-bar-text-color-in-ios-7/17768797#17768797)
 - [How to change status bar style during launch on iOS 7](http://stackoverflow.com/questions/18924345/how-to-change-status-bar-style-during-launch-on-ios-7/18924428#18924428)
+
+## UIView autoresizingMask to bottom left
+
+If want to achive the result like this in programmatic way
+
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/autoresizingmask-bottom-left.png "To bottom left")  
+
+```obj-c
+// flexible right & flexible top
+view.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin;
+```
+
+Reference: [UIView autoresizingMask problem](http://stackoverflow.com/questions/3069388/uiview-autoresizingmask-problem/3069427#3069427)
