@@ -1238,3 +1238,23 @@ if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
 ```
 
 Reference: [How to check if location services are enabled for a particular app prior to iOS 4.2?](http://stackoverflow.com/questions/4700987/how-to-check-if-location-services-are-enabled-for-a-particular-app-prior-to-ios#comment-21140860)
+
+## A trigger of after view added to subview
+
+A `CustomView` want to execute some logic once added to other view
+
+**ViewController.m**
+```obj-c
+CustomView *view = [[CustomView alloc] init];
+[self.view addSubview:view];
+```
+
+**CustomView.m**
+```obj-c
+- (void)didMoveToSuperview
+{
+    NSLog(@"Just added to other view");
+}
+```
+
+Reference: [iPhone/iOS: Will there be called any method if a UIView is added as a subview](http://stackoverflow.com/questions/6162211/iphone-ios-will-there-be-called-any-method-if-a-uiview-is-added-as-a-subview/6162228#6162228)
