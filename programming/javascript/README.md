@@ -25,7 +25,7 @@ if(myRegex.test(year)) {
 
 Reference: [JavaScript - Test for an integer] (http://stackoverflow.com/questions/1019515/javascript-test-for-an-integer#answers)
 
-## Check whether a function exists
+## Get total row in a table
 ```js
 var totalRows = document.getElementById('tableId').getElementsByTagName('tr').length;
 ```
