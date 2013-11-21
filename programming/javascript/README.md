@@ -360,3 +360,13 @@ $.ajax({
 ```
 
 Reference: [JQuery ajax cross domain](http://stackoverflow.com/questions/3506208/jquery-ajax-cross-domain/3506306#3506306)
+
+## jQuery check if method exists
+```js
+// check before use it
+if (!!$.prototype.functionName) {
+    $('#dom-id').functionName();
+}
+```
+
+Reference: [jQuery test for whether an object has a method?](http://stackoverflow.com/questions/5108832/jquery-test-for-whether-an-object-has-a-method/5108845#5108845)
