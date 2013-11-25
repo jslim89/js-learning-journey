@@ -87,3 +87,26 @@ WHERE col_1 = 'foo');
 ```
 
 Reference: [MySQL : perform a big data migration between tables](http://dba.stackexchange.com/questions/24116/mysql-perform-a-big-data-migration-between-tables)
+
+## `printf` like in MySQL
+
+```sql
+mysql> SELECT LPAD(`id` , 4, '0') FROM `table_name` LIMIT 10;
++---------------------+
+| LPAD(`id` , 4, '0') |
++---------------------+
+| 0001                |
+| 0002                |
+| 0003                |
+| 0004                |
+| 0005                |
+| 0006                |
+| 0007                |
+| 0008                |
+| 0009                |
+| 0010                |
++---------------------+
+```
+Which is similar to `printf("%04d", value);`
+
+Reference: [printf or similar inside an SQL query?](http://stackoverflow.com/questions/7266031/printf-or-similar-inside-an-sql-query/7266053#7266053)
