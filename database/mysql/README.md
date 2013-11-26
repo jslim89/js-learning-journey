@@ -110,3 +110,10 @@ mysql> SELECT LPAD(`id` , 4, '0') FROM `table_name` LIMIT 10;
 Which is similar to `printf("%04d", value);`
 
 Reference: [printf or similar inside an SQL query?](http://stackoverflow.com/questions/7266031/printf-or-similar-inside-an-sql-query/7266053#7266053)
+
+## Copy a table structure from a database to another database
+```sql
+mysql> CREATE TABLE source_database.foo_table LIKE dest_database.foo_table;
+```
+
+Reference: [Copy an existing MySQL table to a new table](http://www.tech-recipes.com/rx/1487/copy-an-existing-mysql-table-to-a-new-table/)
