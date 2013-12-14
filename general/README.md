@@ -1,6 +1,6 @@
 # Lesson
 
-## Apache configuration lexerin markdown
+## Apache configuration lexer in markdown
 
 ```
 ```apache
