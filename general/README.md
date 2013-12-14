@@ -3,7 +3,7 @@
 ## Apache configuration lexerin markdown
 
 ```
-``````apache
+```apache
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
     ServerName local.foo.com
@@ -25,7 +25,7 @@
 
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-``````
+```
 ```
 
 More lexers can found in [Pygments available lexers](http://pygments.org/docs/lexers/)
