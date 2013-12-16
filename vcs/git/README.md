@@ -177,3 +177,13 @@ model/UserModel.php
 ```
 
 Reference: [List all the files for a commit in Git](http://stackoverflow.com/questions/424071/list-all-the-files-for-a-commit-in-git/424142#424142)
+
+## Update all EXCEPT for a file
+Commit all files except **/path/to/file.txt**
+```sh
+$ git update-index --assume-unchanged /path/to/file.txt
+$ git commit -a -m "Commit msg"
+$ git update-index --no-assume-unchanged /path/to/file.txt
+```
+
+Reference: [Exclude a file from a git commit](http://trillworks.com/nick/2013/03/05/exclude-a-file-from-a-git-commit/)
