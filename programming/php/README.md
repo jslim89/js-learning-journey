@@ -176,3 +176,19 @@ ini_set('auto_detect_line_endings', true);
 ```
 
 Reference: [php fgetcsv returning all lines](http://stackoverflow.com/questions/5539053/php-fgetcsv-returning-all-lines/5541319#5541319)
+
+## Loop through dates
+
+```php
+// Start date
+$start_date = '2013-12-06';
+// End date
+$end_date = '2014-04-20';
+
+while (strtotime($start_date) <= strtotime($end_date)) {
+    echo "$start_date\n";
+    $start_date = date('Y-m-d', strtotime('+1 day', strtotime($start_date)));
+}
+```
+
+Reference: [PHP: Loop through dates (from date to date) with strtotime() function](http://www.if-not-true-then-false.com/2009/php-loop-through-dates-from-date-to-date-with-strtotime-function/)
