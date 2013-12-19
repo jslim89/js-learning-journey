@@ -377,3 +377,12 @@ $('#dropdown').change();
 ```
 
 Reference: [How to select jQuery drop down val() AND trigger the event?](http://stackoverflow.com/questions/5808180/how-to-select-jquery-drop-down-val-and-trigger-the-event/5808221#5808221)
+
+## jQuery check is dropdown contain a value
+```js
+if ($('#dropdown > option[value="foo"]').length > 0) {
+    alert('The dropdown menu contains a "Foo" value');
+}
+```
+
+Reference: [how to check a dropdown has a value in jquery?](http://stackoverflow.com/questions/9079353/how-to-check-a-dropdown-has-a-value-in-jquery/9079421#9079421)
