@@ -370,3 +370,10 @@ if (!!$.prototype.functionName) {
 ```
 
 Reference: [jQuery test for whether an object has a method?](http://stackoverflow.com/questions/5108832/jquery-test-for-whether-an-object-has-a-method/5108845#5108845)
+
+## Trigger dropdown on change event by jQuery
+```js
+$('#dropdown').change();
+```
+
+Reference: [How to select jQuery drop down val() AND trigger the event?](http://stackoverflow.com/questions/5808180/how-to-select-jquery-drop-down-val-and-trigger-the-event/5808221#5808221)
