@@ -386,3 +386,20 @@ if ($('#dropdown > option[value="foo"]').length > 0) {
 ```
 
 Reference: [how to check a dropdown has a value in jquery?](http://stackoverflow.com/questions/9079353/how-to-check-a-dropdown-has-a-value-in-jquery/9079421#9079421)
+
+## Get image width & height
+```js
+function getImgSize(imgSrc) {
+    var newImg = new Image();
+
+    newImg.onload = function() {
+        var height = newImg.height;
+        var width = newImg.width;
+        console.log('The image size is '+width+' x '+height);
+    }
+
+    newImg.src = imgSrc; // this must be done AFTER setting onload
+}
+```
+
+Reference: [Determine original size of image cross browser?](http://stackoverflow.com/questions/1944280/determine-original-size-of-image-cross-browser/1944298#1944298)
