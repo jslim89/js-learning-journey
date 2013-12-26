@@ -65,3 +65,29 @@ echo 'Other: ' . $google_config['other_param'];
 ```
 
 Reference: [Configuration](http://codehappy.daylerees.com/configuration)
+
+## Specify `alias` on `JOIN`
+
+**On SQL**
+```sql
+SELECT table.title, table.desc, cu.first_name, mu.first_name
+FROM table
+LEFT JOIN user cu ON cu.id = table.created_by  // user who create
+LEFT JOIN user mu ON mu.id = table.modified_by // user who modify
+```
+
+**Laravel Query Builder**
+```php
+DB::table('table')
+    ->leftJoin('user AS cu', 'cu.id', '=', 'table.created_by')
+    ->leftJoin('user AS mu', 'mu.id', '=', 'table.modified_by')
+    ->select(
+        'table.title'
+        , 'table.desc'
+        , 'cu.first_name'
+        , 'mu.first_name'
+    )
+    ->get();
+```
+
+Reference: [Laravel join queries AS](http://stackoverflow.com/questions/14318205/laravel-join-queries-as/14320265#14320265)
