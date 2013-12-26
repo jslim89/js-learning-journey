@@ -91,3 +91,10 @@ DB::table('table')
 ```
 
 Reference: [Laravel join queries AS](http://stackoverflow.com/questions/14318205/laravel-join-queries-as/14320265#14320265)
+
+## Check is POST request
+```
+if (\Request::isMethod('POST')) {
+    // confirmed this is POST request
+}
+```
