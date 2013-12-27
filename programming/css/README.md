@@ -56,3 +56,31 @@ table tr:nth-child(odd) {
 ```
 
 Reference: [EVEN AND ODD RULES](http://www.w3.org/Style/Examples/007/evenodd.en.html)
+
+## Position a `div` on top of `img`
+
+```html
+<div id="container">
+    <img src="http://example.com/img.jpg">
+    <div id="inner">This is my div</div>div>
+</img>div>
+```
+
+Set the container position to `relative`, and the inner div to `absolute`.
+```css
+#container {
+    position: relative;    
+}
+
+#inner {
+   position: absolute;
+   top: 10px; // position y
+   left: 10px; // position x
+    
+   padding: 5px;
+   background-color: white;
+   border: 2px solid red;
+}
+```
+
+Reference: [position a div on top of an image](http://stackoverflow.com/questions/4218204/position-a-div-on-top-of-an-image/4218306#4218306)
