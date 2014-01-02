@@ -192,3 +192,19 @@ while (strtotime($start_date) <= strtotime($end_date)) {
 ```
 
 Reference: [PHP: Loop through dates (from date to date) with strtotime() function](http://www.if-not-true-then-false.com/2009/php-loop-through-dates-from-date-to-date-with-strtotime-function/)
+
+## Get image type
+```php
+switch(exif_imagetype('image/foo.jpg')) {
+    case IMAGETYPE_JPEG:
+        echo 'JPEG';
+        break;
+
+    case IMAGETYPE_PNG:
+        echo 'JPEG';
+        break;
+    ...
+}
+```
+
+Reference: [exif_imagetype](http://www.php.net/manual/en/function.exif-imagetype.php)
