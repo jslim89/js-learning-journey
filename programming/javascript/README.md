@@ -403,3 +403,13 @@ function getImgSize(imgSrc) {
 ```
 
 Reference: [Determine original size of image cross browser?](http://stackoverflow.com/questions/1944280/determine-original-size-of-image-cross-browser/1944298#1944298)
+
+## Prepend zero in front like `sprintf` in PHP
+i.e. get the result like `sprintf('%03d' 3)`
+```js
+var someInteger = 3;
+// add 3 '0' in front of it, then get the last 3 characters
+('0' + someInteger).slice(-3);
+```
+
+Reference: [How to prepend a zero in front of any number below 10 in Javascript using Regexp](http://stackoverflow.com/questions/8169785/how-to-prepend-a-zero-in-front-of-any-number-below-10-in-javascript-using-regexp/8169833#8169833)
