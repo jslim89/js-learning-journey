@@ -208,3 +208,15 @@ switch(exif_imagetype('image/foo.jpg')) {
 ```
 
 Reference: [exif_imagetype](http://www.php.net/manual/en/function.exif-imagetype.php)
+
+## Insert a string into another string
+```php
+$str = 'abc123';
+$result = substr_replace($str, '-', 3, 0);
+echo $result;
+
+// output
+// abc-123
+```
+
+Reference: [How to insert a string inside another string?](http://stackoverflow.com/questions/1372737/how-to-insert-a-string-inside-another-string/1372765#1372765)
