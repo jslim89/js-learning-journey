@@ -15,6 +15,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 * [CSS] (https://github.com/jslim89/js-learning-journey/tree/master/programming/css)
 * [JavaScript] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript)
     - [Bootstrap] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/bootstrap)
+    - [CKEditor] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/ckeditor)
 * [Objective-C] (https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c)
 
 ## Database
