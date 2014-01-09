@@ -220,3 +220,25 @@ echo $result;
 ```
 
 Reference: [How to insert a string inside another string?](http://stackoverflow.com/questions/1372737/how-to-insert-a-string-inside-another-string/1372765#1372765)
+
+## Re-format date using `preg_replace`
+e.g. Format a date with `dd/mm/yyyy` to `yyyy-mm-dd`
+```php
+$date = '31/08/1987';
+
+$pattern = '/^(\d{2})\/(\d{2})\/(\d{4})$/';
+$replacement = '$3-$2-$1';
+
+$formatted_date = preg_replace($pattern, $replacement, $date);
+echo $formatted_date;
+```
+
+Output:
+```
+1987-08-31
+```
+
+* `(\d{2})` - the braces is to keep a reference that can use it later _(i.e. `$1`)_. Where `\d` is to match integer only and `{2}` is exactly 2 characters
+* `\/` - because the slash _(/)_ is a special character, so have to use backslash _(\)_ to escape it
+
+Reference: [preg_replace](http://my1.php.net/preg_replace#example-4797)
