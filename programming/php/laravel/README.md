@@ -98,3 +98,8 @@ if (\Request::isMethod('POST')) {
     // confirmed this is POST request
 }
 ```
+
+## Filter `csrf` for few functions only
+```php
+$this->beforeFilter('csrf', array('on' => 'post', 'only' => array('func1', 'func2')));
+```
