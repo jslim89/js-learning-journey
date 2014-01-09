@@ -239,6 +239,7 @@ Output:
 ```
 
 * `(\d{2})` - the braces is to keep a reference that can use it later _(i.e. `$1`)_. Where `\d` is to match integer only and `{2}` is exactly 2 characters
-* `\/` - because the slash _(/)_ is a special character, so have to use backslash _(\)_ to escape it
+* `\/` - because the slash _(/)_ is a special character, so have to use backslash _(\\)_ to escape it
+* `$3-$2-$1` - is the sequence of the submatch _(i.e. `(\d{2})` those inside the braces)_
 
 Reference: [preg_replace](http://my1.php.net/preg_replace#example-4797)
