@@ -103,3 +103,11 @@ if (\Request::isMethod('POST')) {
 ```php
 $this->beforeFilter('csrf', array('on' => 'post', 'only' => array('func1', 'func2')));
 ```
+
+## Show the last executed query
+```php
+$queries = DB::getQueryLog();
+$last_query = end($queries);
+```
+
+Reference: [Get the query executed in Laravel 3/4](http://stackoverflow.com/questions/14536165/get-the-query-executed-in-laravel-3-4/14536215#14536215)
