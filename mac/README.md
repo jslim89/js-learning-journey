@@ -20,6 +20,17 @@ UUID=22F1DF1C-AFDE-B507-A15B-FC9296BB2E2B none ntfs rw,auto,nobrowse
 
 Unmount the drive, and then remount. It should now writable.
 
+**Important NOTE**
+```
+It is also important that the HD has been safely removed, since NTFS contains a flag to notice if the disk was safely removed or not, not allowing to mount it in write mode with the native OSX driver (something similar happens under Linux). In case it happens you just need to plug it into a windows PC and safely remove the HD (so it cleans that flag).
+```
+
+[Script download](https://raw.github.com/jslim89/js-learning-journey/master/mac/attachments/ntfs.sh)
+
+By [neburim](https://discussions.apple.com/people/neburim)
+
+Reference: [NTFS Write support on Mavericks](https://discussions.apple.com/message/23816923#23816923)
+
 ## Missing Air Drop in Mountain Lion
 Open up terminal
 ```sh
