@@ -253,3 +253,10 @@ $ zip -e zipname.zip file1.txt folder1/*
 ```
 
 Reference: [How do I create a password protected ZIP archive?](http://forums.macrumors.com/showthread.php?t=653030#post7125763)
+
+## Download a file using `curl`
+```sh
+$ curl -o dest_file.tar.gz http://example.com/file.tar.gz
+```
+
+Reference: [Linux / Unix: curl Command Download File Example](http://www.cyberciti.biz/faq/curl-download-file-example-under-linux-unix/)
