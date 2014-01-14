@@ -260,3 +260,13 @@ $ curl -o dest_file.tar.gz http://example.com/file.tar.gz
 ```
 
 Reference: [Linux / Unix: curl Command Download File Example](http://www.cyberciti.biz/faq/curl-download-file-example-under-linux-unix/)
+
+## CLear history in terminal
+```sh
+$ history -c && history -w
+```
+
+* `history -c` - clear the history
+* `history -w` - write the now history file
+
+Reference: [Delete terminal history in Linux [closed]](http://stackoverflow.com/questions/6709349/delete-terminal-history-in-linux/6709403#6709403)
