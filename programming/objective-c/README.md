@@ -1258,3 +1258,26 @@ CustomView *view = [[CustomView alloc] init];
 ```
 
 Reference: [iPhone/iOS: Will there be called any method if a UIView is added as a subview](http://stackoverflow.com/questions/6162211/iphone-ios-will-there-be-called-any-method-if-a-uiview-is-added-as-a-subview/6162228#6162228)
+
+## Show static map (Google) on UIImageView
+```obj-c
+UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(position_x, position_y, width, height)];
+
+double latitude = 3.4005, longitude = 101.34888;
+int zoomLevel = 11;
+
+NSString *staticMapUrlString = [NSString stringWithFormat:@"http://maps.google.com/maps/api/staticmap?markers=color%%3Ared%%7C%f,%f&zoom=%d&size=%dx%d&sensor=true", latitude, longitude, zoomLevel, (int)imageView.bounds.size.width, (int)imageView.bounds.size.height];
+NSURL *staticMapUrl = [NSURL URLWithString:staticMapUrlString];
+
+imageView.image = [UIImage imageWithData: [NSData dataWithContentsOfURL:staticMapUrl]];
+```
+
+String encoding in URL
+
+* `%%3A` - is refer to colon _(:)_, the **double percent** _(%%)_ is to escape the string parameters
+* `%%7C` - is refer to the pipe line _(|)_
+
+References:
+
+* [Get part of the map view as an image in iOS](http://stackoverflow.com/questions/7175300/get-part-of-the-map-view-as-an-image-in-ios/7950179#7950179)
+* [Percent-encoding](http://en.wikipedia.org/wiki/Percent-encoding)
