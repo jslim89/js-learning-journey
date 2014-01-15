@@ -1281,3 +1281,27 @@ References:
 
 * [Get part of the map view as an image in iOS](http://stackoverflow.com/questions/7175300/get-part-of-the-map-view-as-an-image-in-ios/7950179#7950179)
 * [Percent-encoding](http://en.wikipedia.org/wiki/Percent-encoding)
+
+## Detect `double tap` event on UIImageView
+```obj-c
+- (void)viewDidLoad
+{
+    ...
+    ImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
+    imageView.image = image;
+    imageView.userInteractionEnabled = YES; // must enable
+
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapped:)];
+    [tap setDelaysTouchesBegan:YES];
+    tap.numberOfTapsRequired = 2; // double tap
+    tap.numberOfTouchesRequired = 1;
+    [imageView addGestureRecognizer:tap];
+}
+
+- (void)imageTapped:(UITapGestureRecognizer *)sender
+{
+    NSLog(@"Double tapped");
+}
+```
+
+Reference: [Detect Double tap in UIScrollView](http://stackoverflow.com/questions/3905125/detect-double-tap-in-uiscrollview/12172200#12172200)
