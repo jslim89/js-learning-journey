@@ -58,3 +58,31 @@ $ rm 13C42BED-0555-4684-A905-5547B2293D46.mobileprovision
 ```
 
 Reference: [Delete provisioning profile from Xcode 5](http://stackoverflow.com/questions/18923095/delete-provisioning-profile-from-xcode-5/18923552#18923552)
+
+## Install `command line tools` in Xcode 5 & Mavericks
+
+```sh
+$ xcode-select --install
+```
+
+Reference: [Xcode 5.0 Error installing command line tools](http://stackoverflow.com/questions/19066647/xcode-5-0-error-installing-command-line-tools/19067279#19067279)
+
+## Configure virtual host in XAMPP
+<VirtualHost web-local.mysite.com:80> // use <ServerName>:80 instead of *:80
+    ServerAdmin webmaster@dummy-host.example.com
+    ServerName web-local.mysite.com
+    ServerAlias web-local.mysite.com
+    DocumentRoot "/Users/username/public_html/mysite"
+    <Directory "/Users/username/public_html/mysite/">
+        DirectoryIndex index.php
+        Options All
+        AllowOverride All
+        Order allow,deny
+        allow from all
+        Require all granted // this is required
+    </Directory>
+    ErrorLog "logs/web-local.mysite.com-error_log"
+    CustomLog "logs/web-local.mysite.com-access_log" common
+</VirtualHost>
+
+Reference: [Adding VirtualHost fails: Access Forbidden Error 403 (XAMPP) (Windows 7)](http://stackoverflow.com/questions/9110179/adding-virtualhost-fails-access-forbidden-error-403-xampp-windows-7/9117898#9117898)

@@ -270,3 +270,13 @@ $ history -c && history -w
 * `history -w` - write the now history file
 
 Reference: [Delete terminal history in Linux [closed]](http://stackoverflow.com/questions/6709349/delete-terminal-history-in-linux/6709403#6709403)
+
+## Change directory & file permission recursively
+```sh
+# change directories mode to -rwxr-xr-x
+$ find . -type d -exec chmod 755 {} \;
+# change files mode to -rw-r--r--
+$ find . -type f -exec chmod 644 {} \;
+```
+
+Reference: [find -exec a shell function?](http://stackoverflow.com/questions/4321456/find-exec-a-shell-function)

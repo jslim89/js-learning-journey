@@ -117,3 +117,33 @@ mysql> CREATE TABLE source_database.foo_table LIKE dest_database.foo_table;
 ```
 
 Reference: [Copy an existing MySQL table to a new table](http://www.tech-recipes.com/rx/1487/copy-an-existing-mysql-table-to-a-new-table/)
+
+## Add root password to MySql in XAMPP
+
+```sh
+# initially was no password, so can login directly
+$ /Applications/XAMPP/xamppfiles/bin/mysql -u root
+```
+
+```mysql
+mysql> UPDATE mysql.user SET Password=PASSWORD('MyNewPass') WHERE User='root';
+mysql> FLUSH PRIVILEGES;
+```
+
+Edit the phpMyAdmin config, otherwise could not be login
+```sh
+$ sudo vi /Applications/XAMPP/xamppfiles/phpmyadmin/config.inc.php
+```
+
+Change the password
+
+```php
+...
+/* Authentication type */
+$cfg['Servers'][$i]['auth_type'] = 'config';
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = 'MyNewPass'; /* this line */
+...
+```
+
+Reference: [C.5.4.1. How to Reset the Root Password](http://dev.mysql.com/doc/refman/5.0/en/resetting-permissions.html)
