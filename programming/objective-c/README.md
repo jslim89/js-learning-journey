@@ -1305,3 +1305,19 @@ References:
 ```
 
 Reference: [Detect Double tap in UIScrollView](http://stackoverflow.com/questions/3905125/detect-double-tap-in-uiscrollview/12172200#12172200)
+
+## Show character by give ASCII code (int) or vice versa
+
+**Integer to alphabet**
+```obj-c
+int asciiCode = 97;
+NSString *alphabet = [NSString stringWithFormat:@"%c", asciiCode]; // a
+```
+
+**Alphabet to integer**
+```obj-c
+NSString *alphabet = @"a";
+int asciiCode = [alphabet characterAtIndex:0]; // 97
+```
+
+Reference: [How to convert ASCII value to a character in Objective-C?](http://stackoverflow.com/questions/2832729/how-to-convert-ascii-value-to-a-character-in-objective-c/2832933#2832933)
