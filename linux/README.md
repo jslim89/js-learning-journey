@@ -280,3 +280,11 @@ $ find . -type f -exec chmod 644 {} \;
 ```
 
 Reference: [find -exec a shell function?](http://stackoverflow.com/questions/4321456/find-exec-a-shell-function)
+
+## Apache error when running `a2ensite` command
+
+The error message look like `ERROR: Site domain.com does not exist`
+
+Just have to ensure the file name end with **.conf** extension.
+
+Reference: [adding subdomain to apache2 with a2ensite causes error: ERROR: Site domain.com does not exist](http://stackoverflow.com/questions/10557770/adding-subdomain-to-apache2-with-a2ensite-causes-error-error-site-domain-com-d/17665502#17665502)
