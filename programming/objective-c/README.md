@@ -1349,3 +1349,14 @@ Change the text color only
 ```
 
 Reference: [How can I change the text and icon colors for tabBarItems in iOS 7?](http://stackoverflow.com/questions/18734794/how-can-i-change-the-text-and-icon-colors-for-tabbaritems-in-ios-7/18734795#18734795)
+
+## Fix the status bar some time not showing text on iOS7
+Edit **Project-Info.plist** file, add the content below
+```xml
+<key>UIViewControllerBasedStatusBarAppearance</key>
+<false/>
+```
+
+Or open in **Property list**
+
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/status-bar-appearance.png "Status bar appearance")  
