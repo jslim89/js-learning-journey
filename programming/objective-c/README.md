@@ -1321,3 +1321,31 @@ int asciiCode = [alphabet characterAtIndex:0]; // 97
 ```
 
 Reference: [How to convert ASCII value to a character in Objective-C?](http://stackoverflow.com/questions/2832729/how-to-convert-ascii-value-to-a-character-in-objective-c/2832933#2832933)
+
+## Change UITabBarController tint color
+
+Change the bar color
+```obj-c
+tabBarController.tabBar.barTintColor = [UIColor blackColor];
+```
+
+Change the icon & text color
+```obj-c
+tabBarController.tabBar.tintColor = [UIColor whiteColor];
+```
+
+Change the text color only
+```obj-c
+// change the selected text color
+[[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:10.0f],
+                                                    NSForegroundColorAttributeName: [UIColor whiteColor]
+                                                    } forState:UIControlStateSelected];
+
+
+// change the unselected text color
+[[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:10.0f],
+                                                    NSForegroundColorAttributeName: [UIColor whiteColor]
+                                                    } forState:UIControlStateNormal];
+```
+
+Reference: [How can I change the text and icon colors for tabBarItems in iOS 7?](http://stackoverflow.com/questions/18734794/how-can-i-change-the-text-and-icon-colors-for-tabbaritems-in-ios-7/18734795#18734795)
