@@ -147,3 +147,20 @@ $cfg['Servers'][$i]['password'] = 'MyNewPass'; /* this line */
 ```
 
 Reference: [C.5.4.1. How to Reset the Root Password](http://dev.mysql.com/doc/refman/5.0/en/resetting-permissions.html)
+
+## Auto-input password on mysql shell command
+
+Typical way, it will prompt for password
+```sh
+$ mysql -u root -p
+Enter password:
+```
+
+Another way, it you passed the password through the input argument
+```sh
+# username: root
+# password: MyAwesomePassword
+$ mysql -uroot -pMyAwesomePassword
+```
+
+Reference: [BASH script not reading input mysql password [duplicate]](http://stackoverflow.com/questions/13649364/bash-script-not-reading-input-mysql-password/13649419#13649419)
