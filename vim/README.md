@@ -111,3 +111,14 @@ $ rm ~/.viminfo
 ```
 
 Reference: [E576: viminfo: Missing '>' in line:](http://www.linuxquestions.org/questions/linux-newbie-8/e576-viminfo-missing-in-line-691158/#post3378332)
+
+## Show special character
+
+```viml
+:set list " to show the special character
+:set nolist " to hide it back
+```
+
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/vim/images/special-char.png "Show special character")
+
+Reference: [how to see special characters in a file using vi](http://www.unix.com/87041-post6.html?s=12ce7df9bdb92330b794db1425eb4f41)
