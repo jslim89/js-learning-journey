@@ -150,3 +150,32 @@ public function indexAction() {
     $route = $this->url()->fromRoute('product', array('action' => 'edit'));
 }
 ```
+
+## Fixed sql quote value NOTICE
+The notice is look like
+
+`Notice: Attempting to quote a value without specific driver level support can introduce security vulnerabilities in a production environment. in /Users/username/public_html/projectname/vendor/zendframework/zendframework/library/Zend/Db/Adapter/Platform/Sql92.php on line 80`
+
+Fix it by edit the file **vendor/zendframework/zendframework/library/Zend/Db/Metadata/Source/MysqlMetadata.php**
+
+```php
+...
+protected function loadColumnData($table, $schema)
+{
+    ...
+    $this->prepareDataHierarchy('columns', $schema, $table);
+    $p = $this->adapter->getPlatform();
+    // if the platform's resource is not synchronized, try to fetch it
+    // from connection object
+    $p->setDriver($this->adapter->getDriver());
+
+    $isColumns = array(
+        array('C','ORDINAL_POSITION'),
+        ...
+}
+...
+```
+
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/php/zend/images/zf2-sql-quote-notice.png "Add the green highlighted lines")
+
+Reference: [Update MysqlMetadata.php](https://github.com/neoglez/zf2/commit/d184bc2fab07a5b1a0bb69a68daaed80bb4c4bc1)
