@@ -1360,3 +1360,17 @@ Edit **Project-Info.plist** file, add the content below
 Or open in **Property list**
 
 ![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/status-bar-appearance.png "Status bar appearance")  
+
+## Flip animation between view controllers
+Present
+```obj-c
+viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+[self presentViewController:viewController animated:YES completion:nil];
+```
+
+Dismiss
+```obj-c
+[self dismissViewControllerAnimated:YES completion:nil];
+```
+
+Reference: [How to do the flip animation between two UIViewControllers while clicking info button?](http://stackoverflow.com/questions/4622996/how-to-do-the-flip-animation-between-two-uiviewcontrollers-while-clicking-info-b/7384986#7384986)
