@@ -1374,3 +1374,33 @@ Dismiss
 ```
 
 Reference: [How to do the flip animation between two UIViewControllers while clicking info button?](http://stackoverflow.com/questions/4622996/how-to-do-the-flip-animation-between-two-uiviewcontrollers-while-clicking-info-b/7384986#7384986)
+
+## Extract submatch from string using regular expression
+Example here shows extract date from NSDate object
+
+The format we want is **YYYY-MM-DD**
+
+```obj-c
+NSLog(@"date %@", date);
+// this will return (for example)
+// 2014-01-27 10:17:00 +0000
+```
+
+So we can extract out the part using regex
+```obj-c
+NSDate *date = ...;
+
+// extract 4 integers followed by a dash followed by 2 integers followed by a dash followed by 2 integers again
+NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d{4}-\\d{2}-\\d{2})"
+                                                                       options:NSRegularExpressionCaseInsensitive
+                                                                         error:&error];
+[regex enumerateMatchesInString:date.description options:0 range:NSMakeRange(0, date.description.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+    // just get the substring by the range
+    NSString *dateStr = [sender.date.description substringWithRange:[result rangeAtIndex:0]];
+    NSLog(@"Date only: %@", dateStr);
+    // this will show
+    // Date only: 2014-01-27
+}];
+```
+
+Reference: [Extract parts from regular expression with NSRegularExpression](http://stackoverflow.com/questions/9601551/extract-parts-from-regular-expression-with-nsregularexpression/9656243#9656243)
