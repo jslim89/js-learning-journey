@@ -111,3 +111,18 @@ $last_query = end($queries);
 ```
 
 Reference: [Get the query executed in Laravel 3/4](http://stackoverflow.com/questions/14536165/get-the-query-executed-in-laravel-3-4/14536215#14536215)
+
+## Pagination check has page
+Check whether the pagination has other pages
+```php
+<?php if ($obj_list->getTotal() > $obj_list->count(): ?>
+    <div class="pagination-wrapper">
+        <?php echo $obj_list->appends(array(
+                'param1' => 'value1',
+                'param2' => 'value2',
+            ))->links(); ?>
+    </div>
+<?php endif; ?>
+```
+
+If the total objects is more than retrieved objects, that mean it has other pages.
