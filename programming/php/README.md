@@ -272,3 +272,9 @@ function resample($jpgFile, $thumbFile, $width, $orientation) {
 ```
 
 Reference: [PHP read_exif_data and Adjust Orientation](http://stackoverflow.com/questions/7489742/php-read-exif-data-and-adjust-orientation/9207128#9207128)
+
+## Remove all html tags & replace `&nbsp;` to `<space>`
+
+```
+str_replace('&nbsp;', ' ', strip_tags($description));
+```
