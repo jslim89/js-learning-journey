@@ -275,6 +275,6 @@ Reference: [PHP read_exif_data and Adjust Orientation](http://stackoverflow.com/
 
 ## Remove all html tags & replace `&nbsp;` to `<space>`
 
-```
+```php
 str_replace('&nbsp;', ' ', strip_tags($description));
 ```
