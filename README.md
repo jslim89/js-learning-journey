@@ -13,6 +13,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [Laravel 4] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/laravel)
     - [Wordpress] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/wordpress)
     - [Facebook API] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/facebook)
+    - [WideImage] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/wideimage)
 * [CSS] (https://github.com/jslim89/js-learning-journey/tree/master/programming/css)
 * [JavaScript] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript)
     - [Bootstrap] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/bootstrap)
