@@ -278,3 +278,10 @@ Reference: [PHP read_exif_data and Adjust Orientation](http://stackoverflow.com/
 ```php
 str_replace('&nbsp;', ' ', strip_tags($description));
 ```
+
+## Replace new line character with <space>
+```php
+$new_text = str_replace(array("\r", "\r\n", "\n"), ' ', $text);
+```
+
+Reference: [How to Replace Newline with Space Using PHP](http://www.sourcecodester.com/tutorials/php/how-replace-newline-with-space-using-php.html)
