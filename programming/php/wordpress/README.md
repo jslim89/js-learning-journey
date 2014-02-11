@@ -44,3 +44,16 @@ if (!function_exists('ajax_my_unique_action')) {
 ```
 
 Reference: [ajaxurl is not defined](http://wordpress.org/support/topic/ajaxurl-is-not-defined#post-1989445)
+
+## Hide `Add New` submenu from custom post type
+
+```php
+function hide_add_new_custom_type() {
+    global $submenu;
+    // replace my_type with the name of your post type
+    unset($submenu['edit.php?post_type=my_type'][10]);
+}
+add_action('admin_menu', 'hide_add_new_custom_type');
+```
+
+Reference: [WordPress: Disable “Add New” on Custom Post Type](http://stackoverflow.com/questions/3235257/wordpress-disable-add-new-on-custom-post-type/3248103#3248103)
