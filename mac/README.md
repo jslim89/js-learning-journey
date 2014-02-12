@@ -89,3 +89,13 @@ Reference: [Xcode 5.0 Error installing command line tools](http://stackoverflow.
 ```
 
 Reference: [Adding VirtualHost fails: Access Forbidden Error 403 (XAMPP) (Windows 7)](http://stackoverflow.com/questions/9110179/adding-virtualhost-fails-access-forbidden-error-403-xampp-windows-7/9117898#9117898)
+
+## `grep` with color
+
+Add the following content to `~/.profile`
+```sh
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;37;41' # you can set the color here
+```
+
+Reference: [How can I grep with color in Mac OS X's terminal?](https://superuser.com/questions/416835/how-can-i-grep-with-color-in-mac-os-xs-terminal/417152#417152)
