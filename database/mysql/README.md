@@ -164,3 +164,14 @@ $ mysql -uroot -pMyAwesomePassword
 ```
 
 Reference: [BASH script not reading input mysql password [duplicate]](http://stackoverflow.com/questions/13649364/bash-script-not-reading-input-mysql-password/13649419#13649419)
+
+## Rename a column with FULLTEXT index
+```sql
+ALTER TABLE tablename ADD column_new_name VARCHAR(100) AFTER column_old_name;
+ALTER TABLE tablename MODIFY column_new_name VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci; /* make sure the collation is same as column_old_name */
+/* copy the data from column_old_name to column_new_name */
+UPDATE tablename SET column_new_name = column_old_name;
+ALTER TABLE tablename ADD FULLTEXT(column_new_name);
+/* Delete old column */
+alter TABLE tablename DROP COLUMN column_old_name;
+```
