@@ -126,3 +126,15 @@ Check whether the pagination has other pages
 ```
 
 If the total objects is more than retrieved objects, that mean it has other pages.
+
+## Query builder multiple ORDER BY
+
+```php
+\DB::table('tablename')
+    ->orderBy('col_1', 'desc')
+    ->orderBy('col_2', 'asc');
+```
+
+Just have to invoke multiple times
+
+Reference: [How to use order by for multiple columns in laravel 4?](http://stackoverflow.com/questions/17006309/how-to-use-order-by-for-multiple-columns-in-laravel-4/17006377#17006377)
