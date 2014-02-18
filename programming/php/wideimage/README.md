@@ -23,7 +23,7 @@ $canvas = $wideImage->getCanvas();
 // set the font with size 30 and font color to white
 $canvas->useFont('/path/to/fonts/Helvetica-Bold.otf', 30, $wideImage->allocateColor(255, 255, 255));
 // write text to canvas
-$canvas->writeText('center', 'center', $display_title);
+$canvas->writeText('center', 'center', 'Your text goes here');
 // save to file
 $wideImage->saveToFile('output.png');
 ```
