@@ -413,3 +413,12 @@ var someInteger = 3;
 ```
 
 Reference: [How to prepend a zero in front of any number below 10 in Javascript using Regexp](http://stackoverflow.com/questions/8169785/how-to-prepend-a-zero-in-front-of-any-number-below-10-in-javascript-using-regexp/8169833#8169833)
+
+## Clear file input element with jQuery
+
+```js
+$('#myfile').wrap('<form>').closest('form').get(0).reset();
+$('#myfile').unwrap();
+```
+
+Reference: [Clearing <input type='file' /> using jQuery](http://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery/13351234#13351234)
