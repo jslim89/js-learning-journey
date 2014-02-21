@@ -285,3 +285,30 @@ $new_text = str_replace(array("\r", "\r\n", "\n"), ' ', $text);
 ```
 
 Reference: [How to Replace Newline with Space Using PHP](http://www.sourcecodester.com/tutorials/php/how-replace-newline-with-space-using-php.html)
+
+## Regex match any characters INCLUDING <new line>
+
+```php
+$content = <<<EOD
+<html>
+    <title>Test</title>
+    <body>
+        <div id="some-div">
+            Some text here
+        </div>
+    </body>
+</html>
+EOD;
+$pattern = '/<body.*>(.*)<\/body>/s'; // the last characters 's' is to match new line as well
+preg_match($pattern, $content, $result);
+```
+
+`$result[0]` will give you
+
+```html
+<div id="some-div">
+    Some text here
+</div>
+```
+
+Reference: [How do I match any character across multiple lines in a regular expression?](http://stackoverflow.com/questions/159118/how-do-i-match-any-character-across-multiple-lines-in-a-regular-expression/159139#159139)
