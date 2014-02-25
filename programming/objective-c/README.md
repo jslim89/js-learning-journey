@@ -1404,3 +1404,29 @@ NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@
 ```
 
 Reference: [Extract parts from regular expression with NSRegularExpression](http://stackoverflow.com/questions/9601551/extract-parts-from-regular-expression-with-nsregularexpression/9656243#9656243)
+
+## Resize UIImage
+```obj-
+
++ (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size retainAspectRatio:(BOOL)aspectRatio
+{
+    CGSize newSize = size;
+    if (aspectRatio) {
+        // whether is based on width to calculate or height
+        BOOL baseOnWidth = size.width > size.height ? YES : NO;
+        
+        if (baseOnWidth) {
+            newSize.height = (size.width / image.size.width) * image.size.height;
+        } else {
+            newSize.width = (size.height / image.size.height) * image.size.width;
+        }
+    }
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+```
+
+Reference: [The simplest way to resize an UIImage?](http://stackoverflow.com/questions/2658738/the-simplest-way-to-resize-an-uiimage/2658801#2658801)
