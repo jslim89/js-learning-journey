@@ -1086,7 +1086,7 @@ self.navigationController.navigationBar.layer.shadowRadius = 0;
 self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 4);
 self.navigationController.navigationBar.layer.shadowOpacity = 1;
 self.navigationController.navigationBar.layer.shadowColor = [UIColor colorWithWhite:0.8 alpha:0.8f].CGColor;
-self.navigationController.navigationBar.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.navigationController.navigationBar.bounds].CGPath;
+self.navigationController.navigationBar.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.navigationController.navigationBar.bounds cornerRadius:self.navigationController.navigationBar.layer.cornerRadius].CGPath;
 ```
 
 Reference: [Shadow in UIView without gradient ?](http://stackoverflow.com/questions/17539323/shadow-in-uiview-without-gradient/17539564#17539564)
