@@ -821,8 +821,8 @@ References:
         // Add a clip before drawing anything, in the shape of an rounded rect
         [[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius] addClip];
         // Draw your image
-        [image drawInRect:rect];
-        image = UIGraphicsGetImageFromCurrentImageContext();
+        [img drawInRect:rect];
+        img = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
     
