@@ -805,7 +805,7 @@ References:
 
 ## Create rectangle UIImage programmatically
 ```obj-c
-- (UIImage *)imageWithColor:(UIColor *)color inSize:(CGSize)size
+- (UIImage *)imageWithColor:(UIColor *)color inSize:(CGSize)size withCornerRadius:(CGFloat)radius
 {
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
@@ -814,12 +814,26 @@ References:
     CGContextFillRect(context, rect);
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+
+    if (radius > 0) {
+        UIGraphicsBeginImageContext(size);
+        
+        // Add a clip before drawing anything, in the shape of an rounded rect
+        [[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius] addClip];
+        // Draw your image
+        [image drawInRect:rect];
+        image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
     
     return img;
 }
 ```
 
-Reference: [Creating a UIImage from a UIColor to use as a background image for UIButton](http://stackoverflow.com/questions/6496441/creating-a-uiimage-from-a-uicolor-to-use-as-a-background-image-for-uibutton)
+References:
+
+* [Creating a UIImage from a UIColor to use as a background image for UIButton](http://stackoverflow.com/questions/6496441/creating-a-uiimage-from-a-uicolor-to-use-as-a-background-image-for-uibutton)
+* [UIImage with rounded corners](http://stackoverflow.com/questions/10563986/uiimage-with-rounded-corners/10564035#10564035) 
 
 ## Update text on a specific UITableViewCell
 For example update, the fifth row in section 0
@@ -1360,20 +1374,6 @@ Edit **Project-Info.plist** file, add the content below
 Or open in **Property list**
 
 ![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/status-bar-appearance.png "Status bar appearance")  
-
-## Flip animation between view controllers
-Present
-```obj-c
-viewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-[self presentViewController:viewController animated:YES completion:nil];
-```
-
-Dismiss
-```obj-c
-[self dismissViewControllerAnimated:YES completion:nil];
-```
-
-Reference: [How to do the flip animation between two UIViewControllers while clicking info button?](http://stackoverflow.com/questions/4622996/how-to-do-the-flip-animation-between-two-uiviewcontrollers-while-clicking-info-b/7384986#7384986)
 
 ## Extract submatch from string using regular expression
 Example here shows extract date from NSDate object
