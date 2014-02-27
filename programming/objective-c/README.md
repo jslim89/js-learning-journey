@@ -1430,3 +1430,29 @@ Reference: [Extract parts from regular expression with NSRegularExpression](http
 ```
 
 Reference: [The simplest way to resize an UIImage?](http://stackoverflow.com/questions/2658738/the-simplest-way-to-resize-an-uiimage/2658801#2658801)
+
+## `UISegmentedControl` deselect segment
+
+```obj-c
+[segmentedControl setSelectedSegmentIndex:UISegmentedControlNoSegment];
+```
+
+Reference: [UISegmentedControl deselect (make none of the segments selected)](http://stackoverflow.com/questions/2206066/uisegmentedcontrol-deselect-make-none-of-the-segments-selected/9164981#9164981)
+
+## `UISegmentedControl` change text & border color
+
+```obj-c
+segmentedControl.tintColor =[UIColor colorWithRed:50/255.0f green:150/255.0f blue:100/255.0f alpha:1];
+```
+
+## Add `UISegmentedControl` to `UIToolbar`
+```obj-c
+UISegmentedControl *nextPrevSegment = [[UISegmentedControl alloc] initWithItems:@[@"Previous", @"Next"]];
+nextPrevSegment.segmentedControlStyle = UISegmentedControlStyleBar;
+[nextPrevSegment addTarget:self action:@selector(nextPrevTouched:) forControlEvents:UIControlEventValueChanged];
+UIBarButtonItem *segmentedControlButtonItem = [[UIBarButtonItem alloc] initWithCustomView:(UIView *)nextPrevSegment];
+UIToolbar *keyboardToolbar = [[UIToolbar alloc] init];
+[keyboardToolbar setTintColor:[UIColor whiteColor]];
+[keyboardToolbar sizeToFit];
+[keyboardToolbar setItems:[NSArray arrayWithObjects:segmentedControlButtonItem, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], nil]];
+```
