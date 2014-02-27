@@ -1456,3 +1456,14 @@ UIToolbar *keyboardToolbar = [[UIToolbar alloc] init];
 [keyboardToolbar sizeToFit];
 [keyboardToolbar setItems:[NSArray arrayWithObjects:segmentedControlButtonItem, [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil], nil]];
 ```
+
+## Use custom font in `UIWebView`
+
+```obj-c
+NSString *html = @"<p>This is a paragraph<\/p>";
+NSString *htmlString = 
+    [NSString stringWithFormat:@"<font face='GothamRounded-Bold' size='2'>%@", html];
+[webView loadHTMLString:htmlString baseURL:nil];
+```
+
+Reference: [How to change UIWebView default font](http://stackoverflow.com/questions/12533445/how-to-change-uiwebview-default-font/15940938#15940938)
