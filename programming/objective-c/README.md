@@ -1213,6 +1213,15 @@ if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
 }
 ```
 
+**OR** Update the `UINavigationBar` color, then it will follow. Put the code below to `application:didFinishLaunchingWithOptions:`
+
+```obj-c
+// only for iOS7
+if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
+    [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];
+}
+```
+
 **On splash screen**
 
 Edit `Info.plist`
@@ -1229,6 +1238,7 @@ References:
 
 - [How to change Status Bar text color in iOS 7](http://stackoverflow.com/questions/17678881/how-to-change-status-bar-text-color-in-ios-7/17768797#17768797)
 - [How to change status bar style during launch on iOS 7](http://stackoverflow.com/questions/18924345/how-to-change-status-bar-style-during-launch-on-ios-7/18924428#18924428)
+- [How to set Status bar background color iOS 7 [duplicate]](http://stackoverflow.com/questions/19176784/how-to-set-status-bar-background-color-ios-7/19176975#19176975)
 
 ## UIView autoresizingMask to bottom left
 
