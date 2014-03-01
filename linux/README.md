@@ -288,3 +288,11 @@ The error message look like `ERROR: Site domain.com does not exist`
 Just have to ensure the file name end with **.conf** extension.
 
 Reference: [adding subdomain to apache2 with a2ensite causes error: ERROR: Site domain.com does not exist](http://stackoverflow.com/questions/10557770/adding-subdomain-to-apache2-with-a2ensite-causes-error-error-site-domain-com-d/17665502#17665502)
+
+## Find a folder by it's name
+```sh
+$ find . -type d -iname folder_name
+```
+
+* `-type d` is refer to directory _(or folder)_
+* `-iname` is looking for name _(case-insensitive)_
