@@ -21,6 +21,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [CKEditor] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/ckeditor)
 * [Objective-C] (https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c)
     - [Animation] (https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c/animation)
+    - [Facebook] (https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c/facebook)
 
 ## Database
 * [MySQL] (https://github.com/jslim89/js-learning-journey/tree/master/database/mysql)
