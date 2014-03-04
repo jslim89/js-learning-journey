@@ -1477,3 +1477,15 @@ NSString *htmlString =
 ```
 
 Reference: [How to change UIWebView default font](http://stackoverflow.com/questions/12533445/how-to-change-uiwebview-default-font/15940938#15940938)
+
+## Set delay to perform action
+```obj-c
+double delayInSeconds = 2.0;
+dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    //code to be executed on the main queue after delay
+    NSLog(@"Action here delayed 2 seconds.");
+});
+```
+
+Reference: [how to call a method with delay](http://stackoverflow.com/questions/9634790/how-to-call-a-method-with-delay/9634819#9634819)
