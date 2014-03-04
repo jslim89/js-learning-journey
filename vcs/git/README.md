@@ -187,3 +187,10 @@ $ git update-index --no-assume-unchanged /path/to/file.txt
 ```
 
 Reference: [Exclude a file from a git commit](http://trillworks.com/nick/2013/03/05/exclude-a-file-from-a-git-commit/)
+
+## Change submodule origin
+
+1. Edit `.gitmodule` with the new URL
+2. Run `git submodule sync` _(This will update the new URL to the submodule)_
+
+Reference: [How do I replace a git submodule with another repo?](http://stackoverflow.com/questions/14404704/how-do-i-replace-a-git-submodule-with-another-repo/14405542#14405542)
