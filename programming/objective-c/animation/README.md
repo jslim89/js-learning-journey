@@ -55,6 +55,10 @@ Reference: [Fading in and out UIButton in view](http://stackoverflow.com/questio
 [UIView setAnimationDuration:1.0];
 [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:NO];
 
+// optional: event handler after animation
+[UIView setAnimationDelegate:self];
+[UIView setAnimationDidStopSelector:@selector(viewFlipped)];
+
 int listViewIndex = [self.view.subviews indexOfObject:self.tableView];
 int mapViewIndex = [self.view.subviews indexOfObject:self.mapView];
 
@@ -72,4 +76,15 @@ else
 [UIView commitAnimations];
 ```
 
-Reference: [iPhone subview flip between 2 views](http://stackoverflow.com/questions/2336998/iphone-subview-flip-between-2-views/2337273#2337273)
+If you added the event handler, just add the code below
+```obj-c
+- (void)viewFlipped
+{
+    NSLog(@"Flip animation completed.");
+}
+```
+
+References:
+
+- [iPhone subview flip between 2 views](http://stackoverflow.com/questions/2336998/iphone-subview-flip-between-2-views/2337273#2337273)
+- [iPhone: How to commit two animations after another](http://stackoverflow.com/questions/5486164/iphone-how-to-commit-two-animations-after-another/5486230#5486230)
