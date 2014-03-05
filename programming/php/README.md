@@ -312,3 +312,22 @@ preg_match($pattern, $content, $result);
 ```
 
 Reference: [How do I match any character across multiple lines in a regular expression?](http://stackoverflow.com/questions/159118/how-do-i-match-any-character-across-multiple-lines-in-a-regular-expression/159139#159139)
+
+## Receive `json` value from HTTP POST
+
+This will show nothing
+```php
+print_r($_POST);
+```
+
+In order to get the value
+```php
+$json = file_get_contents('php://input');
+if ($json) {
+    $post = json_decode($json, true);
+}
+print_r($post);
+// access via $post['param1']
+```
+
+Reference: [receive json post with php](http://stackoverflow.com/questions/18866571/receive-json-post-with-php/18867369#18867369)
