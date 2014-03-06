@@ -1489,3 +1489,10 @@ dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 ```
 
 Reference: [how to call a method with delay](http://stackoverflow.com/questions/9634790/how-to-call-a-method-with-delay/9634819#9634819)
+
+## Remove section border for iOS6
+```obj-c
+cell.backgroundView = [UIView new];
+```
+
+Reference: [Removing cell borders from a section of grouped-style UITableView](http://stackoverflow.com/questions/4202965/removing-cell-borders-from-a-section-of-grouped-style-uitableview/6808255#6808255)
