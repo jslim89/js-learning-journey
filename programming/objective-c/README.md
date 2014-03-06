@@ -1496,3 +1496,18 @@ cell.backgroundView = [UIView new];
 ```
 
 Reference: [Removing cell borders from a section of grouped-style UITableView](http://stackoverflow.com/questions/4202965/removing-cell-borders-from-a-section-of-grouped-style-uitableview/6808255#6808255)
+
+## UITableView grouped style change background color for iOS6
+transparent background
+```obj-c
+tableView.backgroundView = [UIView new];
+```
+
+for color background
+```obj-c
+UIView* bview = [[UIView alloc] init];
+bview.backgroundColor = [UIColor yellowColor];
+[tableView setBackgroundView:bview];
+```
+
+Reference: [Set background color on UITableView in IOS 6 [duplicate]](http://stackoverflow.com/questions/12617913/set-background-color-on-uitableview-in-ios-6/12617972#12617972)
