@@ -1511,3 +1511,19 @@ bview.backgroundColor = [UIColor yellowColor];
 ```
 
 Reference: [Set background color on UITableView in IOS 6 [duplicate]](http://stackoverflow.com/questions/12617913/set-background-color-on-uitableview-in-ios-6/12617972#12617972)
+
+## Make the UINavigationBar transparent
+```obj-c
+self.navigationController.navigationBar.shadowImage = [UIImage new];
+// remove the inner shadow
+
+// for iOS 7, remove the background image
+if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+} else { // for iOS 6, set the image filled with color that same as the view's background color
+    // see https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c#create-rectangle-uiimage-programmatically
+    [self.navigationController.navigationBar setBackgroundImage:[MyClass imageWithColor:[UIColor yellowColor] inSize:CGSizeMake(320, 44) withCornerRadius:0] forBarMetrics:UIBarMetricsDefault];
+}
+```
+
+Reference: [How to remove UINavigationBar inner shadow in iOS 7?](http://stackoverflow.com/questions/18160173/how-to-remove-uinavigationbar-inner-shadow-in-ios-7/19279550#19279550)
