@@ -1527,3 +1527,26 @@ if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
 ```
 
 Reference: [How to remove UINavigationBar inner shadow in iOS 7?](http://stackoverflow.com/questions/18160173/how-to-remove-uinavigationbar-inner-shadow-in-ios-7/19279550#19279550)
+
+## Set 2 different colors in a view
+This can be achieved by using `CALayer`
+```obj-c
+CALayer *sublayer = [CALayer layer];
+sublayer.backgroundColor = [UIColor yellowColor].CGColor;
+sublayer.frame = CGRectMake(0, 300, self.view.frame.size.width, 100);
+[self.view.layer addSublayer:sublayer];
+```
+
+This will set the color of view to yellow color in (0, 300, 320, 100)
+
+## `UITableView` delegate after `reloadData` is called
+```obj-c
+-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row == ((NSIndexPath*)[[tableView indexPathsForVisibleRows] lastObject]).row){
+        NSLog(@"Finished loaded");
+    }
+}
+```
+
+Reference: [How to detect the end of loading of UITableView](http://stackoverflow.com/questions/4163579/how-to-detect-the-end-of-loading-of-uitableview/11672379#11672379)
