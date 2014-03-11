@@ -1550,3 +1550,28 @@ This will set the color of view to yellow color in (0, 300, 320, 100)
 ```
 
 Reference: [How to detect the end of loading of UITableView](http://stackoverflow.com/questions/4163579/how-to-detect-the-end-of-loading-of-uitableview/11672379#11672379)
+
+## Bold certain text on `UILabel`
+
+```obj-c
+// normal font
+NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
+                       [UIFont fontWithName:@"Helvetica" size:20], NSFontAttributeName,
+                       [UIColor whiteColor], NSForegroundColorAttributeName,
+                       nil];
+// bold font
+NSDictionary *boldAttrs = [NSDictionary dictionaryWithObjectsAndKeys:
+                          [UIFont fontWithName:@"Helvetica-Bold" size:20], NSFontAttributeName, nil];
+
+NSString *text = @"The quick brown fox jumps over the lazy dog";
+
+NSRange range = NSMakeRange(4, 15); // bold the text "quick brown fox"
+// init with regular attributes
+NSMutableAttributedString *textAttr = [[NSMutableAttributedString alloc] initWithString:text attributes:attrs];
+[textAttr setAttributes:boldAttrs range:range]; // set specific attributes for range of text
+[myLabel setAttributedText:textAttr];
+```
+
+**NOTE: This is for iOS6 and above only**
+
+Reference: [Bold & Non-Bold Text In A Single UILabel?](http://stackoverflow.com/questions/3586871/bold-non-bold-text-in-a-single-uilabel/3586943#3586943)
