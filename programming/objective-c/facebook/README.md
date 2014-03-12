@@ -68,3 +68,19 @@ Force user to allow `publish_actions` permission
     }];
 }
 ```
+
+## Get profile picture
+```obj-c
+// set image & user name
+[FBSession setActiveSession:self.session];
+[[FBRequest requestForMe] startWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *FBuser, NSError *error) {
+    if (error) {
+        NSLog(@"error %@", error.description);
+    } else {
+        self.usernameLabel.text = [FBuser name];
+        [self.avatarImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?height=100&type=normal&width=100", [FBuser username]]]];
+    }
+}];
+```
+
+Reference: [Getting username and profile picture from Facebook iOS 7](http://stackoverflow.com/questions/20623728/getting-username-and-profile-picture-from-facebook-ios-7/20623845#20623845)
