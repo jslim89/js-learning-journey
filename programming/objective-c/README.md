@@ -1575,3 +1575,20 @@ NSMutableAttributedString *textAttr = [[NSMutableAttributedString alloc] initWit
 **NOTE: This is for iOS6 and above only**
 
 Reference: [Bold & Non-Bold Text In A Single UILabel?](http://stackoverflow.com/questions/3586871/bold-non-bold-text-in-a-single-uilabel/3586943#3586943)
+
+## Create class dynamically from string
+```obj-c
+NSString* className = @"MyClass";
+[[NSClassFromString(className) alloc] init...];
+```
+
+Reference: [Create object from NSString of class name in Objective-C](http://stackoverflow.com/questions/2951828/create-object-from-nsstring-of-class-name-in-objective-c/2951835#2951835)
+
+## Check is `nib` exists
+```obj-c
+if([[NSBundle mainBundle] pathForResource:fileName ofType:@"nib"] != nil) {
+    // nib exists
+}
+```
+
+Reference: [Checking if a .nib or .xib file exists](http://stackoverflow.com/questions/923706/checking-if-a-nib-or-xib-file-exists/932023#932023)
