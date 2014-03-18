@@ -1592,3 +1592,23 @@ if([[NSBundle mainBundle] pathForResource:fileName ofType:@"nib"] != nil) {
 ```
 
 Reference: [Checking if a .nib or .xib file exists](http://stackoverflow.com/questions/923706/checking-if-a-nib-or-xib-file-exists/932023#932023)
+
+## Default share on iOS 6 and above
+```obj-c
+- (void)shareText:(NSString *)string andImage:(UIImage *)image
+{
+    NSMutableArray *sharingItems = [NSMutableArray new];
+
+    if (string) {
+        [sharingItems addObject:string];
+    }
+    if (image) {
+        [sharingItems addObject:image];
+    }
+
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems applicationActivities:nil];
+    [self presentViewController:activityController animated:YES completion:nil];
+}
+```
+
+Reference: [How to display the default iOS 6 share action sheet with available share options?](http://stackoverflow.com/questions/13498459/how-to-display-the-default-ios-6-share-action-sheet-with-available-share-options/13499204#13499204)
