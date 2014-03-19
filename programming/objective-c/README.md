@@ -129,12 +129,22 @@ UIImageView *imageView = [[UIImageView alloc] init];
 
 Reference: [How can i take an UIImage and give it a black border?](http://stackoverflow.com/questions/1354811/how-can-i-take-an-uiimage-and-give-it-a-black-border#answer-3018485)
 
-## Generate Unix timestamp
+## NSDate & Unix timestamp
+`NSDate` to timestamp
 ```obj-c
 int timestamp = [[NSDate date] timeIntervalSince1970];
 ```
 
-Reference: [UnixTimestamps always off in ios](http://stackoverflow.com/questions/8639048/unixtimestamps-always-off-in-ios#answers)
+timestamp to `NSDate`
+```obj-c
+int timestamp = 1234567890;
+NSDate *theDate = [NSDate dateWithTimeIntervalSince1970:timestamp];
+```
+
+References:
+
+* [UnixTimestamps always off in ios](http://stackoverflow.com/questions/8639048/unixtimestamps-always-off-in-ios#answers)
+* [How to convert NSTimeInterval since1970 to NSDate](http://stackoverflow.com/questions/17365045/how-to-convert-nstimeinterval-since1970-to-nsdate/17365088#17365088)
 
 ## Hide the navigation bar
 Consider a situation here, a 2nd layer view is pushed on top of the root view, where root view need a navigation bar and the view just pushed no need.
