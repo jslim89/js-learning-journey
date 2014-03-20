@@ -1647,3 +1647,29 @@ In **MyParent.m**
 Then you can now invoked by `[myparent sortedChildren]`
 
 Reference: [Core data, sorting one-to-many child objects](http://stackoverflow.com/questions/2524284/core-data-sorting-one-to-many-child-objects/2530879#2530879)
+
+## Long press event on table row
+```obj-c
+- (void)viewDidLoad
+{
+    ...
+    // add to the tableView instead of tableViewCell
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(tableViewPressed:)];
+    [self.tableView addGestureRecognizer:longPress];
+}
+
+- (void)tableViewPressed:(UILongPressGestureRecognizer *)sender
+{
+    if (sender.state == UIGestureRecognizerStateBegan) { // only take action in this state
+        CGPoint point = [sender locationInView:self.tableView]; // get the point (x, y)
+        NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point]; // look for correct indexPath
+        // in case you have section header
+        CGFloat headerHeight = [self tableView:self.tableView heightForHeaderInSection:indexPath.section];
+        
+        // first row should be at the offset y which between (height of header view) and rowHeight + header for header view
+        if ((point.y < headerHeight || point.y > (self.tableView.rowHeight + headerHeight)) && indexPath.row == 0) return;
+
+        // do action here
+    }
+}
+```
