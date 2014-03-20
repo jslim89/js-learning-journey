@@ -1622,3 +1622,28 @@ Reference: [Checking if a .nib or .xib file exists](http://stackoverflow.com/que
 ```
 
 Reference: [How to display the default iOS 6 share action sheet with available share options?](http://stackoverflow.com/questions/13498459/how-to-display-the-default-ios-6-share-action-sheet-with-available-share-options/13499204#13499204)
+
+## Sort CoreData children objects
+
+In **MyParent.h**
+```obj-c
+...
+@property (nonatomic, retain) NSSet *children;
+
+// add this
+- (NSArray *)sortedChildren;
+```
+
+In **MyParent.m**
+```obj-c
+...
+- (NSArray *)sortedChildren
+{
+    NSSortDescriptor *timestamp = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:YES];
+    return [[self.conversations allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:timestamp]];
+}
+```
+
+Then you can now invoked by `[myparent sortedChildren]`
+
+Reference: [Core data, sorting one-to-many child objects](http://stackoverflow.com/questions/2524284/core-data-sorting-one-to-many-child-objects/2530879#2530879)
