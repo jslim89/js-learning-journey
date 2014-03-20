@@ -1673,3 +1673,23 @@ Reference: [Core data, sorting one-to-many child objects](http://stackoverflow.c
     }
 }
 ```
+
+## Clear CoreData tables
+**AppDelegate.m**
+```obj-c
+- (void)flushDatabase
+{
+    [__managedObjectContext lock];
+    NSArray *stores = [__persistentStoreCoordinator persistentStores];
+    for(NSPersistentStore *store in stores) {
+       [__persistentStoreCoordinator removePersistentStore:store error:nil];
+       [[NSFileManager defaultManager] removeItemAtPath:store.URL.path error:nil];
+    }
+    [__managedObjectContext unlock];
+    __managedObjectModel    = nil;
+    __managedObjectContext  = nil;
+    __persistentStoreCoordinator = nil;
+}
+```
+
+Reference: [Clearing CoreData and all that inside](http://stackoverflow.com/questions/14727583/clearing-coredata-and-all-that-inside/14886421#14886421)
