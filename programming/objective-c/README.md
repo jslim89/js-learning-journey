@@ -1693,3 +1693,12 @@ Reference: [Core data, sorting one-to-many child objects](http://stackoverflow.c
 ```
 
 Reference: [Clearing CoreData and all that inside](http://stackoverflow.com/questions/14727583/clearing-coredata-and-all-that-inside/14886421#14886421)
+
+## Compare `CGAffineTransform`
+```obj-c
+if (CGAffineTransformEqualToTransform(transform, CGAffineTransformIdentity)) {
+    // is equal
+}
+```
+
+Reference: [How to Compare CGAffinetransform?](http://stackoverflow.com/questions/19583119/how-to-compare-cgaffinetransform/19583332#19583332)
