@@ -1702,3 +1702,28 @@ if (CGAffineTransformEqualToTransform(transform, CGAffineTransformIdentity)) {
 ```
 
 Reference: [How to Compare CGAffinetransform?](http://stackoverflow.com/questions/19583119/how-to-compare-cgaffinetransform/19583332#19583332)
+
+## `UILabel` justify text to fit left & right
+```obj-c
+NSMutableParagraphStyle *paragraphStyles = [[NSMutableParagraphStyle alloc] init];
+paragraphStyles.alignment = NSTextAlignmentJustified;
+paragraphStyles.firstLineHeadIndent = 0.05;    // Very IMP
+
+NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
+                       paragraphStyles, NSParagraphStyleAttributeName,
+                       nil];
+
+NSString *content = @"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+// Create the attributed string (text + attributes)
+NSMutableAttributedString *textAttrs = [[NSMutableAttributedString alloc] initWithString:content attributes:attrs];
+[page1TextAttr setAttributes:boldAttrs range:range];
+
+UILabel *justifiedLabel = [[UILabel alloc] initWithFrame:...];
+justifiedLabel.numberOfLines = 0;
+justifiedLabel.lineBreakMode = NSLineBreakByWordWrapping;
+[justifiedLabel setAttributedText:textAttrs];
+[justifiedLabel sizeToFit];
+...
+```
+
+Reference: [NSTextAlignmentJustified to UILable textAligment on iOS6 will crash](http://stackoverflow.com/questions/13947650/nstextalignmentjustified-to-uilable-textaligment-on-ios6-will-crash/14919060#14919060)
