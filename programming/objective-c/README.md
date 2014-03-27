@@ -1738,3 +1738,12 @@ if (remoteNotification) {
 ```
 
 Reference: [Calling didReceiveRemoteNotification when app is launching for the first time](http://stackoverflow.com/questions/14968578/calling-didreceiveremotenotification-when-app-is-launching-for-the-first-time/14968832#14968832)
+
+## Remove notification from banner
+Both lines are required
+```obj-c
+[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+[[UIApplication sharedApplication] cancelAllLocalNotifications];
+```
+
+Reference: [iOS application: how to clear notifications?](http://stackoverflow.com/questions/8682051/ios-application-how-to-clear-notifications/8682811#8682811)
