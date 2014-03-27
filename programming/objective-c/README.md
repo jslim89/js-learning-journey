@@ -1726,3 +1726,15 @@ justifiedLabel.lineBreakMode = NSLineBreakByWordWrapping;
 ```
 
 Reference: [NSTextAlignmentJustified to UILable textAligment on iOS6 will crash](http://stackoverflow.com/questions/13947650/nstextalignmentjustified-to-uilable-textaligment-on-ios6-will-crash/14919060#14919060)
+
+## `application:didReceiveRemoteNotification:` not called on app launching
+During the first launch, this method will not be called, thus have to handle this manually
+```obj-c
+NSDictionary *remoteNotification = [launchOptions objectForKey: UIApplicationLaunchOptionsRemoteNotificationKey];
+if (remoteNotification) {
+    // call the method manually
+    [self application:application didReceiveRemoteNotification:remoteNotification];
+}
+```
+
+Reference: [Calling didReceiveRemoteNotification when app is launching for the first time](http://stackoverflow.com/questions/14968578/calling-didreceiveremotenotification-when-app-is-launching-for-the-first-time/14968832#14968832)
