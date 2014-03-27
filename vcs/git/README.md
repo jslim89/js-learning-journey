@@ -194,3 +194,15 @@ Reference: [Exclude a file from a git commit](http://trillworks.com/nick/2013/03
 2. Run `git submodule sync` _(This will update the new URL to the submodule)_
 
 Reference: [How do I replace a git submodule with another repo?](http://stackoverflow.com/questions/14404704/how-do-i-replace-a-git-submodule-with-another-repo/14405542#14405542)
+
+## git tag
+```sh
+$ git commit -am "completed version 1.0"
+# tag current commit on local
+$ git tag v1.0
+$ git push origin master
+# push the tag to remote
+$ git push --tags # or git push origin v1.0
+```
+
+Reference: [How can I push a tag to a remote repository using Git?](http://stackoverflow.com/questions/5195859/how-can-i-push-a-tag-to-a-remote-repository-using-git/5195913#5195913)
