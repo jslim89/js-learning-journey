@@ -1747,3 +1747,11 @@ Both lines are required
 ```
 
 Reference: [iOS application: how to clear notifications?](http://stackoverflow.com/questions/8682051/ios-application-how-to-clear-notifications/8682811#8682811)
+
+## Get version number
+```obj-c
+NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
+NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey];
+```
+
+Reference: [How do I get the current version of my ios project in code?](http://stackoverflow.com/questions/7608632/how-do-i-get-the-current-version-of-my-ios-project-in-code/7608711#7608711)
