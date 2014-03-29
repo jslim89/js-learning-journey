@@ -206,3 +206,12 @@ $ git push --tags # or git push origin v1.0
 ```
 
 Reference: [How can I push a tag to a remote repository using Git?](http://stackoverflow.com/questions/5195859/how-can-i-push-a-tag-to-a-remote-repository-using-git/5195913#5195913)
+
+## Clone a specific branch from remote branch
+```sh
+$ git clone git://example.com/myproject
+$ cd myproject
+$ git checkout -b wanted_branch origin/wanted_branch
+```
+
+Reference: [How do I clone all remote branches with Git?](http://stackoverflow.com/questions/67699/how-do-i-clone-all-remote-branches-with-git/72156#72156)
