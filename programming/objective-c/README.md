@@ -1755,3 +1755,22 @@ NSString *build = [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *
 ```
 
 Reference: [How do I get the current version of my ios project in code?](http://stackoverflow.com/questions/7608632/how-do-i-get-the-current-version-of-my-ios-project-in-code/7608711#7608711)
+
+## `UISearchBar` flat color
+```obj-c
+// only apply for iOS 6
+if ([[UIDevice currentDevice].systemVersion floatValue] < 7) {
+    // go through the subview
+    for (UIView *subview in self.searchBar.subviews) {
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+            // add a view filled with flat color to the background view
+            UIView *flatView = [[UIView alloc] initWithFrame:subview.bounds];
+            flatView.backgroundColor = kStandardBackgroundColor;
+            [subview addSubview:flatView];
+            break;
+        }
+    }
+}
+```
+
+Reference: [How to apply a solid color to a UISearchBar](http://stackoverflow.com/questions/3496829/how-to-apply-a-solid-color-to-a-uisearchbar/12906714#12906714)
