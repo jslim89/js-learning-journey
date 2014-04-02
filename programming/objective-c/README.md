@@ -1765,7 +1765,7 @@ if ([[UIDevice currentDevice].systemVersion floatValue] < 7) {
         if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
             // add a view filled with flat color to the background view
             UIView *flatView = [[UIView alloc] initWithFrame:subview.bounds];
-            flatView.backgroundColor = kStandardBackgroundColor;
+            flatView.backgroundColor = [UIColor greenColor];
             [subview addSubview:flatView];
             break;
         }
