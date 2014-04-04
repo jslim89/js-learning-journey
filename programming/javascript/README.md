@@ -422,3 +422,14 @@ $('#myfile').unwrap();
 ```
 
 Reference: [Clearing <input type='file' /> using jQuery](http://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery/13351234#13351234)
+
+## delegate & datepicker on text field
+```js
+$('#wrapper').delegate('#birthday', 'focusin', function() {
+   $(this).datepicker({
+        dateFormat: 'yy-mm-dd'
+    });
+});
+```
+
+Reference: [JQuery: delegate and datepicker](http://stackoverflow.com/questions/7313573/jquery-delegate-and-datepicker/7313723#7313723)
