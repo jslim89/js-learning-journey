@@ -1774,3 +1774,28 @@ if ([[UIDevice currentDevice].systemVersion floatValue] < 7) {
 ```
 
 Reference: [How to apply a solid color to a UISearchBar](http://stackoverflow.com/questions/3496829/how-to-apply-a-solid-color-to-a-uisearchbar/12906714#12906714)
+
+## Add tap event to `UINavigationBar` title
+```obj-c
+UITapGestureRecognizer *titleViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleViewTapped:)];
+UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+// adjust to center
+titleLabel.textAlignment = NSTextAlignmentCenter;
+// standardize the text color, font
+titleLabel.textColor = [[UINavigationBar appearance].titleTextAttributes valueForKey:UITextAttributeTextColor];
+titleLabel.font = [[UINavigationBar appearance].titleTextAttributes valueForKey:UITextAttributeFont];
+titleLabel.userInteractionEnabled = YES;
+titleLabel.text = @"My awesome title";
+[titleLabel addGestureRecognizer:titleViewTap];
+self.navigationItem.titleView = titleLabel;
+```
+
+Then add a method
+```obj-c
+- (void)titleViewTapped:(UITapGestureRecognizer *)sender
+{
+    NSLog(@"user tapped");
+}
+```
+
+Reference: [UINavigationBar Touch](http://stackoverflow.com/questions/2077025/uinavigationbar-touch)
