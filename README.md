@@ -23,6 +23,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [Animation] (https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c/animation)
     - [Facebook] (https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c/facebook)
     - [AFNetworking 2] (https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c/afnetworking)
+* [Shell script] (https://github.com/jslim89/js-learning-journey/tree/master/programming/shell)
 
 ## Database
 * [MySQL] (https://github.com/jslim89/js-learning-journey/tree/master/database/mysql)
