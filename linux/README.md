@@ -296,3 +296,10 @@ $ find . -type d -iname folder_name
 
 * `-type d` is refer to directory _(or folder)_
 * `-iname` is looking for name _(case-insensitive)_
+
+## List all users in a group
+```sh
+$ grep ^usergroup /etc/group
+```
+
+Reference: [how to list all members of a group](http://www.linuxquestions.org/questions/linux-newbie-8/how-to-list-all-members-of-a-group-602785/#post2972428)
