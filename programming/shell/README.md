@@ -86,3 +86,10 @@ References:
 
 - [how to represent multiple conditions in shell script?](http://stackoverflow.com/questions/3826425/how-to-represent-multiple-conditions-in-shell-script/3826705#3826705)
 - [How to use double or single bracket, parentheses, curly braces](http://stackoverflow.com/questions/2188199/how-to-use-double-or-single-bracket-parentheses-curly-braces/2188369#2188369)
+
+## Get current directory
+```sh
+currdir="`dirname $0`"
+```
+
+Reference: [Can a Bash script tell what directory it's stored in?](http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in/246128#246128)
