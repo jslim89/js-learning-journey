@@ -303,3 +303,17 @@ $ grep ^usergroup /etc/group
 ```
 
 Reference: [how to list all members of a group](http://www.linuxquestions.org/questions/linux-newbie-8/how-to-list-all-members-of-a-group-602785/#post2972428)
+
+## List all users
+```sh
+$ less /etc/passwd
+```
+
+Reference: [Linux Command: List All Users In The System](http://www.cyberciti.biz/faq/linux-list-users-command/)
+
+## Monitor/Watch a file content change
+```sh
+$ tail -f thefile.txt
+```
+
+Reference: [Shell command to monitor changes in a file - What's it called again?](http://serverfault.com/questions/1669/shell-command-to-monitor-changes-in-a-file-whats-it-called-again/1670#1670)
