@@ -331,3 +331,11 @@ print_r($post);
 ```
 
 Reference: [receive json post with php](http://stackoverflow.com/questions/18866571/receive-json-post-with-php/18867369#18867369)
+
+## Error on mysqli
+The error message was `No such file or directory`
+
+**Solution**  
+simply change the host to `127.0.0.1` instead of `localhost`
+
+Reference: [PHP - MySQL connection not working: 2002 No such file or directory](http://stackoverflow.com/questions/1676688/php-mysql-connection-not-working-2002-no-such-file-or-directory/6959675#6959675)
