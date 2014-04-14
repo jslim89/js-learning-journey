@@ -64,3 +64,25 @@ fi
 ```
 
 Reference: [How to check if a directory exists in a shell script](http://stackoverflow.com/questions/59838/how-to-check-if-a-directory-exists-in-a-shell-script/59839#59839)
+
+## Multiple condition in `if` statement
+Example below shows to get some folders in current directory and exclude some of that
+```sh
+#!/bin/bash
+for x in ./*; do
+    if [ -d $x ]; then # Only get the directory
+        proj=`basename $x`;
+        if [[ $proj == "excluded_1" || $proj == "excluded_2" || $proj == "excluded_3" ]]; then
+            continue
+        fi
+        echo $proj;
+    fi
+done
+```
+
+**NOTE: for multiple conditions, must use double bracket**
+
+References:
+
+- [how to represent multiple conditions in shell script?](http://stackoverflow.com/questions/3826425/how-to-represent-multiple-conditions-in-shell-script/3826705#3826705)
+- [How to use double or single bracket, parentheses, curly braces](http://stackoverflow.com/questions/2188199/how-to-use-double-or-single-bracket-parentheses-curly-braces/2188369#2188369)
