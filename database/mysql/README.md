@@ -175,3 +175,11 @@ ALTER TABLE tablename ADD FULLTEXT(column_new_name);
 /* Delete old column */
 alter TABLE tablename DROP COLUMN column_old_name;
 ```
+
+## Error on mysqli
+The error message was `No such file or directory`
+
+**Solution**  
+simply change the host to `127.0.0.1` instead of `localhost`
+
+Reference: [PHP - MySQL connection not working: 2002 No such file or directory](http://stackoverflow.com/questions/1676688/php-mysql-connection-not-working-2002-no-such-file-or-directory/6959675#6959675)
