@@ -99,3 +99,19 @@ export GREP_COLOR='1;37;41' # you can set the color here
 ```
 
 Reference: [How can I grep with color in Mac OS X's terminal?](https://superuser.com/questions/416835/how-can-i-grep-with-color-in-mac-os-xs-terminal/417152#417152)
+
+## Terminal history not keeping
+This is because of permission issue
+```sh
+$ ls -l ~/.bash_history 
+-rw------- 1 root group 164 Apr 15 11:00 /Users/username/.bash_history
+```
+
+Simply change the owner
+```sh
+$ sudo chown username ~/.bash_history
+$ ls -l ~/.bash_history 
+-rw------- 1 username group 164 Apr 15 11:00 /Users/username/.bash_history
+```
+
+Reference: [How do I get Terminal to remember previous commands after closing window in SL 10.6.8?](http://apple.stackexchange.com/questions/22385/how-do-i-get-terminal-to-remember-previous-commands-after-closing-window-in-sl-1/74405#74405)
