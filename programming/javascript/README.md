@@ -433,3 +433,14 @@ $('#wrapper').delegate('#birthday', 'focusin', function() {
 ```
 
 Reference: [JQuery: delegate and datepicker](http://stackoverflow.com/questions/7313573/jquery-delegate-and-datepicker/7313723#7313723)
+
+## Get query string
+```js
+function queryString(key) {  
+    return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+} 
+
+var token = queryString('token');
+```
+
+Reference: [How to obtaining the querystring from the current URL with JavaScript? [duplicate]](http://stackoverflow.com/questions/9870512/how-to-obtaining-the-querystring-from-the-current-url-with-javascript/9870540#9870540)
