@@ -84,3 +84,16 @@ Set the container position to `relative`, and the inner div to `absolute`.
 ```
 
 Reference: [position a div on top of an image](http://stackoverflow.com/questions/4218204/position-a-div-on-top-of-an-image/4218306#4218306)
+
+## Background image 100%
+```css
+#wrapper {
+    background: url('../img/bg.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+```
+
+Reference: [Perfect Full Page Background Image](http://css-tricks.com/perfect-full-page-background-image/)
