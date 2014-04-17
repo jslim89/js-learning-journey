@@ -57,3 +57,16 @@ add_action('admin_menu', 'hide_add_new_custom_type');
 ```
 
 Reference: [WordPress: Disable “Add New” on Custom Post Type](http://stackoverflow.com/questions/3235257/wordpress-disable-add-new-on-custom-post-type/3248103#3248103)
+
+## Change admin edit user profile `Nickname` label
+```php
+function update_profile_label($translation, $original) {
+    if ( 'Nickname' == $original ) {
+        return 'Other name';
+    }
+    return $translation;
+}
+add_filter('gettext', array($this, 'update_profile_label'), 10, 2);
+```
+
+Reference: [Change labels on 'Nickname' and 'Biographical Info' in user-edit.php](http://wordpress.stackexchange.com/questions/6096/change-labels-on-nickname-and-biographical-info-in-user-edit-php/6099#6099)
