@@ -444,3 +444,10 @@ var token = queryString('token');
 ```
 
 Reference: [How to obtaining the querystring from the current URL with JavaScript? [duplicate]](http://stackoverflow.com/questions/9870512/how-to-obtaining-the-querystring-from-the-current-url-with-javascript/9870540#9870540)
+
+## Trigger window resize event on page load
+```js
+$(window).trigger('resize');
+```
+
+Reference: [How to trigger the window resize event in JavaScript?](http://stackoverflow.com/questions/1818474/how-to-trigger-the-window-resize-event-in-javascript/15971955#15971955)
