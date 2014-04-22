@@ -97,3 +97,11 @@ Reference: [position a div on top of an image](http://stackoverflow.com/question
 ```
 
 Reference: [Perfect Full Page Background Image](http://css-tricks.com/perfect-full-page-background-image/)
+
+## Add border to text
+Add white border with 2px width
+```css
+text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+```
+
+Reference: [Text border using css (border around text)](http://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text/13427256#13427256)
