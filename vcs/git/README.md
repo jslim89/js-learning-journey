@@ -215,3 +215,10 @@ $ git checkout -b wanted_branch origin/wanted_branch
 ```
 
 Reference: [How do I clone all remote branches with Git?](http://stackoverflow.com/questions/67699/how-do-i-clone-all-remote-branches-with-git/72156#72156)
+
+## un-commit last commit
+```sh
+$ git reset --hard HEAD^
+```
+
+Reference: [How to uncommit my last commit in git](http://stackoverflow.com/questions/2845731/how-to-uncommit-my-last-commit-in-git/2846154#2846154)
