@@ -222,3 +222,16 @@ $ git reset --hard HEAD^
 ```
 
 Reference: [How to uncommit my last commit in git](http://stackoverflow.com/questions/2845731/how-to-uncommit-my-last-commit-in-git/2846154#2846154)
+
+## Rename branch
+E.g. rename **dev** branch to **master**
+```sh
+# switch to `dev` branch
+$ git checkout dev
+# delete `master` branch
+$ git branch -D master
+# rename current branch to `master`
+$ git branch -m master
+```
+
+Reference: [How do I rename a local Git branch?](http://stackoverflow.com/questions/6591213/how-do-i-rename-a-local-git-branch/6591218#6591218)
