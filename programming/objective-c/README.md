@@ -1800,7 +1800,7 @@ Then add a method
 
 Reference: [UINavigationBar Touch](http://stackoverflow.com/questions/2077025/uinavigationbar-touch)
 
-## iOS7 separator show full width
+## UITableView separator on iOS7 show full width
 
 ```obj-c
 if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
