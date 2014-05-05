@@ -1799,3 +1799,13 @@ Then add a method
 ```
 
 Reference: [UINavigationBar Touch](http://stackoverflow.com/questions/2077025/uinavigationbar-touch)
+
+## iOS7 separator show full width
+
+```obj-c
+if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+    [tableView setSeparatorInset:UIEdgeInsetsZero];
+}
+```
+
+Reference: [How to fix UITableView separator on iOS 7? [duplicate]](http://stackoverflow.com/questions/18773239/how-to-fix-uitableview-separator-on-ios-7/18773281#18773281)
