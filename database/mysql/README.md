@@ -175,3 +175,10 @@ ALTER TABLE tablename ADD FULLTEXT(column_new_name);
 /* Delete old column */
 alter TABLE tablename DROP COLUMN column_old_name;
 ```
+
+## Update all dates by addeing 30 minutes
+```sql
+UPDATE `tablename` SET `created_date` = DATE_ADD(`created_date` , INTERVAL 30 MINUTE ) WHERE `column` = 'value'
+```
+
+Reference: [adding 30 minutes to datetime php/mysql](http://stackoverflow.com/questions/1436827/adding-30-minutes-to-datetime-php-mysql/1436856#1436856)
