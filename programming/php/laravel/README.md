@@ -138,3 +138,26 @@ If the total objects is more than retrieved objects, that mean it has other page
 Just have to invoke multiple times
 
 Reference: [How to use order by for multiple columns in laravel 4?](http://stackoverflow.com/questions/17006309/how-to-use-order-by-for-multiple-columns-in-laravel-4/17006377#17006377)
+
+## Eloquent get pivot/bridge table attributes
+
+In model class
+```php
+ return $this->belongsToMany('Bar', 'pivot_table')->withPivot(array(
+     'pivot_attr_1',
+     'pivot_attr_2',
+     'pivot_attr_3',
+     'pivot_attr_4',
+     'pivot_attr_5',
+ ));
+```
+
+Usage:
+
+```php
+foreach ($foo->bars as $bar) {
+    echo $bar->pivot->pivot_attr_1;
+}
+```
+
+Reference: [Querying pivot attributes in Eloquent](http://stackoverflow.com/questions/20120360/querying-pivot-attributes-in-eloquent)
