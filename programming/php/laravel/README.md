@@ -161,3 +161,14 @@ foreach ($foo->bars as $bar) {
 ```
 
 Reference: [Querying pivot attributes in Eloquent](http://stackoverflow.com/questions/20120360/querying-pivot-attributes-in-eloquent)
+
+## Save pivot table data
+```php
+foreach ($foo->bars as $bar) {
+    $bar->pivot->pivot_attr_1 = 'new value';
+    $bar->pivot->pivot_attr_2 = 'special value';
+    $bar->pivot->save();
+}
+```
+
+Reference: [laravel4 update additional columns in pivot table](http://stackoverflow.com/questions/19083779/laravel4-update-additional-columns-in-pivot-table/19084126#19084126)
