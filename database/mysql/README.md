@@ -182,3 +182,12 @@ UPDATE `tablename` SET `created_date` = DATE_ADD(`created_date` , INTERVAL 30 MI
 ```
 
 Reference: [adding 30 minutes to datetime php/mysql](http://stackoverflow.com/questions/1436827/adding-30-minutes-to-datetime-php-mysql/1436856#1436856)
+
+## Check is MySQL user exists
+```sql
+SELECT `User`, `Host`
+FROM `mysql`.`user`
+WHERE `User` = 'foouser'
+```
+
+Reference: [How do I search to see if a MySQL user exists on the system?](http://dba.stackexchange.com/questions/682/how-do-i-search-to-see-if-a-mysql-user-exists-on-the-system/answer-685#answer-685)
