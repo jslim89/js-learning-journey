@@ -339,3 +339,29 @@ The error message was `No such file or directory`
 simply change the host to `127.0.0.1` instead of `localhost`
 
 Reference: [PHP - MySQL connection not working: 2002 No such file or directory](http://stackoverflow.com/questions/1676688/php-mysql-connection-not-working-2002-no-such-file-or-directory/6959675#6959675)
+
+## Save web image into file
+```php
+function save_image($url, $dest_path) {
+    // get the file extension
+    $ext = pathinfo($url, PATHINFO_EXTENSION);
+
+    // make sure the file name is unique, so use microtime here
+    $filename = str_replace(array('0.', ' '), array('', ''), microtime()) . '.' . $ext;
+
+    $ch = curl_init($url);
+    $fp = fopen($dest_path.'/'.ltrim($filename, '/'), 'wb');
+    curl_setopt($ch, CURLOPT_FILE, $fp);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_exec($ch);
+    curl_close($ch);
+    fclose($fp);
+    // return the new filename at the end
+    return $filename;
+}
+```
+
+References:
+
+- [Saving image from PHP URL using PHP](http://stackoverflow.com/questions/724391/saving-image-from-php-url-using-php/724449#724449)
+- [How to get the file extension in PHP? [duplicate]](http://stackoverflow.com/questions/10368217/how-to-get-the-file-extension-in-php/10368236#10368236)
