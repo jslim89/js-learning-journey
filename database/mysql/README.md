@@ -191,3 +191,30 @@ WHERE `User` = 'foouser'
 ```
 
 Reference: [How do I search to see if a MySQL user exists on the system?](http://dba.stackexchange.com/questions/682/how-do-i-search-to-see-if-a-mysql-user-exists-on-the-system/answer-685#answer-685)
+
+## Row size too large
+Error shown is
+```
+SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large (> 8126). Changing some columns to TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED may help. In current row format, BLOB prefix of 768 bytes is stored inline.
+```
+
+The table here contains many columns with `TEXT` data type, each column has a long long paragraph, thus this error rised
+
+**Solution**
+
+Edit the file `my.cnf` _(for XAMPP in Mac is on `/Applications/XAMPP/xamppfiles/etc/my.cnf`)_
+
+```
+innodb_file_per_table
+innodb_file_format = Barracuda
+```
+
+Add the content above to `[mysqld]` section. Then run sql
+
+```sql
+ALTER TABLE myawesome_table ENGINE=InnoDB ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8; 
+```
+
+Restart XAMPP server
+
+Reference: [Issue with maximum row size in MySQL](http://serverfault.com/questions/326836/issue-with-maximum-row-size-in-mysql/327222#327222)
