@@ -1809,3 +1809,17 @@ if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
 ```
 
 Reference: [How to fix UITableView separator on iOS 7? [duplicate]](http://stackoverflow.com/questions/18773239/how-to-fix-uitableview-separator-on-ios-7/18773281#18773281)
+
+## Change UIImage default image color
+
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/white-icon.png "Original icon color")  
+![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/programming/objective-c/images/gray-icon.png "New color")  
+
+```obj-c
+UIImage *whiteIcon = [[UIImage imageNamed:@"WhiteIcon"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+
+UIImageView *iconImageView = [[UIImageView alloc] initWithImage:whiteIcon];
+iconImageView.tintColor = [UIColor grayColor];
+```
+
+Reference: [How can I change every color in a UIImage to gray? [closed]](http://stackoverflow.com/questions/19970309/how-can-i-change-every-color-in-a-uiimage-to-gray/19973019#19973019)
