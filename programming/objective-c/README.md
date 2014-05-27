@@ -1823,3 +1823,27 @@ iconImageView.tintColor = [UIColor grayColor];
 ```
 
 Reference: [How can I change every color in a UIImage to gray? [closed]](http://stackoverflow.com/questions/19970309/how-can-i-change-every-color-in-a-uiimage-to-gray/19973019#19973019)
+
+## Detect a shake event
+Add the code below to your ViewController
+
+```obj-c
+-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake )
+    {
+        NSLog(@"Shake begin");
+    }
+}
+
+
+-(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake )
+    {
+        NSLog(@"Shake ended");
+    }
+}
+```
+
+Reference: [Objective C: Detecting a shake](http://stackoverflow.com/questions/4807551/objective-c-detecting-a-shake/4808879#4808879)
