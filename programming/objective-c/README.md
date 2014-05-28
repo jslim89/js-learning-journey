@@ -1423,6 +1423,28 @@ NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@
 }];
 ```
 
+**Update**
+For this case, want to extract out the `minutes` & `seconds`
+```obj-c
+NSString *message = @"Your computer will be shutdown in 3 minutes 25 seconds";
+
+// Only match for the minutes & seconds
+NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"(\\d+) minutes (\\d+) seconds"
+                                                                       options:NSRegularExpressionCaseInsensitive
+                                                                         error:&error];
+[regex enumerateMatchesInString:date.description options:0 range:NSMakeRange(0, date.description.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+
+    // `rangeAtIndex` 0 will be "3 minutes 25 seconds, so we don't take
+    // `rangeAtIndex` 1 will be "3"
+    // `rangeAtIndex` 2 will be "25"
+    int minutes = [[message substringWithRange:[result rangeAtIndex:1]] intValue];
+    int seconds = [[message substringWithRange:[result rangeAtIndex:2]] intValue];
+    NSLog(@"%dm %ds", minutes, seconds); // 3m 25s
+}];
+```
+
+It always matches the main match then only followed by submatch
+
 Reference: [Extract parts from regular expression with NSRegularExpression](http://stackoverflow.com/questions/9601551/extract-parts-from-regular-expression-with-nsregularexpression/9656243#9656243)
 
 ## Resize UIImage
