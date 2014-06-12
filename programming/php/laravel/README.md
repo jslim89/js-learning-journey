@@ -172,3 +172,36 @@ foreach ($foo->bars as $bar) {
 ```
 
 Reference: [laravel4 update additional columns in pivot table](http://stackoverflow.com/questions/19083779/laravel4-update-additional-columns-in-pivot-table/19084126#19084126)
+
+## Eloquent: Sort in child table
+Example
+
+**user**
+```
++-------------------+------------------+------+-----+---------+----------------+
+| Field             | Type             | Null | Key | Default | Extra          |
++-------------------+------------------+------+-----+---------+----------------+
+| id                | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| name              | varchar(128)     | NO   |     | NULL    |                |
+| email             | varchar(128)     | NO   |     | NULL    |                |
++-------------------+------------------+------+-----+---------+----------------+
+```
+
+**post**
+```
++-------------------+------------------+------+-----+---------+----------------+
+| Field             | Type             | Null | Key | Default | Extra          |
++-------------------+------------------+------+-----+---------+----------------+
+| id                | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| title             | varchar(128)     | NO   |     | NULL    |                |
+| user_id           | int(10) unsigned | NO   |     | 0       |                |
+| published_date    | datetime         | YES  |     | NULL    |                |
++-------------------+------------------+------+-----+---------+----------------+
+```
+
+In this case we want to sort posts belongs to the user
+```php
+$posts = $user->posts->sortBy('published_date');
+```
+
+Reference: [Laravel - Eloquent ORM](http://laravel.com/docs/eloquent#working-with-pivot-tables)
