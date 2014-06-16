@@ -1483,8 +1483,14 @@ Reference: [UISegmentedControl deselect (make none of the segments selected)](ht
 
 ## `UISegmentedControl` change text & border color
 
+Border color
 ```obj-c
 segmentedControl.tintColor =[UIColor colorWithRed:50/255.0f green:150/255.0f blue:100/255.0f alpha:1];
+```
+
+Text color
+```obj-c
+[_segmentedControl setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor blueColor]} forState:UIControlStateSelected];
 ```
 
 ## Add `UISegmentedControl` to `UIToolbar`
