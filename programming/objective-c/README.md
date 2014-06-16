@@ -1490,7 +1490,7 @@ segmentedControl.tintColor =[UIColor colorWithRed:50/255.0f green:150/255.0f blu
 
 Text color
 ```obj-c
-[_segmentedControl setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor blueColor]} forState:UIControlStateSelected];
+[segmentedControl setTitleTextAttributes:@{UITextAttributeTextColor: [UIColor blueColor]} forState:UIControlStateSelected];
 ```
 
 ## Add `UISegmentedControl` to `UIToolbar`
