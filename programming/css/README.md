@@ -105,3 +105,15 @@ text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #
 ```
 
 Reference: [Text border using css (border around text)](http://stackoverflow.com/questions/13426875/text-border-using-css-border-around-text/13427256#13427256)
+
+## Set 100% height by CSS only
+
+Set the height of a `div` relative to `body`
+
+```css
+#slideshow {
+    height: 100vh;
+}
+```
+
+Reference: [How to Make Div Element 100% Height of Browser Window Using CSS Only](http://stanislav.it/how-to-make-div-element-100-height-of-browser-window-using-css-only/)
