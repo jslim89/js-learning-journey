@@ -1883,3 +1883,16 @@ Reference: [Objective C: Detecting a shake](http://stackoverflow.com/questions/4
 ```
 
 Reference: [iOS UITabBar : Remove top shadow gradient line](http://stackoverflow.com/questions/14371343/ios-uitabbar-remove-top-shadow-gradient-line/16334578#16334578)
+
+## Vibrate device
+Import this `AudioToolbox.framework` from **Link Binary With Library**
+```obj-c
+#import <AudioToolbox/AudioServices.h>
+```
+Then, use either 1 of the following
+```obj-c
+AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+```
+
+Reference: [Making the iPhone vibrate](http://stackoverflow.com/questions/4724980/making-the-iphone-vibrate/4725039#4725039)
