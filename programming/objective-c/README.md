@@ -1875,3 +1875,11 @@ Add the code below to your ViewController
 ```
 
 Reference: [Objective C: Detecting a shake](http://stackoverflow.com/questions/4807551/objective-c-detecting-a-shake/4808879#4808879)
+
+## Remove 1px gradient on top of `UITabBar`
+
+```obj-c
+[[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
+```
+
+Reference: [iOS UITabBar : Remove top shadow gradient line](http://stackoverflow.com/questions/14371343/ios-uitabbar-remove-top-shadow-gradient-line/16334578#16334578)
