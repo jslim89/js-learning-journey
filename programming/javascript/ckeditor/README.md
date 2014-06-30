@@ -15,3 +15,13 @@ CKEDITOR.config.toolbar =
     { name: 'paragraph', items : [ 'NumberedList','BulletedList' ] }   
 ]
 ```
+
+## Edit html source code
+
+```js
+CKEDITOR.config.toolbar =
+[
+    ...
+    { name: 'document', items : [ 'Source' ] }
+]
+```
