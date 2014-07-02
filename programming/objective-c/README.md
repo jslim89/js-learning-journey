@@ -1896,3 +1896,11 @@ AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 ```
 
 Reference: [Making the iPhone vibrate](http://stackoverflow.com/questions/4724980/making-the-iphone-vibrate/4725039#4725039)
+
+## Get reference counter in ARC mode
+
+```obj-c
+NSLog(@"Retain count is %ld", CFGetRetainCount((__bridge CFTypeRef)myObject));
+```
+
+Reference: [How do I verify reference count in ARC mode?](http://stackoverflow.com/questions/8863269/how-do-i-verify-reference-count-in-arc-mode/8963645#8963645)
