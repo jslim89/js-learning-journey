@@ -16,6 +16,8 @@ CKEDITOR.config.toolbar =
 ]
 ```
 
+Reference: [CKEditor Samples » Toolbar Configuration](http://ckeditor.com/latest/samples/plugins/toolbar/toolbar.html#fullToolbar)
+
 ## Edit html source code
 
 ```js
