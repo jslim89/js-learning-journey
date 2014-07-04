@@ -205,3 +205,38 @@ $posts = $user->posts->sortBy('published_date');
 ```
 
 Reference: [Laravel - Eloquent ORM](http://laravel.com/docs/eloquent#working-with-pivot-tables)
+
+## `hasMany` for long table name
+
+Example
+
+**table**
+```
++-------------------+------------------+------+-----+---------+----------------+
+| Field             | Type             | Null | Key | Default | Extra          |
++-------------------+------------------+------+-----+---------+----------------+
+| id                | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| name              | varchar(128)     | NO   |     | NULL    |                |
++-------------------+------------------+------+-----+---------+----------------+
+```
+
+**table_foo**
+```
++-------------------+------------------+------+-----+---------+----------------+
+| Field             | Type             | Null | Key | Default | Extra          |
++-------------------+------------------+------+-----+---------+----------------+
+| id                | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| title             | varchar(128)     | NO   |     | NULL    |                |
+| table_id          | int(10) unsigned | NO   |     | 0       |                |
++-------------------+------------------+------+-----+---------+----------------+
+```
+
+In **Table.php**, use camel-case instead of underscore, e.g.
+```php
+public function tableFoos() {
+    return $this->hasMany('TableFoo');
+}
+```
+otherwise it won't works.
+
+Reference: [Issue with Laravel hasMany relation](https://stackoverflow.com/questions/22390822/issue-with-laravel-hasmany-relation/23485131#23485131)
