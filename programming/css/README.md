@@ -117,3 +117,12 @@ Set the height of a `div` relative to `body`
 ```
 
 Reference: [How to Make Div Element 100% Height of Browser Window Using CSS Only](http://stanislav.it/how-to-make-div-element-100-height-of-browser-window-using-css-only/)
+
+## Google map zoom control not showing properly
+```css
+.gmnoprint img {
+    max-width: none; 
+}
+```
+
+Reference: [google map zoom controls not displaying correctly](https://stackoverflow.com/questions/9904379/google-map-zoom-controls-not-displaying-correctly/18723355#18723355)
