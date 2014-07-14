@@ -115,3 +115,26 @@ $ ls -l ~/.bash_history
 ```
 
 Reference: [How do I get Terminal to remember previous commands after closing window in SL 10.6.8?](http://apple.stackexchange.com/questions/22385/how-do-i-get-terminal-to-remember-previous-commands-after-closing-window-in-sl-1/74405#74405)
+
+## replace pattern with sed
+
+I have already mention this in [Linux section](https://github.com/jslim89/js-learning-journey/tree/master/linux#replace-pattern-with-sed), but there is a small difference here. The command below will produce error
+
+```sh
+$ sed -i "s/reload('#\(\w\+\)#&#\(\w\+\)#')/href='#\1#\&#\2#';/" /path/to/file
+```
+
+Output
+```
+sed: 1: "AbcFile.c": invalid command code A
+```
+
+Here you have to add `-e` option for OS X, e.g.
+
+```sh
+$ sed -ie "s/reload('#\(\w\+\)#&#\(\w\+\)#')/href='#\1#\&#\2#';/" /path/to/file
+```
+
+**NOTE: You can either use `-ie` or `-i -e`**
+
+Reference: [invalid command code ., despite escaping periods, using sed](http://stackoverflow.com/questions/19456518/invalid-command-code-despite-escaping-periods-using-sed/19457213#19457213)
