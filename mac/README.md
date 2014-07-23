@@ -138,3 +138,13 @@ $ sed -ie "s/reload('#\(\w\+\)#&#\(\w\+\)#')/href='#\1#\&#\2#';/" /path/to/file
 **NOTE: You can either use `-ie` or `-i -e`**
 
 Reference: [invalid command code ., despite escaping periods, using sed](http://stackoverflow.com/questions/19456518/invalid-command-code-despite-escaping-periods-using-sed/19457213#19457213)
+
+## Batch resize image
+
+```sh
+$ sips -Z 1024 *.png
+```
+
+`1024` is refer to **width**, the height will adjusted according to ratio
+
+Reference: [Batch resize images in Preview](http://hints.macworld.com/article.php?story=200911231158240)
