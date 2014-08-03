@@ -70,3 +70,12 @@ add_filter('gettext', array($this, 'update_profile_label'), 10, 2);
 ```
 
 Reference: [Change labels on 'Nickname' and 'Biographical Info' in user-edit.php](http://wordpress.stackexchange.com/questions/6096/change-labels-on-nickname-and-biographical-info-in-user-edit-php/6099#6099)
+
+## Add featured image to post
+
+Add the following code to theme's **functions.php**
+```php
+add_theme_support( 'post-thumbnails' );
+```
+
+Reference: [How do I add featured image support to any theme?](http://wordpress.org/support/topic/how-do-i-add-featured-image-support-to-any-theme#post-1865570)
