@@ -317,3 +317,21 @@ $ tail -f thefile.txt
 ```
 
 Reference: [Shell command to monitor changes in a file - What's it called again?](http://serverfault.com/questions/1669/shell-command-to-monitor-changes-in-a-file-whats-it-called-again/1670#1670)
+
+## Loop through all files recursively
+Find all php files recursively
+```sh
+FILES=$(find /path/to/project/ -type f -name *.php)
+
+for file in $FILES
+do
+    echo $file
+done
+```
+
+## Extract file name without extension
+```sh
+filename="${file%.*}"
+```
+
+Reference: [Extract filename and extension in bash](http://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash/965072#965072)
