@@ -148,3 +148,15 @@ $ sips -Z 1024 *.png
 `1024` is refer to **width**, the height will adjusted according to ratio
 
 Reference: [Batch resize images in Preview](http://hints.macworld.com/article.php?story=200911231158240)
+
+## Compress and split files
+```sh
+$ tar -zcvf file.tar.gz file/*
+$ split -b 3500m file.tar.gz file.tar.gz.
+$ ls -l
+-rw-r--r-- 1 js staff 6.5G Aug 10 21:20 file.tar.gz
+-rw-r--r-- 1 js staff 3.5G Aug 10 21:25 file.tar.gz.aa
+-rw-r--r-- 1 js staff 3.1G Aug 10 21:29 file.tar.gz.ab
+```
+
+Reference: [Create multi volume archive on a Mac](https://superuser.com/questions/173782/create-multi-volume-archive-on-a-mac/173790#173790)
