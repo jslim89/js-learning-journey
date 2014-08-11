@@ -240,3 +240,41 @@ public function tableFoos() {
 otherwise it won't works.
 
 Reference: [Issue with Laravel hasMany relation](https://stackoverflow.com/questions/22390822/issue-with-laravel-hasmany-relation/23485131#23485131)
+
+## Outer .htaccess for shared hosting
+
+In shared hosting, usually we can't configure the virtual host, one of the way is to create another **.htaccess** in the project root
+
+```sh
+project
+  ├── app
+  ├── artisan
+  ├── bootstrap
+  ├── composer.json
+  ├── composer.lock
+  ├── composer.phar
+  ├── phpunit.xml
+  ├── public
+  │   ├── favicon.ico
+  │   ├── index.php
+  │   ├── packages
+  │   ├── robots.txt
+  │   └── .htaccess # original
+  ├── server.php
+  ├── vendor
+  └── .htaccess # Add this
+```
+
+Add the content below to **project/.htaccess**
+
+```apache
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_URI} !^public
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+```
+
+To redirect all request to **public** directory
+
+Reference: [Laravel 4 on a shared host](http://driesvints.com/blog/laravel-4-on-a-shared-host/)
