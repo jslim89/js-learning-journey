@@ -365,3 +365,15 @@ References:
 
 - [Saving image from PHP URL using PHP](http://stackoverflow.com/questions/724391/saving-image-from-php-url-using-php/724449#724449)
 - [How to get the file extension in PHP? [duplicate]](http://stackoverflow.com/questions/10368217/how-to-get-the-file-extension-in-php/10368236#10368236)
+
+## Regex validation for color code hex
+
+```php
+if(preg_match('/^#?([a-f0-9]{6}|[a-f0-9]{3})$/', $hex))
+{
+    // correct format
+}
+```
+The regex above check the optional hash _(#)_ and accept either **3** or **6** characters.
+
+Reference: [Extending the Laravel 4 Validator](http://culttt.com/2014/01/20/extending-laravel-4-validator/)
