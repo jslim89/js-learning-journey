@@ -335,3 +335,10 @@ filename="${file%.*}"
 ```
 
 Reference: [Extract filename and extension in bash](http://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash/965072#965072)
+
+## Show current running distro
+```sh
+$ lsb_release -a
+```
+
+Reference :[How can I determine the distro of Linux that is running on a remote server?](https://superuser.com/questions/618660/how-can-i-determine-the-distro-of-linux-that-is-running-on-a-remote-server/618663#618663)
