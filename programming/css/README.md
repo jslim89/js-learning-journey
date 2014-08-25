@@ -126,3 +126,13 @@ Reference: [How to Make Div Element 100% Height of Browser Window Using CSS Only
 ```
 
 Reference: [google map zoom controls not displaying correctly](https://stackoverflow.com/questions/9904379/google-map-zoom-controls-not-displaying-correctly/18723355#18723355)
+
+## Long text word wrap issue
+
+Add this zero-width space character to anywhere of the string
+
+```
+&#8203;
+```
+
+Reference: [wordwrap a very long string](http://stackoverflow.com/questions/856307/wordwrap-a-very-long-string/856322#856322)
