@@ -135,4 +135,21 @@ Add this zero-width space character to anywhere of the string
 &#8203;
 ```
 
-Reference: [wordwrap a very long string](http://stackoverflow.com/questions/856307/wordwrap-a-very-long-string/856322#856322)
+Another better solution would be implemented in CSS
+```css
+ -ms-word-break: break-all;
+     word-break: break-all;
+
+     /* Non standard for webkit */
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+```
+
+Reference: 
+
+- [wordwrap a very long string](http://stackoverflow.com/questions/856307/wordwrap-a-very-long-string/856322#856322)
+- [Word wrapping/hyphenation using CSS.](http://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/)
