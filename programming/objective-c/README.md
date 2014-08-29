@@ -1912,3 +1912,15 @@ Reference: [How do I verify reference count in ARC mode?](http://stackoverflow.c
 ```
 
 Reference: [How to hide the “back” button in UINavigationController?](http://stackoverflow.com/questions/1453519/how-to-hide-the-back-button-in-uinavigationcontroller/1453702#1453702)
+
+## Change `UIAlertView` keyboard type to numpad
+
+```obj-c
+alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+[[alert textFieldAtIndex:0] setKeyboardType:UIKeyboardTypeNumberPad];
+[alert show];
+```
+
+**The sequence is important**
+
+Reference: [UIAlertView: UIAlertViewStyleSecureTextInput: Numeric keyboard](http://stackoverflow.com/questions/10579658/uialertview-uialertviewstylesecuretextinput-numeric-keyboard/10579935#10579935)
