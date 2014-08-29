@@ -1904,3 +1904,11 @@ NSLog(@"Retain count is %ld", CFGetRetainCount((__bridge CFTypeRef)myObject));
 ```
 
 Reference: [How do I verify reference count in ARC mode?](http://stackoverflow.com/questions/8863269/how-do-i-verify-reference-count-in-arc-mode/8963645#8963645)
+
+## Hide the `UINavigationBar` back button
+
+```obj-c
+[self.navigationItem setHidesBackButton:YES animated:YES];
+```
+
+Reference: [How to hide the “back” button in UINavigationController?](http://stackoverflow.com/questions/1453519/how-to-hide-the-back-button-in-uinavigationcontroller/1453702#1453702)
