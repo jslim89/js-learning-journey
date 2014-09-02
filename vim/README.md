@@ -136,3 +136,12 @@ Reference: [Execute a script directly within vim/mvim/gvim](https://stackoverflo
 ```viml
 map <C-m> :w<CR>:!/path/to/script.sh %<CR>
 ```
+
+## Replace with a new line character
+
+```viml
+:%s/,/\r/g
+```
+Replace all comma with new line
+
+Reference: [How to replace a character for a newline in Vim?](https://stackoverflow.com/questions/71323/how-to-replace-a-character-for-a-newline-in-vim/71334#71334)
