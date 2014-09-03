@@ -1924,3 +1924,15 @@ alert.alertViewStyle = UIAlertViewStylePlainTextInput;
 **The sequence is important**
 
 Reference: [UIAlertView: UIAlertViewStyleSecureTextInput: Numeric keyboard](http://stackoverflow.com/questions/10579658/uialertview-uialertviewstylesecuretextinput-numeric-keyboard/10579935#10579935)
+
+## Bad performance after adding shadow
+
+When adding shadow effect to tableView/collectionView cell, the performance will drop significantly. 
+
+```obj-c
+view.layer.shouldRasterize = YES;
+```
+
+Set the property above solve the issue
+
+Reference: [I Have bad performance on using shadow effect](http://stackoverflow.com/questions/6395139/i-have-bad-performance-on-using-shadow-effect/6396932#6396932)
