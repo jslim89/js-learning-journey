@@ -1936,3 +1936,9 @@ view.layer.shouldRasterize = YES;
 Set the property above solve the issue
 
 Reference: [I Have bad performance on using shadow effect](http://stackoverflow.com/questions/6395139/i-have-bad-performance-on-using-shadow-effect/6396932#6396932)
+
+## `UICollectionViewCell` subclass init never run
+
+Implement in `initWithFrame:` instead
+
+Reference: [UICollectionViewCell subclass init never run](http://stackoverflow.com/questions/16531867/uicollectionviewcell-subclass-init-never-run/16531906#16531906)
