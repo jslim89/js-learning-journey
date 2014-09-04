@@ -1942,3 +1942,23 @@ Reference: [I Have bad performance on using shadow effect](http://stackoverflow.
 Implement in `initWithFrame:` instead
 
 Reference: [UICollectionViewCell subclass init never run](http://stackoverflow.com/questions/16531867/uicollectionviewcell-subclass-init-never-run/16531906#16531906)
+
+## Take screenshot from UIView
+
+```obj-c
+- (UIImage *)screenshotImageFromView:(UIView *)view {
+    
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, 1, 0.0f);
+    
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+
+    return image;
+}
+
+// usage
+UIImage *img = [self screenshotImageFromView:self.view];
+```
