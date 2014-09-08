@@ -12,6 +12,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [Zend Framework 2] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/zend)
     - [Laravel 4] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/laravel)
     - [Wordpress] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/wordpress)
+    - [Joomla] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/joomla)
     - [Facebook API] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/facebook)
     - [WideImage] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/wideimage)
     - [TCPDF] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/tcpdf)
