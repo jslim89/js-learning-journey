@@ -2,7 +2,7 @@
 
 ## Change page title
 
-Append the site name as prefix, edit **templates/_<template name>_/index.php**
+Append the site name as prefix, edit `templates/<template name>/index.php`
 
 ```php
 $this->setTitle($app->getCfg('sitename') . ' - ' . $this->getTitle());
