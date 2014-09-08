@@ -1962,3 +1962,45 @@ Reference: [UICollectionViewCell subclass init never run](http://stackoverflow.c
 // usage
 UIImage *img = [self screenshotImageFromView:self.view];
 ```
+
+## `UIColor` from hex string
+
+Add a macro in `<Project>-Prefix.pch`
+
+```obj-c
+#define UIColorFromRGB(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+```
+
+Then add a helper function
+
+```obj-c
+- (unsigned int)intFromHexString:(NSString *) hexStr
+{
+    unsigned int hexInt = 0;
+
+    // Create scanner
+    NSScanner *scanner = [NSScanner scannerWithString:hexStr];
+
+    // Tell scanner to skip the # character
+    [scanner setCharactersToBeSkipped:[NSCharacterSet characterSetWithCharactersInString:@"#"]];
+
+    // Scan hex value
+    [scanner scanHexInt:&hexInt];
+
+    return hexInt;
+}
+```
+
+Usage
+
+```obj-c
+UIColor *color = UIColorFromRGB([self intFromHexString:@"#ff3366"]);
+```
+
+References:
+
+- [Objective C UIColor from RGB](http://www.albertopasca.it/whiletrue/2010/08/objective-c-uicolor-set-color-from-rgb/)
+- [Convert Hex Value Stored As NSString To Integer](http://iosdevelopertips.com/conversion/convert-hex-value-stored-as-string-to-integer.html)
