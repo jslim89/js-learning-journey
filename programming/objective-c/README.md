@@ -2004,3 +2004,22 @@ References:
 
 - [Objective C UIColor from RGB](http://www.albertopasca.it/whiletrue/2010/08/objective-c-uicolor-set-color-from-rgb/)
 - [Convert Hex Value Stored As NSString To Integer](http://iosdevelopertips.com/conversion/convert-hex-value-stored-as-string-to-integer.html)
+
+## LocationService not working on iOS8
+
+```obj-c
+if ([_locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+    [_locationManager requestWhenInUseAuthorization];
+}
+```
+
+Call this method before `startUpdatingLocation`.
+
+In the **Info.plist**, add
+
+```xml
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>You are required to enable the location service to get accurate results.</string>
+```
+
+Reference: [iOS 8 : Location Services not working](https://stackoverflow.com/questions/24062509/ios-8-location-services-not-working/24063578#24063578)
