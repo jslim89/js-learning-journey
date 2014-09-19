@@ -278,3 +278,11 @@ Add the content below to **project/.htaccess**
 To redirect all request to **public** directory
 
 Reference: [Laravel 4 on a shared host](http://driesvints.com/blog/laravel-4-on-a-shared-host/)
+
+## Redirect to external URL
+
+```php
+return Redirect::away('https://www.facebook.com');
+```
+
+Reference: [Laravel 4: Redirect to a given url](https://stackoverflow.com/questions/18626492/laravel-4-redirect-to-a-given-url/18626541#18626541)
