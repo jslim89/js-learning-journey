@@ -16,6 +16,8 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [Facebook API] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/facebook)
     - [WideImage] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/wideimage)
     - [TCPDF] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/tcpdf)
+* [C++] (https://github.com/jslim89/js-learning-journey/tree/master/programming/cpp)
+    - [Cocos2d-x] (https://github.com/jslim89/js-learning-journey/tree/master/programming/cpp/cocos2d-x)
 * [CSS] (https://github.com/jslim89/js-learning-journey/tree/master/programming/css)
     - [Bootstrap 3] (https://github.com/jslim89/js-learning-journey/tree/master/programming/css/bootstrap)
 * [JavaScript] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript)
