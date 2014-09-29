@@ -2023,3 +2023,23 @@ In the **Info.plist**, add
 ```
 
 Reference: [iOS 8 : Location Services not working](https://stackoverflow.com/questions/24062509/ios-8-location-services-not-working/24063578#24063578)
+
+## `CLPlacemark.administrativeArea` Malaysia list
+
+```
+Selangor
+Negri Sembilan
+KL
+Kedah
+Pinang
+Perak
+Perlis
+Malacca
+Johore
+Pahang
+Terengganu
+Kelantan
+Sabah
+Sarawak
+Wilayah Persekutuan Labuan
+```
