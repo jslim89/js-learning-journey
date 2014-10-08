@@ -2043,3 +2043,16 @@ Sabah
 Sarawak
 Wilayah Persekutuan Labuan
 ```
+
+## Change `UITextField` placeholder color
+
+```obj-c
+if ([textField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+    UIColor *color = [UIColor colorWithWhite:1 alpha:0.7];
+    textField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Placeholder text" attributes:@{NSForegroundColorAttributeName: color}];
+} else {
+    TSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
+}
+```
+
+Reference: [iPhone UITextField - Change placeholder text color](http://stackoverflow.com/questions/1340224/iphone-uitextfield-change-placeholder-text-color/13695462#13695462)
