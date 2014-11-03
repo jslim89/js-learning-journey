@@ -160,3 +160,14 @@ $ ls -l
 ```
 
 Reference: [Create multi volume archive on a Mac](https://superuser.com/questions/173782/create-multi-volume-archive-on-a-mac/173790#173790)
+
+## Search and replace multiple files
+
+```sh
+$ grep -R -l "special keyword" * | xargs sed -i "" 's/special keyword/new keyword/'
+```
+
+`grep -R -l "special keyword" *` - retrive all files that contains _"special keyword"_
+`sed -i "" 's/special keyword/new keyword/'` - replace _"special keyword"_ with _"new keyword"_
+
+Reference: [sed with -i switch not working in OSX Leopard](http://hintsforums.macworld.com/showthread.php?t=95246)
