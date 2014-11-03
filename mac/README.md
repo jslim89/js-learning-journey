@@ -167,7 +167,7 @@ Reference: [Create multi volume archive on a Mac](https://superuser.com/question
 $ grep -R -l "special keyword" * | xargs sed -i "" 's/special keyword/new keyword/'
 ```
 
-`grep -R -l "special keyword" *` - retrive all files that contains _"special keyword"_
-`sed -i "" 's/special keyword/new keyword/'` - replace _"special keyword"_ with _"new keyword"_
+* `grep -R -l "special keyword" *` - retrive all files that contains _"special keyword"_
+* `sed -i "" 's/special keyword/new keyword/'` - replace _"special keyword"_ with _"new keyword"_
 
 Reference: [sed with -i switch not working in OSX Leopard](http://hintsforums.macworld.com/showthread.php?t=95246)
