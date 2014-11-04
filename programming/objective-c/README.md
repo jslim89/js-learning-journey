@@ -2056,3 +2056,18 @@ if ([textField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
 ```
 
 Reference: [iPhone UITextField - Change placeholder text color](http://stackoverflow.com/questions/1340224/iphone-uitextfield-change-placeholder-text-color/13695462#13695462)
+
+## Underline text on `UIButton`
+
+```obj-c
+UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+button.titleLabel.textColor = [UIColor whiteColor];
+button.backgroundColor = [UIColor clearColor];
+NSMutableAttributedString *buttonStr = [[NSMutableAttributedString alloc] initWithString:@"or do other stuff"];
+[buttonStr addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(3, [buttonStr length] - 3)];
+[button setAttributedTitle:buttonStr forState:UIControlStateNormal];
+```
+
+The code above will underline **do other stuff**.
+
+Reference: [UIButton Or UILabel with underlined text. iOS 6 or iOS 7](http://iostechsolutions.blogspot.com/2014/04/uibutton-or-uilabel-with-underlined.html)
