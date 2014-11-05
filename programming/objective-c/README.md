@@ -2071,3 +2071,36 @@ NSMutableAttributedString *buttonStr = [[NSMutableAttributedString alloc] initWi
 The code above will underline **do other stuff**.
 
 Reference: [UIButton Or UILabel with underlined text. iOS 6 or iOS 7](http://iostechsolutions.blogspot.com/2014/04/uibutton-or-uilabel-with-underlined.html)
+
+## Loop through `NSDate`
+
+```obj-c
+- (void)dateRangeFrom:(NSDate *)fromDate to:(NSDate *)toDate
+{
+    // add 1 day to them, e.g.
+    // fromDate = 2014-11-05 ; toDate = 2014-10-30, without adding 1 day, it will loop from 2014-11-04 to 2014-10-29
+    fromDate = [fromDate dateByAddingTimeInterval:24 * 60 * 60];
+    toDate = [toDate dateByAddingTimeInterval:24 * 60 * 60];
+
+    NSDateComponents *component = [NSDateComponents new];
+    
+    // if fromDate is greater than toDate, then loop decending, ascending otherwise
+    NSComparisonResult compareResult;
+    if ([fromDate compare:toDate] == NSOrderedAscending) {
+        compareResult = NSOrderedAscending;
+        component.day = 1; // loop through day by day
+    } else {
+        compareResult = NSOrderedDescending;
+        component.day = -1;
+    }
+    
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    
+    while ([fromDate compare:toDate] == compareResult) {
+        fromDate = [currentCalendar dateByAddingComponents:component toDate:fromDate options:0];
+        NSLog(@"Date %@", fromDate);
+    }
+}
+```
+
+Reference: [Loop between two NSDates in Objective C [closed]](http://stackoverflow.com/questions/18289923/loop-between-two-nsdates-in-objective-c/18290759#18290759)
