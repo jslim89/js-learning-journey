@@ -2104,3 +2104,52 @@ Reference: [UIButton Or UILabel with underlined text. iOS 6 or iOS 7](http://ios
 ```
 
 Reference: [Loop between two NSDates in Objective C [closed]](http://stackoverflow.com/questions/18289923/loop-between-two-nsdates-in-objective-c/18290759#18290759)
+
+## Add touch event on `UIStatusBar`
+
+**AppDelegate.h**
+```obj-c
+static NSString * const kStatusBarTappedNotification = @"statusBarTappedNotification";
+```
+
+**AppDelegate.m**
+```obj-c
+#pragma mark - Status bar touch tracking
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesBegan:touches withEvent:event];
+    CGPoint location = [[[event allTouches] anyObject] locationInView:[self window]];
+    CGRect statusBarFrame = [UIApplication sharedApplication].statusBarFrame;
+    if (CGRectContainsPoint(statusBarFrame, location)) {
+        [self statusBarTouchedAction];
+    }
+}
+
+- (void)statusBarTouchedAction {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kStatusBarTappedNotification
+                                                        object:nil];
+}
+```
+
+**AnyViewController.m**
+```obj-c
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarTappedAction:) name:kStatusBarTappedNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kStatusBarTappedNotification object:nil];
+}
+
+- (void)statusBarTappedAction:(NSNotification*)notification
+{
+    NSLog(@"StatusBar tapped");
+}
+```
+
+Reference: [How to detect touches in status bar](https://stackoverflow.com/questions/3753097/how-to-detect-touches-in-status-bar/18953439#18953439)
