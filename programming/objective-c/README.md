@@ -2153,3 +2153,12 @@ static NSString * const kStatusBarTappedNotification = @"statusBarTappedNotifica
 ```
 
 Reference: [How to detect touches in status bar](https://stackoverflow.com/questions/3753097/how-to-detect-touches-in-status-bar/18953439#18953439)
+
+## Detect link on `UITextView`
+
+```obj-c
+textView.editable = NO;
+textView.dataDetectorTypes = UIDataDetectorTypeAll;
+```
+
+Reference: [How to make URL/Phone-clickable UILabel?](https://stackoverflow.com/questions/10681965/how-to-make-url-phone-clickable-uilabel/10690821#10690821)
