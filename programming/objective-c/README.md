@@ -2159,6 +2159,9 @@ Reference: [How to detect touches in status bar](https://stackoverflow.com/quest
 ```obj-c
 textView.editable = NO;
 textView.dataDetectorTypes = UIDataDetectorTypeAll;
+if ([textView respondsToSelector:@selector(setLinkTextAttributes:)]) {
+    textView.linkTextAttributes = @{NSForegroundColorAttributeName: [UIColor redColor]};
+}
 ```
 
 Reference: [How to make URL/Phone-clickable UILabel?](https://stackoverflow.com/questions/10681965/how-to-make-url-phone-clickable-uilabel/10690821#10690821)
