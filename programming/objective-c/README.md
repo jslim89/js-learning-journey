@@ -1558,13 +1558,19 @@ self.navigationController.navigationBar.shadowImage = [UIImage new];
 // for iOS 7, remove the background image
 if ([[UIDevice currentDevice].systemVersion floatValue] >= 7) {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
 } else { // for iOS 6, set the image filled with color that same as the view's background color
     // see https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c#create-rectangle-uiimage-programmatically
     [self.navigationController.navigationBar setBackgroundImage:[MyClass imageWithColor:[UIColor yellowColor] inSize:CGSizeMake(320, 44) withCornerRadius:0] forBarMetrics:UIBarMetricsDefault];
 }
 ```
 
-Reference: [How to remove UINavigationBar inner shadow in iOS 7?](http://stackoverflow.com/questions/18160173/how-to-remove-uinavigationbar-inner-shadow-in-ios-7/19279550#19279550)
+References:
+
+- [How to remove UINavigationBar inner shadow in iOS 7?](http://stackoverflow.com/questions/18160173/how-to-remove-uinavigationbar-inner-shadow-in-ios-7/19279550#19279550)
+- [Transparent UINavigationBar](http://stackoverflow.com/questions/21850622/transparent-uinavigationbar/21850947#21850947)
 
 ## Set 2 different colors in a view
 This can be achieved by using `CALayer`
