@@ -2171,3 +2171,13 @@ if ([textView respondsToSelector:@selector(setLinkTextAttributes:)]) {
 ```
 
 Reference: [How to make URL/Phone-clickable UILabel?](https://stackoverflow.com/questions/10681965/how-to-make-url-phone-clickable-uilabel/10690821#10690821)
+
+## Get rotation angle from `CGAffineTransform`
+
+```obj-c
+atan2(transform.b, transform.a);
+```
+
+NOTE: The value are in radian
+
+Reference: [iphone sdk CGAffineTransform getting the angle of rotation of an object](http://stackoverflow.com/questions/2051811/iphone-sdk-cgaffinetransform-getting-the-angle-of-rotation-of-an-object/2051861#2051861)
