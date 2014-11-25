@@ -2181,3 +2181,37 @@ atan2(transform.b, transform.a);
 NOTE: The value are in radian
 
 Reference: [iphone sdk CGAffineTransform getting the angle of rotation of an object](http://stackoverflow.com/questions/2051811/iphone-sdk-cgaffinetransform-getting-the-angle-of-rotation-of-an-object/2051861#2051861)
+
+## Update status bar background color, fade when scroll
+
+```obj-c
+@implementation ViewController {
+    UIView *_statusBarBackgroundView;
+}
+
+- (void)viewDidLoad {
+    ...
+    _statusBarBackgroundView = [[UIView alloc] initWithFrame:[[UIApplication sharedApplication] statusBarFrame]];
+    _statusBarBackgroundView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:_statusBarBackgroundView];
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGFloat offset = scrollView.contentOffset.y;
+    CGFloat initialPoint = 40;
+    CGFloat endPoint = 80;
+    
+    if (offset > initialPoint) {
+        CGFloat opacity = (offset - initialPoint) / (endPoint - initialPoint);
+        opacity = MIN(opacity, 1);
+        _statusBarBackgroundView.backgroundColor = UIColorFromRGBA(0xfc8d8d, opacity);
+    } else {
+        _statusBarBackgroundView.backgroundColor = [UIColor clearColor];
+    }
+    self.navigationController.navigationBar.backgroundColor = _statusBarBackgroundView.backgroundColor;
+}
+```
+
+Reference: [iOS7 Side menu status bar color transition. As in the iOS7 Facebook App](https://stackoverflow.com/questions/19010500/ios7-side-menu-status-bar-color-transition-as-in-the-ios7-facebook-app/19778121#19778121)
