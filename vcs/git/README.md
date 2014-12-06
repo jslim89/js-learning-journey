@@ -235,3 +235,12 @@ $ git branch -m master
 ```
 
 Reference: [How do I rename a local Git branch?](http://stackoverflow.com/questions/6591213/how-do-i-rename-a-local-git-branch/6591218#6591218)
+
+## Show updated file name between 2 commits
+
+```sh
+$ git diff --name-only d92bd53 ffc95b0
+$ git diff --name-only HEAD~10 HEAD~5
+```
+
+Reference: [Show all changed files between two Git commits](https://stackoverflow.com/questions/1552340/show-all-changed-files-between-two-git-commits/1552353#1552353)
