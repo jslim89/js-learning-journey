@@ -20,6 +20,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [Cocos2d-x] (https://github.com/jslim89/js-learning-journey/tree/master/programming/cpp/cocos2d-x)
 * [CSS] (https://github.com/jslim89/js-learning-journey/tree/master/programming/css)
     - [Bootstrap 3] (https://github.com/jslim89/js-learning-journey/tree/master/programming/css/bootstrap)
+    - [jQuery UI] (https://github.com/jslim89/js-learning-journey/tree/master/programming/css/jquery-ui)
 * [JavaScript] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript)
     - [Bootstrap] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/bootstrap)
     - [CKEditor] (https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/ckeditor)
