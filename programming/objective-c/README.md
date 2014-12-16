@@ -2215,3 +2215,22 @@ Reference: [iphone sdk CGAffineTransform getting the angle of rotation of an obj
 ```
 
 Reference: [iOS7 Side menu status bar color transition. As in the iOS7 Facebook App](https://stackoverflow.com/questions/19010500/ios7-side-menu-status-bar-color-transition-as-in-the-ios7-facebook-app/19778121#19778121)
+
+## `UIWebView` inject css
+
+```obj-c
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    NSString* css = @"\"@font-face { font-family: 'Chalkboard'; src: local('ChalkboardSE-Regular'); } body { background-color: #F0F0FC; color: #572B00; font-family: Chalkboard;} a { color: #A00; text-decoration: none;}\"";
+    NSString* js = [NSString stringWithFormat:
+                @"var styleNode = document.createElement('style');\n"
+                 "styleNode.type = \"text/css\";\n"
+                 "var styleText = document.createTextNode(%@);\n"
+                 "styleNode.appendChild(styleText);\n"
+                 "document.getElementsByTagName('head')[0].appendChild(styleNode);\n",css];
+    NSLog(@"js:\n%@",js);
+    [self.webView stringByEvaluatingJavaScriptFromString:js];
+}
+```
+
+Reference: [UIWebView CSS injection using JavaScript](https://stackoverflow.com/questions/6903292/uiwebview-css-injection-using-javascript/11127033#11127033)
