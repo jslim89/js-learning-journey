@@ -2234,3 +2234,19 @@ Reference: [iOS7 Side menu status bar color transition. As in the iOS7 Facebook 
 ```
 
 Reference: [UIWebView CSS injection using JavaScript](https://stackoverflow.com/questions/6903292/uiwebview-css-injection-using-javascript/11127033#11127033)
+
+## `UIImagePickerControllerOriginalImage` orientation issue
+
+```obj-c
++ (UIImage*)removeOrientationForImage:(UIImage*)image {
+    CGSize size = image.size;
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0,0,size.width ,size.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return newImage;
+}
+```
+
+Reference: [How to Rotate a UIImage 90 degrees?](http://stackoverflow.com/questions/1315251/how-to-rotate-a-uiimage-90-degrees/13469432#13469432)
