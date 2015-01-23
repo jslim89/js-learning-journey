@@ -2250,3 +2250,20 @@ Reference: [UIWebView CSS injection using JavaScript](https://stackoverflow.com/
 ```
 
 Reference: [How to Rotate a UIImage 90 degrees?](http://stackoverflow.com/questions/1315251/how-to-rotate-a-uiimage-90-degrees/13469432#13469432)
+
+## `DAKeyboardControl` issue with UITabBar
+
+```obj-c
+[contentView addKeyboardPanningWithActionHandler:^(CGRect keyboardFrameInView, BOOL opening, BOOL closing) {
+    
+    CGRect toolBarFrame = toolBar.frame;
+    toolBarFrame.origin.y = MIN(keyboardFrameInView.origin.y, contentView.bounds.size.height) - toolBarFrame.size.height;
+    toolBar.frame = toolBarFrame;
+    
+    CGRect tableViewFrame = tableView.frame;
+    tableViewFrame.size.height = toolBarFrame.origin.y;
+    tableView.frame = tableViewFrame;
+}];
+```
+
+Reference: [Dismissing the keyboard with tab bar layout makes the input view disappear #42](https://github.com/danielamitay/DAKeyboardControl/issues/42#issuecomment-17017996)
