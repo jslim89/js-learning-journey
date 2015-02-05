@@ -2267,3 +2267,36 @@ Reference: [How to Rotate a UIImage 90 degrees?](http://stackoverflow.com/questi
 ```
 
 Reference: [Dismissing the keyboard with tab bar layout makes the input view disappear #42](https://github.com/danielamitay/DAKeyboardControl/issues/42#issuecomment-17017996)
+
+## `NSArray` extract a single column into another array
+
+e.g.
+
+```
+[
+    {
+        "id": "1",
+        "name": "Foo"
+    },
+    {
+        "id": "2",
+        "name": "Bar"
+    },
+    {
+        "id": "3",
+        "name": "Foo Bar"
+    },
+]
+```
+
+After calling
+
+```obj-c
+[myArr mutableArrayValueForKey:@"name"]
+```
+
+New result
+
+```
+["Foo", "Bar", "Foo Bar"]
+```
