@@ -286,3 +286,31 @@ return Redirect::away('https://www.facebook.com');
 ```
 
 Reference: [Laravel 4: Redirect to a given url](https://stackoverflow.com/questions/18626492/laravel-4-redirect-to-a-given-url/18626541#18626541)
+
+## Eloquent filter joined table
+
+```
+Transaction table
++----+-------------+---------+
+| id | borrower_id | book_id |
++----+-------------+---------+
+|  1 |      1      |    1    |
++----+-------------+---------+
+
+Book table
++----+----------+
+| id | owner_id |
++----+----------+
+|  1 |    1     |
++----+----------+
+```
+
+Let say want to retrieve those transation that related to a particular
+user, regardless he/she is owner or borrower
+
+```php
+$query
+    ->where('borrower_id', '=', $user_id)
+    ->book()->where('owner_id', '=', $user_id)
+;
+```
