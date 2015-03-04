@@ -377,3 +377,23 @@ if(preg_match('/^#?([a-f0-9]{6}|[a-f0-9]{3})$/', $hex))
 The regex above check the optional hash _(#)_ and accept either **3** or **6** characters.
 
 Reference: [Extending the Laravel 4 Validator](http://culttt.com/2014/01/20/extending-laravel-4-validator/)
+
+## Updated all `null` to empty string in an array
+
+```php
+function null_to_empty_str($obj) {
+    $new_json_array = array();
+    foreach ($obj as $k => $v) {
+        if (is_array($v)) {
+            $new_json_array[$k] = null_to_empty_str($v);
+            continue;
+        }
+        if ($v === null) {
+            $new_json_array[$k] = '';
+            continue;
+        }
+        $new_json_array[$k] = $v;
+    }
+    return $new_json_array;
+}
+```
