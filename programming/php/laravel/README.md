@@ -110,7 +110,16 @@ $queries = DB::getQueryLog();
 $last_query = end($queries);
 ```
 
-Reference: [Get the query executed in Laravel 3/4](http://stackoverflow.com/questions/14536165/get-the-query-executed-in-laravel-3-4/14536215#14536215)
+OR a better way
+
+```php
+$query->toSql();
+```
+
+References:
+
+- [Get the query executed in Laravel 3/4](http://stackoverflow.com/questions/14536165/get-the-query-executed-in-laravel-3-4/14536215#14536215)
+- [How do I get the query builder to output its raw SQL query as a string?](http://stackoverflow.com/questions/18236294/how-do-i-get-the-query-builder-to-output-its-raw-sql-query-as-a-string/20382987#20382987)
 
 ## Pagination check has page
 Check whether the pagination has other pages
