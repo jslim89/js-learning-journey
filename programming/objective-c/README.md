@@ -2300,3 +2300,11 @@ New result
 ```
 ["Foo", "Bar", "Foo Bar"]
 ```
+
+## `MKMapView` event after dragged/zoomed
+
+```obj-c
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated;
+```
+
+Reference: [determine if MKMapView was dragged/moved](http://stackoverflow.com/questions/5556977/determine-if-mkmapview-was-dragged-moved/5557154#5557154)
