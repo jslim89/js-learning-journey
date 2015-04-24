@@ -342,3 +342,8 @@ $ lsb_release -a
 ```
 
 Reference :[How can I determine the distro of Linux that is running on a remote server?](https://superuser.com/questions/618660/how-can-i-determine-the-distro-of-linux-that-is-running-on-a-remote-server/618663#618663)
+
+## Generate SQL from script and import to db
+```sh
+$ php generate_sql.php | mysql -u root -p mydatabase
+```
