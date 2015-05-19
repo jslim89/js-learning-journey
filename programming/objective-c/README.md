@@ -2308,3 +2308,27 @@ New result
 ```
 
 Reference: [determine if MKMapView was dragged/moved](http://stackoverflow.com/questions/5556977/determine-if-mkmapview-was-dragged-moved/5557154#5557154)
+
+## Custom `UIResponder` trigger event
+
+Example, create a `CustomCheckbox`, want to perform **ValueChanged** event when touched on the checkbox
+
+**CustomCheckbox.m**
+
+```obj-c
+- (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    self.checked = !_checked;
+    // trigger value changed event
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
+    return YES;
+}
+```
+
+**ViewController.m**
+
+```obj-c
+[checkbox addTarget:self action:@selector(checkboxChecked:) forControlEvents:UIControlEventValueChanged];
+```
+
+Reference: [Custom Controls](http://www.objc.io/issue-3/custom-controls.html)
