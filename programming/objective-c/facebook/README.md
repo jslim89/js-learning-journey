@@ -84,3 +84,46 @@ Force user to allow `publish_actions` permission
 ```
 
 Reference: [Getting username and profile picture from Facebook iOS 7](http://stackoverflow.com/questions/20623728/getting-username-and-profile-picture-from-facebook-ios-7/20623845#20623845)
+
+# FacebookSDK 4.x
+
+## Login
+
+**ViewController.m**
+
+```obj-c
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+
+- (void)facebookButtonTapped:(id)sender
+{
+    FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+    [loginManager logInWithReadPermissions:@[@"email"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        if (error) {
+            NSLog(@"Facebook error: %@", [error localizedDescription]);
+            return;
+        }
+        NSLog(@"Facebook token: %@", result.token.tokenString);
+    }];
+}
+```
+
+**AppDelegate.m**
+
+```obj-c
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+...
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
+```
