@@ -2332,3 +2332,35 @@ Example, create a `CustomCheckbox`, want to perform **ValueChanged** event when 
 ```
 
 Reference: [Custom Controls](http://www.objc.io/issue-3/custom-controls.html)
+
+## Print out properties of an object
+
+```obj-c
+#import <objc/message.h>
+
+- (NSString *)descriptionForObject:(id)objct
+{
+    unsigned int varCount;
+    NSMutableString *descriptionString = [[NSMutableString alloc]init];
+    
+    
+    objc_property_t *vars = class_copyPropertyList(object_getClass(objct), &varCount);
+    
+    for (int i = 0; i < varCount; i++)
+    {
+        objc_property_t var = vars[i];
+        
+        const char* name = property_getName (var);
+        
+        NSString *keyValueString = [NSString stringWithFormat:@"\n%@ = %@",[NSString stringWithUTF8String:name],[objct valueForKey:[NSString stringWithUTF8String:name]]];
+        [descriptionString appendString:keyValueString];
+    }
+    
+    free(vars);
+    return descriptionString;
+}
+```
+
+Usage: `NSLog(@"obj %@", [self descriptionForObject:obj]);`
+
+Reference: [Github: arundevma/ICHObjectPrinter](https://github.com/arundevma/ICHObjectPrinter/blob/master/ICHObjectPrinter/ICHObjectPrinter/ICHObjectPrinter/ICHObjectPrinter.m)
