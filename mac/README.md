@@ -171,3 +171,13 @@ $ grep -R -l "special keyword" * | xargs sed -i "" 's/special keyword/new keywor
 * `sed -i "" 's/special keyword/new keyword/'` - replace _"special keyword"_ with _"new keyword"_
 
 Reference: [sed with -i switch not working in OSX Leopard](http://hintsforums.macworld.com/showthread.php?t=95246)
+
+## Mission control not working
+
+Restart it
+
+```sh
+$ osascript -e 'quit application "Dock"'
+```
+
+Reference: [10.7: Restart Mission Control ](http://hints.macworld.com/article.php?story=20110802073945173)
