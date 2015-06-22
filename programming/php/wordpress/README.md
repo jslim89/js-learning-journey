@@ -79,3 +79,10 @@ add_theme_support( 'post-thumbnails' );
 ```
 
 Reference: [How do I add featured image support to any theme?](http://wordpress.org/support/topic/how-do-i-add-featured-image-support-to-any-theme#post-1865570)
+
+## Pagination get 404
+
+Make sure the `posts_per_page` matched with the number in **Admin**
+-> **Settings** -> **Reading** -> **Blog pages show at most**
+
+Reference: [Error 404 on pagination when changing posts_per_page on query_posts](https://wordpress.org/support/topic/error-404-on-pagination-when-changing-posts_per_page-on-query_posts#post-1553412)
