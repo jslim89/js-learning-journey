@@ -14,3 +14,12 @@ func tableViewTapped(sender: UITapGestureRecognizer) {
 ```
 
 Reference: [Dismiss keyboard by touching background of UITableView](http://stackoverflow.com/questions/2321038/dismiss-keyboard-by-touching-background-of-uitableview/4727589#4727589)
+
+## `UITableViewCell` dynamic height for auto-layout subviews
+
+```swift
+self.tableView.rowHeight = UITableViewAutomaticDimension
+self.tableView.estimatedRowHeight = 44.0
+```
+
+Reference: [UITableView Tutorial: Dynamic Table View Cell Height](http://www.raywenderlich.com/87975/dynamic-table-view-cell-height-ios-8-swift)
