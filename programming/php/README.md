@@ -397,3 +397,17 @@ function null_to_empty_str($obj) {
     return $new_json_array;
 }
 ```
+
+## phpMyAdmin auto login
+
+Edit the file **config.inc.php**
+
+```php
+// change from 'cookie' to 'config'
+$cfg['Servers'][$i]['auth_type'] = 'config';
+// add root username & password
+$cfg['Servers'][$i]['user'] = 'root';
+$cfg['Servers'][$i]['password'] = 'root_pass';
+```
+
+Reference: [Avoid login screen in phpmyadmin and auto login](http://www.devraju.com/php/avoid-login-screen-in-phpmyadmin-and-auto-login/)
