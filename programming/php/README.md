@@ -411,3 +411,30 @@ $cfg['Servers'][$i]['password'] = 'root_pass';
 ```
 
 Reference: [Avoid login screen in phpmyadmin and auto login](http://www.devraju.com/php/avoid-login-screen-in-phpmyadmin-and-auto-login/)
+
+## Make use of `array_map` to create key-value array
+
+```php
+$original = [
+    0 => ['id' => 'js', 'name' => 'foo'],
+    1 => ['id' => 'lim', 'name' => 'bar'],
+];
+
+$options = [];
+array_map(function($obj) use (&$options) {
+    $options[$obj['id']] = $obj['name'];
+}, $original);
+
+print_r($options);
+```
+
+Result will be:
+
+```
+Array(
+    'js' => 'foo',
+    'lim' => 'bar',
+)
+```
+
+Reference: [PHP: array_map](http://php.net/manual/en/function.array-map.php)
