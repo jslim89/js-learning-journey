@@ -46,3 +46,6 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 
 ## Version Control System
 * [Git] (https://github.com/jslim89/js-learning-journey/tree/master/vcs/git)
+
+## Others
+* [Regex] (https://github.com/jslim89/js-learning-journey/tree/master/others/regex)
