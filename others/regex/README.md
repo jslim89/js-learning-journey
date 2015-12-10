@@ -24,11 +24,11 @@ Wrap the word with `\b`, means the word has no other character in front or behin
 
 What if **without `\b`**? then it will matches
 
-- _monthly_
-- _daily_
-- foo_monthly_
-- _monthly_bar
-- foo_daily_
-- _daily_bar
+- monthly
+- daily
+- foomonthly
+- monthlybar
+- foodaily
+- dailybar
 
 Reference: [Alternation with The Vertical Bar or Pipe Symbol](http://www.regular-expressions.info/alternation.html)
