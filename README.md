@@ -41,6 +41,9 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [OpenSSL] (https://github.com/jslim89/js-learning-journey/tree/master/linux/openssl)
 * [Mac OS X] (https://github.com/jslim89/js-learning-journey/tree/master/mac)
 
+## Server
+* [.htaccess] (https://github.com/jslim89/js-learning-journey/tree/master/server/htaccess.md)
+
 ## Vim
 * [Vim] (https://github.com/jslim89/js-learning-journey/tree/master/vim)
 
