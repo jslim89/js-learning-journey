@@ -44,8 +44,9 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 ## Server
 * [.htaccess] (https://github.com/jslim89/js-learning-journey/tree/master/server/htaccess.md)
 
-## Vim
-* [Vim] (https://github.com/jslim89/js-learning-journey/tree/master/vim)
+## Editor
+* [Vim] (https://github.com/jslim89/js-learning-journey/tree/master/editor/vim)
+* [Emacs] (https://github.com/jslim89/js-learning-journey/tree/master/editor/emacs)
 
 ## Version Control System
 * [Git] (https://github.com/jslim89/js-learning-journey/tree/master/vcs/git)
