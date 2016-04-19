@@ -145,3 +145,11 @@ map <C-m> :w<CR>:!/path/to/script.sh %<CR>
 Replace all comma with new line
 
 Reference: [How to replace a character for a newline in Vim?](https://stackoverflow.com/questions/71323/how-to-replace-a-character-for-a-newline-in-vim/71334#71334)
+
+## Replace `^M` with new line
+
+```viml
+:%s/^V^M/^V^M/g
+```
+
+Reference: [How to convert the ^M linebreak to 'normal' linebreak in a file opened in vim?](http://stackoverflow.com/questions/811193/how-to-convert-the-m-linebreak-to-normal-linebreak-in-a-file-opened-in-vim/811208#811208)
