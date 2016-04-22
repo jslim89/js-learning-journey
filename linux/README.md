@@ -347,3 +347,13 @@ Reference :[How can I determine the distro of Linux that is running on a remote 
 ```sh
 $ php generate_sql.php | mysql -u root -p mydatabase
 ```
+
+## `chown` to softlink
+
+```sh
+$ chown -h myuser:mygroup mysymbolic
+```
+
+Need a `-h` option
+
+Reference: [chown is not changing symbolic link](http://superuser.com/questions/68685/chown-is-not-changing-symbolic-link/68688#68688)
