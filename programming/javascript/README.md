@@ -451,3 +451,30 @@ $(window).trigger('resize');
 ```
 
 Reference: [How to trigger the window resize event in JavaScript?](http://stackoverflow.com/questions/1818474/how-to-trigger-the-window-resize-event-in-javascript/15971955#15971955)
+
+## jQuery where condition
+
+e.g.
+
+```js
+var arr = [
+    { a: 'abc', b: 'efg', c: 'hij' },
+    { a: 'klm', b: 'nop', c: 'qrs' }
+]
+```
+
+Now want to find the json which contain `a` attr is `klm`
+
+```js
+filtered = jQuery.grep(arr, function(e) {
+    return e.a == 'klm';
+});
+```
+
+The result will be
+
+```js
+[{ a: 'klm', b: 'nop', c: 'qrs' }]
+```
+
+Reference: [Jquery where clause on json](http://stackoverflow.com/questions/27868174/jquery-where-clause-on-json/27868296#27868296)
