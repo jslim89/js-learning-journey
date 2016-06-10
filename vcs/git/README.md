@@ -244,3 +244,17 @@ $ git diff --name-only HEAD~10 HEAD~5
 ```
 
 Reference: [Show all changed files between two Git commits](https://stackoverflow.com/questions/1552340/show-all-changed-files-between-two-git-commits/1552353#1552353)
+
+## Choose specific key for specific host
+
+Create/Edit **~/.ssh/config**, add
+
+```
+Host BitBucket
+    HostName bitbucket.org
+    User git
+    IdentityFile ~/.ssh/my_new_rsa
+    IdentitiesOnly yes
+```
+
+Reference: [Specify private SSH-key to use when executing shell command with or without Ruby?](http://stackoverflow.com/questions/4565700/specify-private-ssh-key-to-use-when-executing-shell-command-with-or-without-ruby/11251797#11251797)
