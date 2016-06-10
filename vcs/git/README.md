@@ -250,9 +250,8 @@ Reference: [Show all changed files between two Git commits](https://stackoverflo
 Create/Edit **~/.ssh/config**, add
 
 ```
-Host BitBucket
+Host bitbucket.org
     HostName bitbucket.org
-    User git
     IdentityFile ~/.ssh/my_new_rsa
     IdentitiesOnly yes
 ```
