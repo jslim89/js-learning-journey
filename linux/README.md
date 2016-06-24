@@ -357,3 +357,13 @@ $ chown -h myuser:mygroup mysymbolic
 Need a `-h` option
 
 Reference: [chown is not changing symbolic link](http://superuser.com/questions/68685/chown-is-not-changing-symbolic-link/68688#68688)
+
+## Install/Remove `crontab` for other user
+
+```sh
+# install
+$ crontab cron_content.txt -u username
+
+# remove crontab from certain user
+$ crontab -r -u username
+```
