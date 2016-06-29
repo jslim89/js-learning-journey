@@ -34,6 +34,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 
 ## Database
 * [MySQL] (https://github.com/jslim89/js-learning-journey/tree/master/database/mysql)
+* [MariaDB] (https://github.com/jslim89/js-learning-journey/tree/master/database/mariadb)
 * [MongoDB] (https://github.com/jslim89/js-learning-journey/tree/master/database/mongodb)
 
 ## Unix Stuff
