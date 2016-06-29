@@ -367,3 +367,11 @@ $ crontab cron_content.txt -u username
 # remove crontab from certain user
 $ crontab -r -u username
 ```
+
+## Kill all process with certain name pattern
+
+```sh
+$ pkill -f foobar
+```
+
+Reference: [How to kill all processes with a given partial name?](http://stackoverflow.com/questions/8987037/how-to-kill-all-processes-with-a-given-partial-name/8987063#8987063)
