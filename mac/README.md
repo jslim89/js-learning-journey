@@ -31,6 +31,37 @@ By [neburim](https://discussions.apple.com/people/neburim)
 
 Reference: [NTFS Write support on Mavericks](https://discussions.apple.com/message/23816923#23816923)
 
+## Enable write support for NTFS on macOS Sierra
+
+Find your disk name
+
+```
+$ ls -l /Volumes/
+drwxr-xr-x 1 jslim staff 4096 Nov  7 12:33 'New Volume'/
+lrwxr-xr-x 1 root  wheel    1 Nov  7 10:05 'Macintosh HD' -> /
+```
+
+So in this case my external hard disk name is **New Volume**
+
+Edit/Create the file **/etc/fstab**
+
+```
+$ sudo vim /etc/fstab
+```
+
+Add the following content
+
+```
+LABEL=New\040Volume none ntfs rw,auto,nobrowse
+```
+
+`\040` is represent a _<space>_ character.
+
+Now unmount it, and plug it back. It will appear in **/Volume** directory
+
+Reference: [How to manually active NTFS writing in macOS Sierra](https://www.osxio.com/manually-active-ntfs-writing-macos-sierra/)
+
+
 ## Missing Air Drop in Mountain Lion
 Open up terminal
 ```sh
