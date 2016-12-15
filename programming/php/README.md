@@ -438,3 +438,18 @@ Array(
 ```
 
 Reference: [PHP: array_map](http://php.net/manual/en/function.array-map.php)
+
+## Call static method by dynamic class
+
+```php
+<?php
+$class_name = 'FooBar';
+$class_name::callMethod($arg1...);
+```
+
+If want to initialize
+
+```php
+<?php
+$obj = new $class_name();
+```
