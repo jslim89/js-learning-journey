@@ -218,3 +218,21 @@ ALTER TABLE myawesome_table ENGINE=InnoDB ROW_FORMAT=COMPRESSED KEY_BLOCK_SIZE=8
 Restart XAMPP server
 
 Reference: [Issue with maximum row size in MySQL](http://serverfault.com/questions/326836/issue-with-maximum-row-size-in-mysql/327222#327222)
+
+## Date '0000-00-00' error on MySQL 5.7
+
+Cannot even update the value
+
+```
+UPDATE table SET birthday = null WHERE birthday = '0000-00-00';
+
+#1292 - Incorrect date value: '0000-00-00' for column 'birthday' at row 1
+```
+
+But it works in this way
+
+```
+UPDATE table SET birthday = null WHERE CAST(birthday AS CHAR(10)) = '0000-00-00';
+```
+
+Reference: [MySQL Incorrect datetime value: '0000-00-00 00:00:00'](http://stackoverflow.com/questions/35565128/mysql-incorrect-datetime-value-0000-00-00-000000/37780259#37780259)
