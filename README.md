@@ -8,6 +8,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 * [Python] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python)
     - [Fabric] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python/fabric)
     - [Django] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python/django)
+    - [SQLAlchemy] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python/sqlalchemy)
 * [PHP] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php)
     - [Zend Framework 2] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/zend)
     - [Laravel 4] (https://github.com/jslim89/js-learning-journey/tree/master/programming/php/laravel-4)
