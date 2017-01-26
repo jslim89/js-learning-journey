@@ -126,3 +126,14 @@ def month_year_iter(start_month, start_year, end_month, end_year):
 ```
 
 Reference: [How to create a month iterator](http://stackoverflow.com/questions/5734438/how-to-create-a-month-iterator/5734564#5734564)
+
+## datetime minus month
+
+6 months ago
+
+```py
+today = datetime.date.today()
+until_date = today - relativedelta(months=6)
+```
+
+Reference: [How do I calculate the date six months from the current date using the datetime Python module?](http://stackoverflow.com/questions/546321/how-do-i-calculate-the-date-six-months-from-the-current-date-using-the-datetime/4406260#4406260)
