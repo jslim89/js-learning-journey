@@ -3,6 +3,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 
 ## General
 * [Everything] (https://github.com/jslim89/js-learning-journey/tree/master/general)
+* [Media] (https://github.com/jslim89/js-learning-journey/tree/master/media)
 
 ## Programming Language
 * [Python] (https://github.com/jslim89/js-learning-journey/tree/master/programming/python)
