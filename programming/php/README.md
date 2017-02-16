@@ -464,4 +464,4 @@ $html = '<strong>No 1.</strong> This is a <a href="...">Link</a>';
 preg_replace_callback('(<a.*>(.*?)</a>)', function($a) {return '<em>' . $a[1] . '</em>');}, $html);
 ```
 
-Reference: [How To Replace First HTML <strong></strong> Tag in PHP](http://stackoverflow.com/questions/14658732/how-to-replace-first-html-strong-strong-tag-in-php/14658760#14658760)
+Reference: [How To Replace First HTML &lt;strong&gt;&lt;/strong&gt; Tag in PHP](http://stackoverflow.com/questions/14658732/how-to-replace-first-html-strong-strong-tag-in-php/14658760#14658760)
