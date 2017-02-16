@@ -453,3 +453,15 @@ If want to initialize
 <?php
 $obj = new $class_name();
 ```
+
+## Replace html tag by regex
+
+Let say replace `<a>` to `<em>`
+
+```php
+<?php
+$html = '<strong>No 1.</strong> This is a <a href="...">Link</a>';
+preg_replace_callback('(<a.*>(.*?)</a>)', function($a) {return '<em>' . $a[1] . '</em>');}, $html);
+```
+
+Reference: [How To Replace First HTML <strong></strong> Tag in PHP](http://stackoverflow.com/questions/14658732/how-to-replace-first-html-strong-strong-tag-in-php/14658760#14658760)
