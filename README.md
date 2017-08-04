@@ -36,6 +36,9 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 * [C#](https://github.com/jslim89/js-learning-journey/tree/master/programming/csharp)
 * [Shell script](https://github.com/jslim89/js-learning-journey/tree/master/programming/shell)
 
+## Testing
+* [Appium](https://github.com/jslim89/js-learning-journey/tree/master/testing/appium)
+
 ## Database
 * [MySQL](https://github.com/jslim89/js-learning-journey/tree/master/database/mysql)
 * [MariaDB](https://github.com/jslim89/js-learning-journey/tree/master/database/mariadb)
