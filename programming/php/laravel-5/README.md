@@ -12,3 +12,10 @@ public function run()
 ```
 
 Reference: [MassAssignmentException in Laravel](http://stackoverflow.com/questions/22280136/massassignmentexception-in-laravel/25566046#25566046)
+
+## Get remote IP address
+
+```php
+<?php
+$request->server->get('HTTP_X_FORWARDED_FOR', $request->ip())
+```
