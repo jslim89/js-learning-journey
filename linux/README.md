@@ -375,3 +375,11 @@ $ pkill -f foobar
 ```
 
 Reference: [How to kill all processes with a given partial name?](http://stackoverflow.com/questions/8987037/how-to-kill-all-processes-with-a-given-partial-name/8987063#8987063)
+
+## Run command with specific user
+
+```sh
+$ sudo -u www-data php run.php
+```
+
+Reference: [How to configure PHP CLI on linux ubuntu to run as www-data?](https://serverfault.com/questions/453811/how-to-configure-php-cli-on-linux-ubuntu-to-run-as-www-data/453823#453823)
