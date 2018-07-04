@@ -465,3 +465,15 @@ preg_replace_callback('(<a.*>(.*?)</a>)', function($a) {return '<em>' . $a[1] . 
 ```
 
 Reference: [How To Replace First HTML &lt;strong&gt;&lt;/strong&gt; Tag in PHP](http://stackoverflow.com/questions/14658732/how-to-replace-first-html-strong-strong-tag-in-php/14658760#14658760)
+
+## Call dynamic class static function
+
+```php
+<?php
+$class_name = 'Helpers\DateHelper';
+$result = call_user_func($class_name . '::convert', '2018-04-30', 'M d, Y');
+```
+
+This is equivalent to `Helpers\DateHelper::convert('2018-04-30', 'M d, Y')`
+
+Reference: [Dynamic static method call in PHP?](https://stackoverflow.com/questions/2108795/dynamic-static-method-call-in-php/2108809#2108809)
