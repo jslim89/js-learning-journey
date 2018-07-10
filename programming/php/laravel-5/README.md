@@ -19,3 +19,14 @@ Reference: [MassAssignmentException in Laravel](http://stackoverflow.com/questio
 <?php
 $request->server->get('HTTP_X_FORWARDED_FOR', $request->ip())
 ```
+
+## Get database table last insert ID without insert record
+
+```php
+<?php
+$table_status = \DB::select('SHOW TABLE STATUS FROM ' . env('DB_DATABASE') . ' WHERE Name = "table_name"');
+if (empty($table_status)) {
+	throw new \Exception('Table not found');
+}
+$last_id = $table_status[0]->Auto_increment;
+```
