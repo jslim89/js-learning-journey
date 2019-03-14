@@ -257,3 +257,16 @@ Host bitbucket.org
 ```
 
 Reference: [Specify private SSH-key to use when executing shell command with or without Ruby?](http://stackoverflow.com/questions/4565700/specify-private-ssh-key-to-use-when-executing-shell-command-with-or-without-ruby/11251797#11251797)
+
+## Merge certain files from other branch
+
+```
+$ git checkout source_branch path/to/file1.php path/to/deep/path/file2.php
+$ git status -s
+A  path/to/file1.php
+A  path/to/deep/path/file2.php
+
+$ git commit -m "merge from 'source_branch'"
+```
+
+Reference: [Git tip: How to "merge" specific files from another branch](https://jasonrudolph.com/blog/2009/02/25/git-tip-how-to-merge-specific-files-from-another-branch/)
