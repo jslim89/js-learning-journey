@@ -30,3 +30,26 @@ if (empty($table_status)) {
 }
 $last_id = $table_status[0]->Auto_increment;
 ```
+
+## `COUNT` aggregated values with multiple conditions
+
+Example, get the book borrowed for today, this week, this month, etc. in 1 query
+
+```php
+<?php
+$today = Carbon::now()->toDateString();
+$week_start = Carbon::now()->startOfWeek()->toDateString();
+$week_end = Carbon::now()->endOfWeek()->toDateString();
+$month_start = Carbon::now()->startOfMonth()->toDateString();
+$month_end = Carbon::now()->endOfMonth()->toDateString();
+
+$books = Book::select([
+	'books.*',
+	\DB::raw('COUNT(DISTINCT user_books.id) AS total_borrows'),
+	\DB::raw('COUNT(DISTINCT IF(user_books.date = "' . $today . '", user_books.id, NULL)) AS today_borrows'),
+	\DB::raw('COUNT(DISTINCT IF(user_books.date >= "' . $week_start . '" AND user_books.date <= "' . $week_end . '", user_books.id, NULL)) AS week_borrows'),
+	\DB::raw('COUNT(DISTINCT IF(user_books.date >= "' . $month_start . '" AND user_books.date <= "' . $month_end . '", user_books.id, NULL)) AS month_borrows'),
+])->join('user_books', 'user_books.book_id', '=', 'books.id')
+	->groupBy('books.id')
+	->get();
+```
