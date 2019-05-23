@@ -49,3 +49,23 @@ hidden.bs.collapse
 ```
 
 Reference: [Bootstrap on collapse event](http://stackoverflow.com/questions/10641646/bootstrap-on-collapse-event/21353717#21353717)
+
+# Bootstrap 4
+
+## Multi-modal not scrollable
+
+When open 1st modal, it's scrollable;
+When open 2nd modal, it's scrollable;
+When close the 2nd modal, the 1st modal become not scrollable.
+
+Here's the fix
+
+```js
+$('body').on('hidden.bs.modal', '.modal', function (e) {
+    if ($('.modal:visible').length) {
+        $('body').addClass('modal-open');
+    }
+});
+```
+
+Reference: [Scrolling issues with multiple bootstrap modals](https://stackoverflow.com/questions/36460538/scrolling-issues-with-multiple-bootstrap-modals)
