@@ -153,3 +153,16 @@ Reference:
 
 - [wordwrap a very long string](http://stackoverflow.com/questions/856307/wordwrap-a-very-long-string/856322#856322)
 - [Word wrapping/hyphenation using CSS.](http://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/)
+
+
+## Hide scrollbar
+
+```css
+.container {
+    scrollbar-width: none; // for firefox
+}
+.container::-webkit-scrollbar { // for chrome/safari
+    width: 0;
+    height: 0;
+}
+```
