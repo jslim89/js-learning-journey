@@ -53,6 +53,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 
 ## Server
 * [.htaccess](https://github.com/jslim89/js-learning-journey/tree/master/server/htaccess.md)
+* [nginx](https://github.com/jslim89/js-learning-journey/tree/master/server/nginx.md)
 
 ## Editor
 * [Vim](https://github.com/jslim89/js-learning-journey/tree/master/editor/vim)
