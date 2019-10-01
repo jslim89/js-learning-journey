@@ -1,5 +1,15 @@
 # Lessons
 
+## Simple server
+
+Serve current folder as webserver
+
+```
+$ python -m SimpleHTTPServer 8080
+```
+
+Reference: [Web Site 101: Using a Local Development Environment](http://duspviz.mit.edu/tutorials/localhost-servers/)
+
 ## Conditional operator
 Normally in [C](http://en.wikipedia.org/wiki/C_(programming_language\)) we write:
 ```c
