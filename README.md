@@ -14,6 +14,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [Zend Framework 2](https://github.com/jslim89/js-learning-journey/tree/master/programming/php/zend)
     - [Laravel 4](https://github.com/jslim89/js-learning-journey/tree/master/programming/php/laravel-4)
     - [Laravel 5](https://github.com/jslim89/js-learning-journey/tree/master/programming/php/laravel-5)
+    - [Laravel 6](https://github.com/jslim89/js-learning-journey/tree/master/programming/php/laravel-6)
     - [Wordpress](https://github.com/jslim89/js-learning-journey/tree/master/programming/php/wordpress)
     - [Joomla](https://github.com/jslim89/js-learning-journey/tree/master/programming/php/joomla)
     - [Facebook API](https://github.com/jslim89/js-learning-journey/tree/master/programming/php/facebook)
