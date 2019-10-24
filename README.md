@@ -63,8 +63,9 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 ## Version Control System
 * [Git](https://github.com/jslim89/js-learning-journey/tree/master/vcs/git)
 
-## Amazon Web Service
+## Cloud provider
 * [AWS](https://github.com/jslim89/js-learning-journey/tree/master/aws)
+* [Google Cloud](https://github.com/jslim89/js-learning-journey/tree/master/gcloud)
 
 ## Others
 * [Regex](https://github.com/jslim89/js-learning-journey/tree/master/others/regex)
