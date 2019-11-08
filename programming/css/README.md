@@ -166,3 +166,41 @@ Reference:
     height: 0;
 }
 ```
+
+## Enforce image height according to width
+
+This can be done by setting the aspect ratio
+
+```html
+<div class="container">
+    <a href="#">
+        <img src="/path/to/img1.jpg">
+    </a>
+    <a href="#">
+        <img src="/path/to/img2.jpg">
+    </a>
+    <a href="#">
+        <img src="/path/to/img3.jpg">
+    </a>
+</div>
+```
+
+```css
+.container {
+  display: flex;
+
+  a {
+    flex-grow: 1;
+    flex-basis: 0;
+    --aspect-ratio: 1; // <---- SET THIS
+
+    img {
+      width: 100%;
+      height: 100%; // <----- set the height to 100%
+      object-fit: cover;
+    }
+  }
+}
+```
+
+Reference: [Aspect Ratio Boxes](https://css-tricks.com/aspect-ratio-boxes/)
