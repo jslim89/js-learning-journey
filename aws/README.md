@@ -22,3 +22,30 @@ $ aws sqs purge-queue --queue-url https://sqs.ap-southeast-1.amazonaws.com/12345
 ```
 
 Reference: [AWS purge-queue](https://docs.aws.amazon.com/cli/latest/reference/sqs/purge-queue.html)
+
+
+## Use `aws` command with specific credentials
+
+We can set multiple credentials in **~/.aws/credentials**
+
+```
+[default]
+aws_access_key_id=ABCDEFGHIJKLMNOPQRSTUVWXYZ
+aws_secret_access_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+[pf1]
+aws_access_key_id=ZYXWVUTSRQPONMLKJIHGFEDCBA
+aws_secret_access_key=yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+
+[pf2]
+aws_access_key_id=ABCDEFGHIJKLMESBM7VFCXU
+aws_secret_access_key=zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+```
+
+We can specify with `--profile` option. e.g.
+
+```
+$ aws s3 ls --profile pf2
+```
+
+Reference: [Support for --profile for selecting IAM credentials](https://github.com/awslabs/aws-sam-cli/issues/27)
