@@ -383,11 +383,3 @@ $ sudo -u www-data php run.php
 ```
 
 Reference: [How to configure PHP CLI on linux ubuntu to run as www-data?](https://serverfault.com/questions/453811/how-to-configure-php-cli-on-linux-ubuntu-to-run-as-www-data/453823#453823)
-
-## Convert mp4 to gif
-
-```sh
-$ ffmpeg -i input.mp4 -vf "fps=10,scale=320:-1" -loop 0 output.gif
-```
-
-Reference: [How do I convert a video to GIF using ffmpeg, with reasonable quality?](https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality/556031#556031)

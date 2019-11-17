@@ -56,6 +56,9 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 * [.htaccess](https://github.com/jslim89/js-learning-journey/tree/master/server/htaccess.md)
 * [nginx](https://github.com/jslim89/js-learning-journey/tree/master/server/nginx.md)
 
+## Video
+* [ffmpeg](https://github.com/jslim89/js-learning-journey/tree/master/videos/ffmpeg.md)
+
 ## Editor
 * [Vim](https://github.com/jslim89/js-learning-journey/tree/master/editor/vim)
 * [Emacs](https://github.com/jslim89/js-learning-journey/tree/master/editor/emacs)
