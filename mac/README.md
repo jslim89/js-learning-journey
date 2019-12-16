@@ -212,3 +212,12 @@ $ osascript -e 'quit application "Dock"'
 ```
 
 Reference: [10.7: Restart Mission Control ](http://hints.macworld.com/article.php?story=20110802073945173)
+
+## Convert heic to jpg
+
+```
+$ brew install imagemagick
+$ magick mogrify -monitor -format jpg *.HEIC
+```
+
+Reference: [How to convert a HEIF/HEIC image to JPEG in El Capitan?](https://apple.stackexchange.com/questions/297134/how-to-convert-a-heif-heic-image-to-jpeg-in-el-capitan/347507#347507)
