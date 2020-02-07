@@ -49,7 +49,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
 
 ## Unix Stuff
 * [Linux](https://github.com/jslim89/js-learning-journey/tree/master/linux)
-    - [Ubuntu](https://github.com/jslim89/js-learning-journey/tree/master/linux/ubuntu)
+    - [Ubuntu](https://github.com/jslim89/js-learning-journey/tree/master/linux/ubuntu.md)
     - [OpenSSL](https://github.com/jslim89/js-learning-journey/tree/master/linux/openssl)
 * [Mac OS X](https://github.com/jslim89/js-learning-journey/tree/master/mac)
 

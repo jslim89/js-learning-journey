@@ -19,7 +19,7 @@ $ su -
 * `-t cifs` - File system type to be mount
 * `-o` - in order to pass in arguments (i.e. **username** and **password**)
 
-Reference: [How to mount remote windows partition (windows share) under Linux] (http://www.cyberciti.biz/tips/how-to-mount-remote-windows-partition-windows-share-under-linux.html)
+Reference: [How to mount remote windows partition (windows share) under Linux](http://www.cyberciti.biz/tips/how-to-mount-remote-windows-partition-windows-share-under-linux.html)
 
 ## GREP exclude certain keyword
 ```sh
@@ -142,7 +142,7 @@ _The last character can be:_
 `.` **(dot)** - ordinary SELinux context only
 `+` **(plus)** - SELinux ACLs or other things beyond ordinary context
 
-![alt text] (https://raw.github.com/jslim89/js-learning-journey/master/linux/images/permission_trailing_dot.png "Permission trailing dot")  
+![alt text](https://raw.github.com/jslim89/js-learning-journey/master/linux/images/permission_trailing_dot.png "Permission trailing dot")  
 
 Reference: [what's with that trailing "." for the mode from "ls -l"] (http://lists.fedoraproject.org/pipermail/users/2009-November/092469.html)
 
