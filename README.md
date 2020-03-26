@@ -31,6 +31,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [CKEditor](https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/ckeditor)
     - [TinyMCE](https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/tinymce)
     - [gulp](https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/gulp)
+* [Vue](https://github.com/jslim89/js-learning-journey/tree/master/programming/vue)
 * [Objective-C](https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c)
 * [Swift](https://github.com/jslim89/js-learning-journey/tree/master/programming/swift)
     - [Animation](https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c/animation)
