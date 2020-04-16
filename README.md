@@ -30,7 +30,7 @@ I realize that some technical stuff that seldom use, I'll easily forgot. Previou
     - [Bootstrap](https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/bootstrap)
     - [CKEditor](https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/ckeditor)
     - [TinyMCE](https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/tinymce)
-    - [DataTable](https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/datatable)
+    - [DataTable](https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/datatable.md)
     - [gulp](https://github.com/jslim89/js-learning-journey/tree/master/programming/javascript/gulp)
 * [Vue](https://github.com/jslim89/js-learning-journey/tree/master/programming/vue)
 * [Objective-C](https://github.com/jslim89/js-learning-journey/tree/master/programming/objective-c)
