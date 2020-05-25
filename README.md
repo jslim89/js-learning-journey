@@ -1,5 +1,9 @@
 # About
-I realize that some technical stuff that seldom use, I'll easily forgot. Previously I was wrote in [Google Plus] (https://plus.google.com/105933285745744838422/posts). After a year, it become hard to trace back what I post. Now I decided to write it on [GitHub](https://github.com/).
+I realize that some technical stuff that seldom use, I'll easily forgot. Previously I was wrote in [Google Plus](https://plus.google.com/105933285745744838422/posts). After a year, it become hard to trace back what I post. Now I decided to write it on [GitHub](https://github.com/).
+
+## UPDATE 2020-05-25:
+
+The content has been moved to [my blog](http://jslim.net/short-notes/)
 
 ## General
 * [Everything](https://github.com/jslim89/js-learning-journey/tree/master/general)
